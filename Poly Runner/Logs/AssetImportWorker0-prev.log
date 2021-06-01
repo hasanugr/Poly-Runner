@@ -1,0 +1,1869 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.3f1 (76626098c1c4) revision 7758432'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19041.572; Version 2004; 64bit' Language: 'tr' Physical Memory: 16338 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/GameR/Unity Workspace/Poly-Runner/Poly Runner
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+49791
+Successfully changed project path to: C:/Users/GameR/Unity Workspace/Poly-Runner/Poly Runner
+C:/Users/GameR/Unity Workspace/Poly-Runner/Poly Runner
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 149.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.3f1 (76626098c1c4)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/GameR/Unity Workspace/Poly-Runner/Poly Runner/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon (TM) RX 470 Graphics (ID=0x67df)
+    Vendor:   
+    VRAM:     4075 MB
+    Driver:   27.20.15003.5017
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001729 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 150.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.973 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003111 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 159.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.483 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3548 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.0 MB.
+System memory in use after: 272.3 MB.
+
+Unloading 135 unused Assets to reduce memory usage. Loaded Objects now: 3989.
+Total: 4.963300 ms (FindLiveObjects: 0.483000 ms CreateObjectMapping: 0.120700 ms MarkObjects: 3.141100 ms  DeleteObjects: 1.216900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/MuzzleFlash01.prefab
+  artifactKey: Guid(ad2ab49d0a2a17148bd51c93d977bdbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/MuzzleFlash01.prefab using Guid(ad2ab49d0a2a17148bd51c93d977bdbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '045cf1de50cb58cb78f946ed21136de8') in 0.048812 seconds
+  Import took 0.057074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/MetalImpacts.prefab
+  artifactKey: Guid(44be68b4fc4366142a9cd1ae1f761ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/MetalImpacts.prefab using Guid(44be68b4fc4366142a9cd1ae1f761ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60fac52d0b66baace4d35458d8a230cc') in 0.877377 seconds
+  Import took 0.884301 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/FleshImpacts.prefab
+  artifactKey: Guid(24b82347924701148a13c746edfb6b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/FleshImpacts.prefab using Guid(24b82347924701148a13c746edfb6b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7254fdd8b11b5f67947567cadcd13a1') in 0.354001 seconds
+  Import took 0.360334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/StoneImpacts.prefab
+  artifactKey: Guid(8b7a1ffda5bb7474b8fae646c45ce7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/StoneImpacts.prefab using Guid(8b7a1ffda5bb7474b8fae646c45ce7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d180d179e703076e074a976b873ff34') in 0.494650 seconds
+  Import took 0.501574 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/SandImpacts.prefab
+  artifactKey: Guid(bca9020d2c9c915448fb5263a425faf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/SandImpacts.prefab using Guid(bca9020d2c9c915448fb5263a425faf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6b9bc39a6d46a0280792e8841c9c88') in 0.064472 seconds
+  Import took 0.070849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/EffectExamples
+  artifactKey: Guid(1eeca658aa0eec44093fc704dff97da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples using Guid(1eeca658aa0eec44093fc704dff97da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '532172f267d7ae3398caa1cf9d46c399') in 0.001948 seconds
+  Import took 0.007685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs
+  artifactKey: Guid(66b2958180b2bf2499ff4c4b6a684d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs using Guid(66b2958180b2bf2499ff4c4b6a684d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fa9d57ab5a0a779be9a7607e5fb8b45') in 0.001954 seconds
+  Import took 0.007778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/EffectExamples/Weapon Effects
+  artifactKey: Guid(a693b7e7a750f4142beaa792c5791927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects using Guid(a693b7e7a750f4142beaa792c5791927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e0bf0602aa69e1885c842dfa41aacd9') in 0.003922 seconds
+  Import took 0.010376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Prefabs/WoodImpacts.prefab
+  artifactKey: Guid(3c0b5f221ea995442b9d11dc526de1c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Prefabs/WoodImpacts.prefab using Guid(3c0b5f221ea995442b9d11dc526de1c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba18d1837ea07ffd97aa21aeb6d6652') in 0.913450 seconds
+  Import took 0.919649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.425356 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/BulletFleshDecal.mat
+  artifactKey: Guid(d771645f9ac10d241b18277409d02a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/BulletFleshDecal.mat using Guid(d771645f9ac10d241b18277409d02a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e08f11d04cd2f2a25e2542a4a297f9b') in 0.069491 seconds
+  Import took 0.075579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.051141 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/GoopMist.mat
+  artifactKey: Guid(22bd383795fb6f34b93b51a4caa75781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/GoopMist.mat using Guid(22bd383795fb6f34b93b51a4caa75781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e94a5f396d82307c06cb5eaada0c067') in 0.014101 seconds
+  Import took 0.020133 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012372 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/GoopMist.mat
+  artifactKey: Guid(22bd383795fb6f34b93b51a4caa75781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/GoopMist.mat using Guid(22bd383795fb6f34b93b51a4caa75781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e94a5f396d82307c06cb5eaada0c067') in 0.012910 seconds
+  Import took 0.018798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.499278 seconds.
+  path: Assets/EffectExamples/Water Effects
+  artifactKey: Guid(ba290491ceddda648bce3f8b178b2353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects using Guid(ba290491ceddda648bce3f8b178b2353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4ae2865474bfdafd9d6cc34b9c31fe7') in 0.001924 seconds
+  Import took 0.008419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.132187 seconds.
+  path: Assets/EffectExamples/Water Effects/Prefabs
+  artifactKey: Guid(527a225033593d040b9de296117f335e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Prefabs using Guid(527a225033593d040b9de296117f335e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d955bd5fc454654812ede25a5cd4c33') in 0.001765 seconds
+  Import took 0.007586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.061681 seconds.
+  path: Assets/EffectExamples/Water Effects/Prefabs/BigSplash.prefab
+  artifactKey: Guid(c1c88308ebb5d2541a282905b854ee4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Prefabs/BigSplash.prefab using Guid(c1c88308ebb5d2541a282905b854ee4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aedb9a70e5e059b599fa6f693e061365') in 0.004837 seconds
+  Import took 0.010859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/EffectExamples/Water Effects/Prefabs/Shower.prefab
+  artifactKey: Guid(3d19250bdd4e0df4c8da855e85a8d70b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Prefabs/Shower.prefab using Guid(3d19250bdd4e0df4c8da855e85a8d70b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe266a19b9a2a8ab6a5597680f8698d3') in 0.004785 seconds
+  Import took 0.010506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/EffectExamples/Water Effects/Prefabs/WaterLeak.prefab
+  artifactKey: Guid(a82a87e68ab906d4bbf876f687e2a155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Prefabs/WaterLeak.prefab using Guid(a82a87e68ab906d4bbf876f687e2a155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '400320600ce970b5f6521088809fcb4f') in 0.004582 seconds
+  Import took 0.010550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.905731 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterDropSmall.mat
+  artifactKey: Guid(c4d4365c3eeb8a54183f5af15699021d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterDropSmall.mat using Guid(c4d4365c3eeb8a54183f5af15699021d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3db518f9148b93e0959fc573fdd6443') in 0.356129 seconds
+  Import took 0.362284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008883 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterDropSmall.mat
+  artifactKey: Guid(c4d4365c3eeb8a54183f5af15699021d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterDropSmall.mat using Guid(c4d4365c3eeb8a54183f5af15699021d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3db518f9148b93e0959fc573fdd6443') in 0.040539 seconds
+  Import took 0.047105 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.249441 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/Splash.mat
+  artifactKey: Guid(0491051b82b09be4eaa3b2224971acc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/Splash.mat using Guid(0491051b82b09be4eaa3b2224971acc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999a6a05c219092ed8703372932d2a73') in 0.783381 seconds
+  Import took 0.789864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.653396 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/Splash02.mat
+  artifactKey: Guid(e9f88b6d5b7b7f24c8b3dc6b70f06653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/Splash02.mat using Guid(e9f88b6d5b7b7f24c8b3dc6b70f06653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09a3a5fd73d101d717133066e391be65') in 0.650321 seconds
+  Import took 0.656184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterFog.mat
+  artifactKey: Guid(ccf7149889a0eb64faa9cba40c767ff0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterFog.mat using Guid(ccf7149889a0eb64faa9cba40c767ff0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '804b284cf0192bb1862c2800cfb305f0') in 0.252398 seconds
+  Import took 0.258573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterRipple.mat
+  artifactKey: Guid(0f53c9d8ad82e7e42acd9cd32b6a1da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterRipple.mat using Guid(0f53c9d8ad82e7e42acd9cd32b6a1da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6537d8938636a55bb111503fd62ce247') in 0.035326 seconds
+  Import took 0.041211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/Water.mat
+  artifactKey: Guid(967578261f8e13142b10ed604e91b64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/Water.mat using Guid(967578261f8e13142b10ed604e91b64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3f6bee7bf24f9dd7293dcebcb624798') in 0.347163 seconds
+  Import took 0.353018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterDropBig.mat
+  artifactKey: Guid(88129a2e1a1e0f741a42376e2475028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterDropBig.mat using Guid(88129a2e1a1e0f741a42376e2475028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edbd511bb09da16247a05b4918954b86') in 0.052514 seconds
+  Import took 0.058395 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/Water.mat
+  artifactKey: Guid(967578261f8e13142b10ed604e91b64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/Water.mat using Guid(967578261f8e13142b10ed604e91b64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3f6bee7bf24f9dd7293dcebcb624798') in 0.093944 seconds
+  Import took 0.099680 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.307379 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/40 TRANSPARENT-GREEN.mat
+  artifactKey: Guid(7d937c04fbb734546b29eb971936bb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/40 TRANSPARENT-GREEN.mat using Guid(7d937c04fbb734546b29eb971936bb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a5007058fdf539b46472e107b3ad32') in 0.014067 seconds
+  Import took 0.020155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/45 BLUE-LIGHT.mat
+  artifactKey: Guid(6a1a1ff74be63374aa9c17b8e7395b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/45 BLUE-LIGHT.mat using Guid(6a1a1ff74be63374aa9c17b8e7395b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f668c2da4bc23b9eab13fb23081a60b') in 0.015217 seconds
+  Import took 0.021140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/40 TRANSPARENT-GREEN.mat
+  artifactKey: Guid(7d937c04fbb734546b29eb971936bb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/40 TRANSPARENT-GREEN.mat using Guid(7d937c04fbb734546b29eb971936bb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a5007058fdf539b46472e107b3ad32') in 0.007023 seconds
+  Import took 0.012682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/45 BLUE-LIGHT.mat
+  artifactKey: Guid(6a1a1ff74be63374aa9c17b8e7395b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/45 BLUE-LIGHT.mat using Guid(6a1a1ff74be63374aa9c17b8e7395b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f668c2da4bc23b9eab13fb23081a60b') in 0.007647 seconds
+  Import took 0.013435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022047 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/48 TRANSPARENT BLUE.mat
+  artifactKey: Guid(d0054e2826ae0cc4e8abb517bd8d7ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/Transparent/48 TRANSPARENT BLUE.mat using Guid(d0054e2826ae0cc4e8abb517bd8d7ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd92726dec64e93a80e664be6cd98b495') in 0.007949 seconds
+  Import took 0.014345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.323229 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/BuildingMetal.mat
+  artifactKey: Guid(e869ab35795c2534f8c23ed14506fb56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/BuildingMetal.mat using Guid(e869ab35795c2534f8c23ed14506fb56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da144d2de6849b6bcc0e29d1635ad9ce') in 0.016535 seconds
+  Import took 0.022539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/BulletDecalStone.mat
+  artifactKey: Guid(a29767879f97b364393df3a772628180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/BulletDecalStone.mat using Guid(a29767879f97b364393df3a772628180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f9464391b64d2e0a05382e6b47be7e') in 0.018356 seconds
+  Import took 0.024480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Giraffe.mat
+  artifactKey: Guid(4f6b82cd0d15d46a8a848e90ccbd6456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Giraffe.mat using Guid(4f6b82cd0d15d46a8a848e90ccbd6456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1542041601dc30190d3740025e07c94e') in 0.095044 seconds
+  Import took 0.100692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/Flame01.mat
+  artifactKey: Guid(e43d70c08c6bf7e4aa274e46393928b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/Flame01.mat using Guid(e43d70c08c6bf7e4aa274e46393928b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bfff7b35ab9b4a6ba1e6dd94db672d8') in 0.514628 seconds
+  Import took 0.520152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/ExplosionDistortion.mat
+  artifactKey: Guid(fafa06e8ef8c7fb4eac7a74c65cf3a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/ExplosionDistortion.mat using Guid(fafa06e8ef8c7fb4eac7a74c65cf3a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c312fc873ef596414fc3d340ffbe7a82') in 0.114053 seconds
+  Import took 0.120165 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/BuildingStone.mat
+  artifactKey: Guid(172a3028c541dc04cbf321aaf2173fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/BuildingStone.mat using Guid(172a3028c541dc04cbf321aaf2173fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1520a118a2c26c7fded9b5a4132277c') in 0.007839 seconds
+  Import took 0.013785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Models/Glass_Meshes/Materials/Scene_Material.mat
+  artifactKey: Guid(214f091b8ca3db84f8881bd33b153a2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Glass_Meshes/Materials/Scene_Material.mat using Guid(214f091b8ca3db84f8881bd33b153a2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f968d831b4496f69cf62b53faa1a8d0') in 0.009148 seconds
+  Import took 0.015426 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- UI/Montserrat-Regular.ttf
+  artifactKey: Guid(10bf48ef695413841b74ebca8d9c744d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- UI/Montserrat-Regular.ttf using Guid(10bf48ef695413841b74ebca8d9c744d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e6153fef24446c8109c8bfdc903ef78') in 0.022260 seconds
+  Import took 0.028366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Seagull.mat
+  artifactKey: Guid(dc59430fe2cd4400f9469c7ee15689d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Seagull.mat using Guid(dc59430fe2cd4400f9469c7ee15689d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'babbead9eb5fb9518b34d11be1eff6e4') in 0.093755 seconds
+  Import took 0.099813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Wolf.mat
+  artifactKey: Guid(56d16d5e782954b91b85626cd9e9b409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Wolf.mat using Guid(56d16d5e782954b91b85626cd9e9b409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd981116da1678637aa55c1f7308158c1') in 0.093041 seconds
+  Import took 0.098419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/BuildingMetal.mat
+  artifactKey: Guid(e5ff795fee09fc14eaec8499fe641791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/BuildingMetal.mat using Guid(e5ff795fee09fc14eaec8499fe641791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1412068ca0c8c4501b2bfe6b0814e544') in 0.007134 seconds
+  Import took 0.013059 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Shark_White.mat
+  artifactKey: Guid(c2b31fe3f0dc54d30b0286009cf55122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Shark_White.mat using Guid(c2b31fe3f0dc54d30b0286009cf55122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b5b0c528207f52d90ef9c198158ced7') in 0.092046 seconds
+  Import took 0.097756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Addons/polyperfect/Fancy GUI Kit/Fonts/FredokaOne-Regular SDF.asset
+  artifactKey: Guid(5b0bbf0192b9788428af7b485b543c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Fancy GUI Kit/Fonts/FredokaOne-Regular SDF.asset using Guid(5b0bbf0192b9788428af7b485b543c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1387c270149ac1a0b870cf1a47818a3') in 0.100801 seconds
+  Import took 0.106232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/EffectExamples/Goop Effects/Materials/GoopStreamParticle.mat
+  artifactKey: Guid(fb0a006be807eac48a87ffa79b3330a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Materials/GoopStreamParticle.mat using Guid(fb0a006be807eac48a87ffa79b3330a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4914c06909c853ef46f0d2d9dbae38a3') in 0.308185 seconds
+  Import took 0.314092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/WaterStreamParticle.mat
+  artifactKey: Guid(8ea6ed53aae46fe4e83d154e73aed27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/WaterStreamParticle.mat using Guid(8ea6ed53aae46fe4e83d154e73aed27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd813f3c3fb3cc3bd3bebe3a97555d940') in 0.033610 seconds
+  Import took 0.041622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/BuildingStone.mat
+  artifactKey: Guid(9fac9b9a38225674d98a94878fd02616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/BuildingStone.mat using Guid(9fac9b9a38225674d98a94878fd02616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a10a83cf46e9a208d474e4a70143402c') in 0.015759 seconds
+  Import took 0.021390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Materials/Bend_TwistedSpiral (Corridor)/Frame.mat
+  artifactKey: Guid(479e5ad90db0dcf45b06b665200721bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Materials/Bend_TwistedSpiral (Corridor)/Frame.mat using Guid(479e5ad90db0dcf45b06b665200721bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec9ac5c4eeb2825a5f8cdbd9854a66d5') in 0.063239 seconds
+  Import took 0.068988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Gorilla_Black.mat
+  artifactKey: Guid(8c230c31852fc4d14b28363255fda9ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Gorilla_Black.mat using Guid(8c230c31852fc4d14b28363255fda9ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3afe321c9018ade5c0afdc50870d88dd') in 0.092968 seconds
+  Import took 0.099001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/Gold.mat
+  artifactKey: Guid(a5db46007f6880a4fbeb44fe0d024c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/Gold.mat using Guid(a5db46007f6880a4fbeb44fe0d024c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a9d4e598c8c41c50daf06499c1acb1') in 0.016406 seconds
+  Import took 0.022182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/WoodSurface.mat
+  artifactKey: Guid(ce4b77858ec6c0f469b07b034c21a85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/WoodSurface.mat using Guid(ce4b77858ec6c0f469b07b034c21a85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701a44e5ef1fea75f804a836a1757526') in 0.200494 seconds
+  Import took 0.206309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/fireball.mat
+  artifactKey: Guid(3349fc02d104e2b458470ec533f51c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/fireball.mat using Guid(3349fc02d104e2b458470ec533f51c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98cf6880931be3772d740ae3ea3a71d2') in 0.787158 seconds
+  Import took 0.793065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame02.mat
+  artifactKey: Guid(bd8c234372a08af408b82538314378fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame02.mat using Guid(bd8c234372a08af408b82538314378fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5a810733902a53c82ebd912884f7f1') in 0.356198 seconds
+  Import took 0.361983 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/EffectExamples/Magic Effects/Materials/Fireball.mat
+  artifactKey: Guid(a74b8e4e831053c46943378279c70e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Materials/Fireball.mat using Guid(a74b8e4e831053c46943378279c70e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '112568905809af6f0d50978dd60be823') in 0.704658 seconds
+  Import took 0.710556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/RockDebris.mat
+  artifactKey: Guid(fbdb05c770da2c44fa1993ee693bd6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/RockDebris.mat using Guid(fbdb05c770da2c44fa1993ee693bd6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf839a7a90f546465fda86e469871764') in 0.237997 seconds
+  Import took 0.243807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/Gold.mat
+  artifactKey: Guid(52d9ee1afefab134c805ff33ef5bf1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Tutorial #2 - Little Planet (Part 2) Finished/Gold.mat using Guid(52d9ee1afefab134c805ff33ef5bf1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad1b1b33edb0c25372e7c979c9b299d') in 0.008616 seconds
+  Import took 0.014107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame04.mat
+  artifactKey: Guid(7a812f56d512d964ea8de8fe839e1811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame04.mat using Guid(7a812f56d512d964ea8de8fe839e1811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c7f1bfe470462dc0bfc3607ca948347') in 0.367159 seconds
+  Import took 0.372580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/EffectExamples/Misc Effects/Materials/candle.mat
+  artifactKey: Guid(475822f8482d0fd4d861c763d1f3934c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Misc Effects/Materials/candle.mat using Guid(475822f8482d0fd4d861c763d1f3934c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '124c37d5e91a7eca17641ed34c19cc27') in 0.009478 seconds
+  Import took 0.015785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/BuildingMetal.mat
+  artifactKey: Guid(4b3df18b5598b95469639f8a9c0c7835) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_CylindricalRolloff/BuildingMetal.mat using Guid(4b3df18b5598b95469639f8a9c0c7835) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a3053e79376a88d03c4efc0ec4478ec') in 0.007482 seconds
+  Import took 0.013219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/EffectExamples/Misc Effects/Materials/SandSwirls.mat
+  artifactKey: Guid(795ab1f41a8fd4142859110cee203fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Misc Effects/Materials/SandSwirls.mat using Guid(795ab1f41a8fd4142859110cee203fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f0400d67162ec1eaa88f1e3c0272598') in 0.012582 seconds
+  Import took 0.018205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/SandParticle.mat
+  artifactKey: Guid(e689f2433ec031e41ae61c69dfb6db02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/SandParticle.mat using Guid(e689f2433ec031e41ae61c69dfb6db02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cbd71842114ac62df151673cd209482') in 0.012964 seconds
+  Import took 0.018817 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Addons/polyperfect/Fancy GUI Kit/Fonts/FredokaOne-Regular SDF border.asset
+  artifactKey: Guid(24a8e9b0bc5121a4b96655093e64fc19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Fancy GUI Kit/Fonts/FredokaOne-Regular SDF border.asset using Guid(24a8e9b0bc5121a4b96655093e64fc19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ccc8ec724083a8fdde6cbbc187c5fbe') in 0.069687 seconds
+  Import took 0.075264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/GoopStreak.mat
+  artifactKey: Guid(2f03a6f5f76f67c45ae05e606f7ca2da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/GoopStreak.mat using Guid(2f03a6f5f76f67c45ae05e606f7ca2da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e562c2dae614b1b6efea5621194503a') in 0.050184 seconds
+  Import took 0.056099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/BuildingMetal.mat
+  artifactKey: Guid(e7df269b1d6121e4787b2f27aab18dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/BuildingMetal.mat using Guid(e7df269b1d6121e4787b2f27aab18dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e3bd4b78102a70f174db6804c492c00') in 0.007731 seconds
+  Import took 0.013568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Addons/LeanTween/Examples/Material/Futoro_PlanetMaterial.mat
+  artifactKey: Guid(6b98784ec692b4e00a86fa1044ad8998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/LeanTween/Examples/Material/Futoro_PlanetMaterial.mat using Guid(6b98784ec692b4e00a86fa1044ad8998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '264adea1ceef3d7b1c4f1223b3475dd9') in 0.007874 seconds
+  Import took 0.013794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/BulletDecalSand.mat
+  artifactKey: Guid(0a35d64bb8fd24f47b8bf3802f71313b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/BulletDecalSand.mat using Guid(0a35d64bb8fd24f47b8bf3802f71313b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5c64ef9f1fea6ec8b30616466e651a') in 0.050649 seconds
+  Import took 0.056693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/RockDebris.mat
+  artifactKey: Guid(586b03ea88dd46c42b5eb8af4d0c137a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/RockDebris.mat using Guid(586b03ea88dd46c42b5eb8af4d0c137a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12176bc11df2c36e0d6ad3c670113d3f') in 0.093094 seconds
+  Import took 0.098521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/FleshSurface.mat
+  artifactKey: Guid(72bc6ef93dd24b24a92daaf12577d9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/FleshSurface.mat using Guid(72bc6ef93dd24b24a92daaf12577d9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c82e5826b1e37a4dbf4a9c3ebbab814') in 0.029892 seconds
+  Import took 0.035958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Shark.mat
+  artifactKey: Guid(0fd18455c9a764832bf17a829f5f8a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Shark.mat using Guid(0fd18455c9a764832bf17a829f5f8a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc1b1a03f57b44d51f131481ee874d3e') in 0.101339 seconds
+  Import took 0.107152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/FireExplosion.mat
+  artifactKey: Guid(7a306caa8f9f7ed40a5361ce411cdf1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/FireExplosion.mat using Guid(7a306caa8f9f7ed40a5361ce411cdf1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40db68e4cd26e37f5c56918db8c6dd0e') in 0.367801 seconds
+  Import took 0.373362 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/EffectExamples/Magic Effects/Materials/RockSpike.mat
+  artifactKey: Guid(2c420724f5bf46241bc8d1d616c65653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Materials/RockSpike.mat using Guid(2c420724f5bf46241bc8d1d616c65653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8de4d90a24929648e9719f411a256df2') in 0.227549 seconds
+  Import took 0.233103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Addons/polyperfect/Fancy GUI Kit/Textures/gem.mat
+  artifactKey: Guid(69b0491eeb33e2c40836d3b82efadb52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Fancy GUI Kit/Textures/gem.mat using Guid(69b0491eeb33e2c40836d3b82efadb52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343c7c1625287925dd816c1fac44326a') in 0.276470 seconds
+  Import took 0.282082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/BuildingStone.mat
+  artifactKey: Guid(23b3d9b9d040fb640982c8a41813a573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/BuildingStone.mat using Guid(23b3d9b9d040fb640982c8a41813a573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ebc0af1a6def4fceae37436ba58ee19') in 0.007936 seconds
+  Import took 0.013631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/EffectExamples/Misc Effects/Materials/FireFly.mat
+  artifactKey: Guid(5471faebdbcc34e47baecfecda463063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Misc Effects/Materials/FireFly.mat using Guid(5471faebdbcc34e47baecfecda463063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93a9864b0ac78aa78030c3ae4edb8144') in 0.019768 seconds
+  Import took 0.025899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Gorilla_Brown.mat
+  artifactKey: Guid(6b72272e2adc146d0bb065e8806f0cf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Gorilla_Brown.mat using Guid(6b72272e2adc146d0bb065e8806f0cf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '088013b59e096d5521546959b125fec5') in 0.090447 seconds
+  Import took 0.096443 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/EffectExamples/Magic Effects/Materials/RockDust.mat
+  artifactKey: Guid(7f74562c360a75d468cce8ccff3d595f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Materials/RockDust.mat using Guid(7f74562c360a75d468cce8ccff3d595f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad509bdb5ba4b928e7d9ac1d3b71fd0') in 0.382910 seconds
+  Import took 0.389239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/Gold.mat
+  artifactKey: Guid(71b758f876b65184c9a1d32726be0c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Bend_LittlePlanet/Gold.mat using Guid(71b758f876b65184c9a1d32726be0c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b56f0bd107dd13b420c43afcb9f1e28') in 0.025887 seconds
+  Import took 0.032267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/EffectExamples/Goop Effects/Materials/GoopSplatParticle.mat
+  artifactKey: Guid(3ea2e59d181ffce4e97d5d1d07a22c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Materials/GoopSplatParticle.mat using Guid(3ea2e59d181ffce4e97d5d1d07a22c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b16d686e341dd2f13a5981a300fd265') in 0.053551 seconds
+  Import took 0.059771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/SandParticle.mat
+  artifactKey: Guid(4ea8613283885aa45a5c6eb29a50bdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/SandParticle.mat using Guid(4ea8613283885aa45a5c6eb29a50bdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde5b58a098490dce632abd74e93adba') in 0.014275 seconds
+  Import took 0.020152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Wolf_White.mat
+  artifactKey: Guid(1d5d0013b0c06469a8598dd66e4f5b6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Ultimate Pack/- Materials/Animals/Wolf_White.mat using Guid(1d5d0013b0c06469a8598dd66e4f5b6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b5a3dd6a90213dcaae5eebe903505e') in 0.092580 seconds
+  Import took 0.099407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame03.mat
+  artifactKey: Guid(d7f098ed9997e714193be5e86df013f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/Flame03.mat using Guid(d7f098ed9997e714193be5e86df013f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '600023d2f7416a66b89f8002f1cc9803') in 0.361691 seconds
+  Import took 0.367779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/wispySmoke.mat
+  artifactKey: Guid(4cd7f6cf6430b2347803bd0c957fbbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/wispySmoke.mat using Guid(4cd7f6cf6430b2347803bd0c957fbbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cfeb091ddc07cd7f74ed94be3cb8a70') in 1.343857 seconds
+  Import took 1.349910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/BulletDecalWood.mat
+  artifactKey: Guid(39babc0a61c17df41bca722640cfc289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/BulletDecalWood.mat using Guid(39babc0a61c17df41bca722640cfc289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7e054f301f3d6d587b60fd813ed3f9') in 0.018167 seconds
+  Import took 0.024495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/WoodSplintersParticle.mat
+  artifactKey: Guid(fd8ebe3c7242d364bae68f1548ae70bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/WoodSplintersParticle.mat using Guid(fd8ebe3c7242d364bae68f1548ae70bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fddc47443a739edd5354824f2964c7c7') in 0.183669 seconds
+  Import took 0.189996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/EffectExamples/Goop Effects/Materials/GoopSplashParticle.mat
+  artifactKey: Guid(6f3ee23817d2bd74681209e519f72618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Materials/GoopSplashParticle.mat using Guid(6f3ee23817d2bd74681209e519f72618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0889d2a836a595d19d63d71aa5c2c9bc') in 0.050879 seconds
+  Import took 0.056837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/GoopSplat2.mat
+  artifactKey: Guid(fb0f4297b291a034bb4f9a9eada50640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/GoopSplat2.mat using Guid(fb0f4297b291a034bb4f9a9eada50640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e49a78b390f7f5cc1ba7194d1329f023') in 0.050816 seconds
+  Import took 0.056568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/BuildingStone.mat
+  artifactKey: Guid(03ad6a4c3c0e64440b1d6cee74fc2a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/BuildingStone.mat using Guid(03ad6a4c3c0e64440b1d6cee74fc2a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f7da1d128f5cfa1117fc9e8b58b0338') in 0.007487 seconds
+  Import took 0.013018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/EffectExamples/Misc Effects/Materials/FireFlyTrail.mat
+  artifactKey: Guid(1d11412570f90ba4caf1b0b6dea27152) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Misc Effects/Materials/FireFlyTrail.mat using Guid(1d11412570f90ba4caf1b0b6dea27152) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e729bf798dd36e4ca7776abf1a6e64e2') in 0.008251 seconds
+  Import took 0.014217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/SandSurface.mat
+  artifactKey: Guid(26bc8648a85c6b041a5d5b00ca61062b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/SandSurface.mat using Guid(26bc8648a85c6b041a5d5b00ca61062b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80f910659fc8c2a0725ee2015dc7e15c') in 0.007205 seconds
+  Import took 0.013380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/EffectExamples/Goop Effects/Materials/GoopPoolParticle.mat
+  artifactKey: Guid(95be4df36eca6eb4b821dcab4acd4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Materials/GoopPoolParticle.mat using Guid(95be4df36eca6eb4b821dcab4acd4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0bd951fb378b0eb77680866d9ebac20') in 0.051050 seconds
+  Import took 0.056641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/EffectExamples/Weapon Effects/Materials/BulletDecalMetal.mat
+  artifactKey: Guid(094e76e620df5714eb3946120657e1f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Weapon Effects/Materials/BulletDecalMetal.mat using Guid(094e76e620df5714eb3946120657e1f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef101f1c58da0d040605eeb9384f971') in 0.018317 seconds
+  Import took 0.024101 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Gold.mat
+  artifactKey: Guid(6221f2fbc7212d94cb9c069ee262d824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/Amazing Assets/Curved World/Example Scenes/Files/Unity Tanks/Materials/Gold.mat using Guid(6221f2fbc7212d94cb9c069ee262d824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a5ffd72f2b72bf22b2cbae63a9b634') in 0.007870 seconds
+  Import took 0.013285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 468.013132 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures
+  artifactKey: Guid(a85c1ec2c6d51f54bb3f25f3dfef5e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures using Guid(a85c1ec2c6d51f54bb3f25f3dfef5e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b255e1a4637c688b2edcbefb942d24c') in 0.010189 seconds
+  Import took 0.016452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.108434 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/RippleAlbedo.png
+  artifactKey: Guid(8ed4f18f263651d4b865df353c6c8fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/RippleAlbedo.png using Guid(8ed4f18f263651d4b865df353c6c8fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6493d3c055051b1ed2f0a0b5bcfea4c') in 0.039837 seconds
+  Import took 0.045559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/SplatNormal.tif
+  artifactKey: Guid(0660389cc5a6f4947997407fb6945fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/SplatNormal.tif using Guid(0660389cc5a6f4947997407fb6945fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e03b20377787ee3f1b8e8be5bc5510d') in 0.031691 seconds
+  Import took 0.037096 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/Splash04Normal.tif
+  artifactKey: Guid(73e81e5a6e5b6874582e6c6d405d7491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/Splash04Normal.tif using Guid(73e81e5a6e5b6874582e6c6d405d7491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd838d8b6517dbe574a9651f32032c12') in 0.354040 seconds
+  Import took 0.359928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/SphereAlbedo.tif
+  artifactKey: Guid(feebd9fe3a61f384286140f9201d038d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/SphereAlbedo.tif using Guid(feebd9fe3a61f384286140f9201d038d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42de392b51a2e592c592aa89df185373') in 0.011772 seconds
+  Import took 0.017837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/SplatAlbedo.tif
+  artifactKey: Guid(c996b36d1e7f97a41836e819231fc9cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/SplatAlbedo.tif using Guid(c996b36d1e7f97a41836e819231fc9cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237ca123cec80b71a80dbd219682346a') in 0.028844 seconds
+  Import took 0.034898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/Splash01.tif
+  artifactKey: Guid(50d576b32d1c88f4abcea02ff8e68dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/Splash01.tif using Guid(50d576b32d1c88f4abcea02ff8e68dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bdce08acb2537444bcb7634cf864f1a') in 0.366980 seconds
+  Import took 0.372942 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/Splash04Albedo.tif
+  artifactKey: Guid(0153ce75dcbf4624d93f11ff5b9882bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/Splash04Albedo.tif using Guid(0153ce75dcbf4624d93f11ff5b9882bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ffa96b459f42e90df25fcf8ac2ef02e') in 0.273928 seconds
+  Import took 0.279382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/RippleNormal.tif
+  artifactKey: Guid(b31676a3103837945920ebc3cff4e14e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/RippleNormal.tif using Guid(b31676a3103837945920ebc3cff4e14e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d5c4c8e3789576ca665b174c14e6585') in 0.027418 seconds
+  Import took 0.033075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/Splash01Normal.tif
+  artifactKey: Guid(f166adb87ec51544e8173ca8a1b784c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/Splash01Normal.tif using Guid(f166adb87ec51544e8173ca8a1b784c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3741aa1db463c337ef46f03ce1c8f26') in 0.355917 seconds
+  Import took 0.361519 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/RippleNormal.tif
+  artifactKey: Guid(b31676a3103837945920ebc3cff4e14e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/RippleNormal.tif using Guid(b31676a3103837945920ebc3cff4e14e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d5c4c8e3789576ca665b174c14e6585') in 0.028592 seconds
+  Import took 0.034056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/WaterNormal.tif
+  artifactKey: Guid(5d5f4575f58c52f4dbf3d0581eba8a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/WaterNormal.tif using Guid(5d5f4575f58c52f4dbf3d0581eba8a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c4d929dee641db492570db70380d20') in 0.093467 seconds
+  Import took 0.099178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019122 seconds.
+  path: Assets/EffectExamples/Water Effects/Textures/WaterNormal.tif
+  artifactKey: Guid(5d5f4575f58c52f4dbf3d0581eba8a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Textures/WaterNormal.tif using Guid(5d5f4575f58c52f4dbf3d0581eba8a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c4d929dee641db492570db70380d20') in 0.093923 seconds
+  Import took 0.100147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.232164 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects
+  artifactKey: Guid(a5105affb5d3055448de0ec9cde1dbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects using Guid(a5105affb5d3055448de0ec9cde1dbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '705f24e6519d51ebf600b68d99294749') in 0.001994 seconds
+  Import took 0.008490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.114648 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs
+  artifactKey: Guid(dbfd7946be19cfa47b39e4ca9a17c511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs using Guid(dbfd7946be19cfa47b39e4ca9a17c511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd29798864c031e74f57f1f52d6baaa1a') in 0.001770 seconds
+  Import took 0.008188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.059738 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/DustStorm.prefab
+  artifactKey: Guid(9e03786a9517b604d8e930182607a128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/DustStorm.prefab using Guid(9e03786a9517b604d8e930182607a128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56613bafb441b5d67fa8a2e3ede305a6') in 0.005300 seconds
+  Import took 0.011253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/SmokeEffect.prefab
+  artifactKey: Guid(73767e07adddc394d82b994801f89bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/SmokeEffect.prefab using Guid(73767e07adddc394d82b994801f89bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81169d6953a6412557c1977f12fc92f9') in 0.004080 seconds
+  Import took 0.009858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/RisingSteam.prefab
+  artifactKey: Guid(efe021d4c307b5449b8121d46791cf95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/RisingSteam.prefab using Guid(efe021d4c307b5449b8121d46791cf95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17572dc9ec5846f261cf78e0524e7ac5') in 0.004295 seconds
+  Import took 0.010415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/PressurisedSteam.prefab
+  artifactKey: Guid(61bb62591466c3649bdf4905822d72f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/PressurisedSteam.prefab using Guid(61bb62591466c3649bdf4905822d72f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73059120e2b4198183f2766b1a879f0') in 0.003994 seconds
+  Import took 0.011863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/Heat Distortion.prefab
+  artifactKey: Guid(ea309e8646148c24ab067d84d5d22697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/Heat Distortion.prefab using Guid(ea309e8646148c24ab067d84d5d22697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e155a069e916a7bbdda4a5a288d698a') in 0.003857 seconds
+  Import took 0.009774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/Steam.prefab
+  artifactKey: Guid(378b2c30ef426554495292cb902cb8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/Steam.prefab using Guid(378b2c30ef426554495292cb902cb8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fef4628ab901cb216a85d4ec31b0fd38') in 0.003710 seconds
+  Import took 0.009516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/GroundFog.prefab
+  artifactKey: Guid(1a365141225c22e49a7bb976869b22a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/GroundFog.prefab using Guid(1a365141225c22e49a7bb976869b22a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e9837732b2b11dc151aa859b818619') in 0.003958 seconds
+  Import took 0.009886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/RocketTrail.prefab
+  artifactKey: Guid(ef134ce1a2a98d94fb68c860d9c736c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/RocketTrail.prefab using Guid(ef134ce1a2a98d94fb68c860d9c736c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b20747cd62e995d3215b8a67f27a1640') in 0.004653 seconds
+  Import took 0.010736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Prefabs/PoisonGas.prefab
+  artifactKey: Guid(6f672a31584a6a748912a49c1dce2f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Prefabs/PoisonGas.prefab using Guid(6f672a31584a6a748912a49c1dce2f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f944ca9e63e298bfd923aeaa127253bb') in 0.004024 seconds
+  Import took 0.009797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.399786 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/GroundFog.mat
+  artifactKey: Guid(f96090edaea7c564c80586f4385918fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/GroundFog.mat using Guid(f96090edaea7c564c80586f4385918fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08371fecf43ef1d541066968947b4638') in 0.368511 seconds
+  Import took 0.374385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.934319 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/SmokeySteam01.mat
+  artifactKey: Guid(df0a9d4a1d2f26c4eb697a71ac5b82d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/SmokeySteam01.mat using Guid(df0a9d4a1d2f26c4eb697a71ac5b82d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ba9dfc749fe8de55797306f96b26896') in 0.364900 seconds
+  Import took 0.370715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.268949 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/Smoke02.mat
+  artifactKey: Guid(43d3e21dd15c3b847957abee25d004d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/Smoke02.mat using Guid(43d3e21dd15c3b847957abee25d004d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '338b979706abcc8dc5cb28398d454c9c') in 0.361526 seconds
+  Import took 0.367672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.102270 seconds.
+  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/Dust.mat
+  artifactKey: Guid(0227585ad08c3da4ab3286a2f78d42f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/Dust.mat using Guid(0227585ad08c3da4ab3286a2f78d42f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd96e2694bce91f564df5045e72af5c') in 0.372256 seconds
+  Import took 0.378121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.539795 seconds.
+  path: Assets/EffectExamples/Goop Effects
+  artifactKey: Guid(96a4fd4c27ed4214f905c521891b2c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects using Guid(96a4fd4c27ed4214f905c521891b2c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79571cfc3167812227123cfb33698599') in 0.002004 seconds
+  Import took 0.007832 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.069537 seconds.
+  path: Assets/EffectExamples/Goop Effects/Prefabs
+  artifactKey: Guid(81fe257bbe1f3de4d8993c136ed6c362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Prefabs using Guid(81fe257bbe1f3de4d8993c136ed6c362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9444bfd5f567fff3d59157f5fe99287') in 0.001784 seconds
+  Import took 0.008061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.046705 seconds.
+  path: Assets/EffectExamples/Goop Effects/Prefabs/GoopSpray.prefab
+  artifactKey: Guid(5656e7ea1f1a75d4c895547ec2b824b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Prefabs/GoopSpray.prefab using Guid(5656e7ea1f1a75d4c895547ec2b824b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb43dc5ca485239e6911fbd510d76929') in 0.003983 seconds
+  Import took 0.009916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/EffectExamples/Goop Effects/Prefabs/GoopSprayEffect.prefab
+  artifactKey: Guid(abb9f519b142e304d9c45b56afa768bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Prefabs/GoopSprayEffect.prefab using Guid(abb9f519b142e304d9c45b56afa768bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49b64a1294e0b51207d246e1568d8bc1') in 0.011591 seconds
+  Import took 0.017666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/EffectExamples/Goop Effects/Prefabs/GoopStreamEffect.prefab
+  artifactKey: Guid(a3768c8a9d1b90d4bb0eb0e4bdbe730c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Goop Effects/Prefabs/GoopStreamEffect.prefab using Guid(a3768c8a9d1b90d4bb0eb0e4bdbe730c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ce7d588268078d0399b57eee253ca90') in 0.004133 seconds
+  Import took 0.009756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 134.248060 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects
+  artifactKey: Guid(9c9c292c9091a7d4fbaf34fdd81b85fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects using Guid(9c9c292c9091a7d4fbaf34fdd81b85fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e538bcfb708df45d8c5196ea67af9a1b') in 0.001876 seconds
+  Import took 0.007697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.160882 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs
+  artifactKey: Guid(af557a47dae08a94cb2839384fe7ac98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs using Guid(af557a47dae08a94cb2839384fe7ac98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9670ac32ac41d6c8f0fee63d335dcb46') in 0.001742 seconds
+  Import took 0.007886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.065592 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab
+  artifactKey: Guid(e1b08032bec16ba4eb1ae23cbd572664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/BigExplosion.prefab using Guid(e1b08032bec16ba4eb1ae23cbd572664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62680cb4432afcb0d7e347c6c069c945') in 0.004854 seconds
+  Import took 0.012011 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/WildFire.prefab
+  artifactKey: Guid(f293a2dcc753a4a489fefe7f8f312d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/WildFire.prefab using Guid(f293a2dcc753a4a489fefe7f8f312d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78b152fc198a6211e09fb8e1167b1d15') in 0.004085 seconds
+  Import took 0.009964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/MediumFlames.prefab
+  artifactKey: Guid(be6847dd39ab95f4daa2ed98e4f90564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/MediumFlames.prefab using Guid(be6847dd39ab95f4daa2ed98e4f90564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce0d6b3cc4b6d65d76259560189466dc') in 0.003885 seconds
+  Import took 0.009361 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/TinyExplosion.prefab
+  artifactKey: Guid(25c7aa9ad705fe143a4d71c1c8deb7d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/TinyExplosion.prefab using Guid(25c7aa9ad705fe143a4d71c1c8deb7d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '403a342c5f5a0008e2339ccfdf7423d1') in 0.004071 seconds
+  Import took 0.010723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/ParticlesLight.prefab
+  artifactKey: Guid(fa35d75604d172d48b7a6b62a07c7dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/ParticlesLight.prefab using Guid(fa35d75604d172d48b7a6b62a07c7dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fc96e91cf11735086af9b1569be11a0') in 0.003205 seconds
+  Import took 0.008970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/TinyFlames.prefab
+  artifactKey: Guid(ea4fb55d0227e604386f44f905cfe7c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/TinyFlames.prefab using Guid(ea4fb55d0227e604386f44f905cfe7c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001b99983d96396e3190163f3e170cd0') in 0.003784 seconds
+  Import took 0.009122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FlameStream.prefab
+  artifactKey: Guid(bccc7a794e75b2a44a4b0dac69160b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FlameStream.prefab using Guid(bccc7a794e75b2a44a4b0dac69160b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21c675b122940672421d597e727e0c56') in 0.003748 seconds
+  Import took 0.009363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/LargeFlames.prefab
+  artifactKey: Guid(bb98861c48ad2024ca93498c7dd93a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/LargeFlames.prefab using Guid(bb98861c48ad2024ca93498c7dd93a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '465d91c01e68c380c34d76481968324b') in 0.007828 seconds
+  Import took 0.013685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/PlasmaExplosionEffect.prefab
+  artifactKey: Guid(96730f8640590934eacb6f860058e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/PlasmaExplosionEffect.prefab using Guid(96730f8640590934eacb6f860058e7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a504ee3597f31e99078987f3b21838b') in 0.004278 seconds
+  Import took 0.010112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/EnergyExplosion.prefab
+  artifactKey: Guid(9bba9cf244c53c5439505dfc96fdd11c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/EnergyExplosion.prefab using Guid(9bba9cf244c53c5439505dfc96fdd11c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4818fa2018592608140f804f20a081d') in 0.004145 seconds
+  Import took 0.009910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/SmallExplosion.prefab
+  artifactKey: Guid(64891a0eb28db934898420d80ca07cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/SmallExplosion.prefab using Guid(64891a0eb28db934898420d80ca07cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '196c518a5715a17b2d687aa21ec210af') in 0.004086 seconds
+  Import took 0.009871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FireBall.prefab
+  artifactKey: Guid(a990e3ac1318b834488c784d851f42a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FireBall.prefab using Guid(a990e3ac1318b834488c784d851f42a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78dda6515882abd21269e0c018cce554') in 0.003908 seconds
+  Import took 0.009370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/DustExplosion.prefab
+  artifactKey: Guid(d8f0099df63275647a8bcf646df1ca00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/DustExplosion.prefab using Guid(d8f0099df63275647a8bcf646df1ca00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa0dddd5e0170469559b0a638ee4134') in 0.004422 seconds
+  Import took 0.010918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FlameThrower.prefab
+  artifactKey: Guid(007c57e2df8e9b144b99f471b84f3d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Prefabs/FlameThrower.prefab using Guid(007c57e2df8e9b144b99f471b84f3d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '261bac0e621987231e37314b9a3fed9d') in 0.004302 seconds
+  Import took 0.010660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.601204 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/Explosion.mat
+  artifactKey: Guid(6421a5a06ae9f7a47a57b67f35c73b5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/Explosion.mat using Guid(6421a5a06ae9f7a47a57b67f35c73b5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bfa1209c98c565ca684b8634befc357') in 1.007550 seconds
+  Import took 1.013563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.186675 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/Dust.mat
+  artifactKey: Guid(53a63d52a4c231f4c8ef0f2bfc170425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/Dust.mat using Guid(53a63d52a4c231f4c8ef0f2bfc170425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6097a30147f7bb569542254c3562e0f') in 0.372686 seconds
+  Import took 0.378940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.829339 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/EnergyExplosion.mat
+  artifactKey: Guid(bf88af72084132746823869f28b070f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/EnergyExplosion.mat using Guid(bf88af72084132746823869f28b070f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '917cd2adf7d8def00aa8ed393ddbf64c') in 0.370102 seconds
+  Import took 0.376069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 47.629704 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/MediumFlame01.mat
+  artifactKey: Guid(5584a46a2a298d348a252b58b4847ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/MediumFlame01.mat using Guid(5584a46a2a298d348a252b58b4847ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8af104047986690351a7a9e18bcb595b') in 0.732551 seconds
+  Import took 0.738629 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.820865 seconds.
+  path: Assets/EffectExamples/Fire & Explosion Effects/Materials/LargeFlame02.mat
+  artifactKey: Guid(b25dd701bdc692249907c8b4e4b784b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Fire & Explosion Effects/Materials/LargeFlame02.mat using Guid(b25dd701bdc692249907c8b4e4b784b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07e6e9392c75897d6e71c0cee1db8f24') in 1.506856 seconds
+  Import took 1.515131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.669527 seconds.
+  path: Assets/EffectExamples/Magic Effects
+  artifactKey: Guid(67858b22112fded4bb494b5d7f8f7ce3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects using Guid(67858b22112fded4bb494b5d7f8f7ce3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '242dbe534a379715ed5591270cf9f2d2') in 0.001878 seconds
+  Import took 0.007692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.662321 seconds.
+  path: Assets/EffectExamples/Magic Effects/Prefabs
+  artifactKey: Guid(889678cc39b43cc4dbde2bce5a82f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Prefabs using Guid(889678cc39b43cc4dbde2bce5a82f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '807a8bf9814112b7e6e7f6b66861d285') in 0.001878 seconds
+  Import took 0.007639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.056315 seconds.
+  path: Assets/EffectExamples/Magic Effects/Prefabs/EarthShatter.prefab
+  artifactKey: Guid(32c9fd11a72259d45aa26ae41c34c5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Prefabs/EarthShatter.prefab using Guid(32c9fd11a72259d45aa26ae41c34c5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7741414bf319388da6d0c0183bd93e3d') in 0.005630 seconds
+  Import took 0.012129 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/EffectExamples/Magic Effects/Prefabs/IceLance.prefab
+  artifactKey: Guid(1a1c02facd51d87458dcaa3a761e2c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Prefabs/IceLance.prefab using Guid(1a1c02facd51d87458dcaa3a761e2c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da90e79dde2db6d246dcf6fd0c4d96ca') in 0.187344 seconds
+  Import took 0.193388 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.403405 seconds.
+  path: Assets/EffectExamples/Magic Effects/Models/IceLance.FBX
+  artifactKey: Guid(735d1d1e5a1d1934589aa44da6a7ea75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Models/IceLance.FBX using Guid(735d1d1e5a1d1934589aa44da6a7ea75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b58a85f654326e8d7ef01e332d0a642b') in 0.218639 seconds
+  Import took 0.224607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2163.421429 seconds.
+  path: Assets/EffectExamples/Water Effects/Materials/WaterDropBig.mat
+  artifactKey: Guid(88129a2e1a1e0f741a42376e2475028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Water Effects/Materials/WaterDropBig.mat using Guid(88129a2e1a1e0f741a42376e2475028d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea8c6ce04547becb8207edc8d99df82') in 0.056968 seconds
+  Import took 0.063228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 227.834680 seconds.
+  path: Assets/Scripts/Player/Character.cs
+  artifactKey: Guid(4eccbd93233a2204c89ded28df7b4fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Character.cs using Guid(4eccbd93233a2204c89ded28df7b4fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '017fff1c73b500af282664fbd03a6e5b') in 0.006441 seconds
+  Import took 0.012348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001127 seconds.
+  path: Assets/Scripts/Player/Character.cs
+  artifactKey: Guid(4eccbd93233a2204c89ded28df7b4fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Character.cs using Guid(4eccbd93233a2204c89ded28df7b4fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '017fff1c73b500af282664fbd03a6e5b') in 0.001701 seconds
+  Import took 0.007687 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 556.406557 seconds.
+  path: Assets/Scripts/Obstacles/JumpingShark.cs
+  artifactKey: Guid(4454f034528954e42a68cf6e81a1ee4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Obstacles/JumpingShark.cs using Guid(4454f034528954e42a68cf6e81a1ee4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60941f64487831e9cb2696ff71c4017a') in 0.002028 seconds
+  Import took 0.008408 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003181 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3381 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 257.7 MB.
+System memory in use after: 255.9 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 4082.
+Total: 4.717100 ms (FindLiveObjects: 0.468800 ms CreateObjectMapping: 0.105300 ms MarkObjects: 3.067500 ms  DeleteObjects: 1.074000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003090 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.120 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3381 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 257.7 MB.
+System memory in use after: 256.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 4085.
+Total: 4.594600 ms (FindLiveObjects: 0.556800 ms CreateObjectMapping: 0.116400 ms MarkObjects: 2.891800 ms  DeleteObjects: 1.028500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 1210.480040 seconds.
+  path: Assets/Prefabs/Obstacles/Dynamic/Breaking Ice.prefab
+  artifactKey: Guid(422a8d6aac8fe934689ab91a760a3d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Obstacles/Dynamic/Breaking Ice.prefab using Guid(422a8d6aac8fe934689ab91a760a3d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3af4e47ce7a81721172fdf32a68212e4') in 0.201304 seconds
+  Import took 0.209279 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003028 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.105 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3381 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 258.4 MB.
+System memory in use after: 256.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 4125.
+Total: 4.215100 ms (FindLiveObjects: 0.350800 ms CreateObjectMapping: 0.111300 ms MarkObjects: 2.716200 ms  DeleteObjects: 1.035900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 7.921387 seconds.
+  path: Assets/Prefabs/Obstacles/Dynamic/Jumping Shark.prefab
+  artifactKey: Guid(733e8be519ae22d4f937d098738270af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Obstacles/Dynamic/Jumping Shark.prefab using Guid(733e8be519ae22d4f937d098738270af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e18e4bff6dea2f73921f94abc078129f') in 0.598950 seconds
+  Import took 0.606417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 170.876908 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/africa.ogg
+  artifactKey: Guid(aa6444cb66c494d0ebdb029828a157be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/africa.ogg using Guid(aa6444cb66c494d0ebdb029828a157be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1d98bbd0bb8b2a801f228109d701ff7') in 0.025823 seconds
+  Import took 0.031814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting1.ogg
+  artifactKey: Guid(b35c1c3bd50044296bca679047b59c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting1.ogg using Guid(b35c1c3bd50044296bca679047b59c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95a8e652b7805335c801289e5c0babbf') in 0.007346 seconds
+  Import took 0.012920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/deer1.ogg
+  artifactKey: Guid(9f5591bf0410147a3ab3dd80de160b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/deer1.ogg using Guid(9f5591bf0410147a3ab3dd80de160b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e362d7bbb79125386a6f0bdf55a33cdc') in 0.007669 seconds
+  Import took 0.013549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/jungle.ogg
+  artifactKey: Guid(6748d9c9b5cbe4587840cc2e5bfe7a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/jungle.ogg using Guid(6748d9c9b5cbe4587840cc2e5bfe7a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76efe47a1084bfd4add1b4461510eefa') in 0.009071 seconds
+  Import took 0.014455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/piano-sad.ogg
+  artifactKey: Guid(afe1307d1dfad40a58ab23d367de9859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/piano-sad.ogg using Guid(afe1307d1dfad40a58ab23d367de9859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ccbf244b00f37e81c52894ea061a75') in 0.007774 seconds
+  Import took 0.013531 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/eating-grass.ogg
+  artifactKey: Guid(39081a8f8fcfc43319c8f687e415712a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/eating-grass.ogg using Guid(39081a8f8fcfc43319c8f687e415712a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9fd0b346669377f35f40c16f709842e') in 0.008137 seconds
+  Import took 0.014110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-walking.ogg
+  artifactKey: Guid(21d39ec6a10f64bef8e113d2db0ce741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-walking.ogg using Guid(21d39ec6a10f64bef8e113d2db0ce741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fcf128c950b06aa545a70b15660e5f2') in 0.007097 seconds
+  Import took 0.012882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/snake-rattle.ogg
+  artifactKey: Guid(4dd824b9fb42341ea925dae50f46d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/snake-rattle.ogg using Guid(4dd824b9fb42341ea925dae50f46d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d5a8f56f3d48e02f179c0df16dac854') in 0.007542 seconds
+  Import took 0.013364 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/ice-squeels.ogg
+  artifactKey: Guid(231f5e48c4f0c49ec9d12e4698c08e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/ice-squeels.ogg using Guid(231f5e48c4f0c49ec9d12e4698c08e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b331deac14d7c884062ee53d5980d33') in 0.007255 seconds
+  Import took 0.013044 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-growl.ogg
+  artifactKey: Guid(658cb6be8ecea465f8d45372a3c26ff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-growl.ogg using Guid(658cb6be8ecea465f8d45372a3c26ff5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8981155069a803345031a32e575094') in 0.007408 seconds
+  Import took 0.013262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/snake-rattle2.ogg
+  artifactKey: Guid(291223563c5ea4abf9d5eb26f2b0d836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/snake-rattle2.ogg using Guid(291223563c5ea4abf9d5eb26f2b0d836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9f397246cf9a2afdb657d336fcc56cd') in 0.007094 seconds
+  Import took 0.012756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-whinny.ogg
+  artifactKey: Guid(cc6dadbb62bf240f9b731c085a12f51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-whinny.ogg using Guid(cc6dadbb62bf240f9b731c085a12f51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e8db26a07962db8839b5d20f4f47c48') in 0.007143 seconds
+  Import took 0.012990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-purr.ogg
+  artifactKey: Guid(7b6b33682babad5438d7b5414f5bcc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-purr.ogg using Guid(7b6b33682babad5438d7b5414f5bcc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ed9fb13a76fa3e3426d18614eaa2bac') in 0.006829 seconds
+  Import took 0.013195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-background.ogg
+  artifactKey: Guid(c16e73485744543c2b47600223c311f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-background.ogg using Guid(c16e73485744543c2b47600223c311f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46d316596779104f494663633ad5d345') in 0.007799 seconds
+  Import took 0.013489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/desert.ogg
+  artifactKey: Guid(206da488893b24c4fa40940add7a9ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/desert.ogg using Guid(206da488893b24c4fa40940add7a9ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3301730c2734fff23c9168bbea95da4') in 0.006966 seconds
+  Import took 0.012679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/deer-walk.ogg
+  artifactKey: Guid(b8d66fbf2a4c44b208b86bdcaf684983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/deer-walk.ogg using Guid(b8d66fbf2a4c44b208b86bdcaf684983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2235ee796ae8e8426932a6cab69a911d') in 0.006953 seconds
+  Import took 0.012670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-fall.ogg
+  artifactKey: Guid(a231c712d73334749af731ed7a2ea067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-fall.ogg using Guid(a231c712d73334749af731ed7a2ea067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1124c02c57287c81a34bc800fc788739') in 0.006990 seconds
+  Import took 0.012973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/artic.ogg
+  artifactKey: Guid(6b42d6a1d7806483197988b15488e2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/artic.ogg using Guid(6b42d6a1d7806483197988b15488e2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e47e789d6897e6f18a4f9a3b91f0845') in 0.007841 seconds
+  Import took 0.013386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-whining.ogg
+  artifactKey: Guid(23a85d7a4180c4a4384a9f9da0c18caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-whining.ogg using Guid(23a85d7a4180c4a4384a9f9da0c18caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bee12e6f7ae006075459dbcd328092c') in 0.007480 seconds
+  Import took 0.013476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-call2.ogg
+  artifactKey: Guid(0de96a8161452418c85ccc0a20fbf478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-call2.ogg using Guid(0de96a8161452418c85ccc0a20fbf478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f787f6b6eb930ba4cefe84f6990da97e') in 0.007251 seconds
+  Import took 0.012818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-bark-sigle.ogg
+  artifactKey: Guid(64f2394e24967461c83b283349e00581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-bark-sigle.ogg using Guid(64f2394e24967461c83b283349e00581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212e9382cdc7f8d32cfe264345ce0afa') in 0.007651 seconds
+  Import took 0.013360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-run.ogg
+  artifactKey: Guid(1a9e4068c7b4b42afbfb409a5a13bd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-run.ogg using Guid(1a9e4068c7b4b42afbfb409a5a13bd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc298b0ce87287ae1b48f0e80e465fb') in 0.007792 seconds
+  Import took 0.013676 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting2.ogg
+  artifactKey: Guid(7a306e42ceac44633878fcd02509d204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting2.ogg using Guid(7a306e42ceac44633878fcd02509d204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4de38280c3dda699fd37e9e74cb50c8') in 0.006957 seconds
+  Import took 0.012814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-run.ogg
+  artifactKey: Guid(de958d1389c5f4943b29af6a49318cad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-run.ogg using Guid(de958d1389c5f4943b29af6a49318cad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c08f98556ee3fb1e95b417ccde44f8b5') in 0.007400 seconds
+  Import took 0.013371 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-call.ogg
+  artifactKey: Guid(7e4289455ecb1465596eaeefe049e379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-call.ogg using Guid(7e4289455ecb1465596eaeefe049e379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa2572cb7df40182015f8f01d9bf504b') in 0.006546 seconds
+  Import took 0.012747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-run.ogg
+  artifactKey: Guid(8903d51571357468e94913d5528fa5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-run.ogg using Guid(8903d51571357468e94913d5528fa5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a93111c81a67bd59e4ddb3b8b7b15b') in 0.007637 seconds
+  Import took 0.013077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-hungry.ogg
+  artifactKey: Guid(0f9731ce1b920410ca371556bbc29202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-hungry.ogg using Guid(0f9731ce1b920410ca371556bbc29202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bde06e8849591ecb5ef73ee4580eab9') in 0.007258 seconds
+  Import took 0.013015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-barking.ogg
+  artifactKey: Guid(1e5b44e7729e64f8594f629e9e51c5c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/dog-barking.ogg using Guid(1e5b44e7729e64f8594f629e9e51c5c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fbe28c6e27d6b56501c73182843e04a') in 0.006838 seconds
+  Import took 0.012190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/sea.ogg
+  artifactKey: Guid(99c7f5a4fdc7f4b70b0d17f712987f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/sea.ogg using Guid(99c7f5a4fdc7f4b70b0d17f712987f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b05745fc81c6671ffad878ca10eb7843') in 0.007180 seconds
+  Import took 0.012542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-attack.ogg
+  artifactKey: Guid(dabbc3d60b9254fc483ca68d4dcedc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/spider-attack.ogg using Guid(dabbc3d60b9254fc483ca68d4dcedc0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce7d66b921724ed96e01235909aedf0c') in 0.006693 seconds
+  Import took 0.012655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-foot.ogg
+  artifactKey: Guid(9968f065c9f3d4aebadb78a35d7cfd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/horse-foot.ogg using Guid(9968f065c9f3d4aebadb78a35d7cfd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30ffe13086fdf040964809b307b0943b') in 0.006418 seconds
+  Import took 0.012308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/seagull.ogg
+  artifactKey: Guid(fc18f453fab34462c85d26962d0702ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/seagull.ogg using Guid(fc18f453fab34462c85d26962d0702ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a046c3dc4fd456cb630db34052ec324b') in 0.007112 seconds
+  Import took 0.012800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting3.ogg
+  artifactKey: Guid(842983cedf18245fbb682c015a71cedf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting3.ogg using Guid(842983cedf18245fbb682c015a71cedf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5011c15412f497d143e156325cb49737') in 0.007681 seconds
+  Import took 0.013380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-moo.ogg
+  artifactKey: Guid(c244c3141607649918f54beb8a706957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-moo.ogg using Guid(c244c3141607649918f54beb8a706957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfb9a4aacd7332a8a825b1739509339f') in 0.007660 seconds
+  Import took 0.013467 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting-calm.ogg
+  artifactKey: Guid(577532471b3374967adb1ff2620e2761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-trumpeting-calm.ogg using Guid(577532471b3374967adb1ff2620e2761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3001732d5de7477df65acffbc7e9a50e') in 0.007059 seconds
+  Import took 0.013182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/forest-autumn.ogg
+  artifactKey: Guid(a10617abd83734aebacc30d51358455b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/forest-autumn.ogg using Guid(a10617abd83734aebacc30d51358455b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c41fa031e977fe4089be8393dea904e5') in 0.006969 seconds
+  Import took 0.012493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/seagull2.ogg
+  artifactKey: Guid(6bb4cd8f2f062487aa58eb22ac1cae9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/seagull2.ogg using Guid(6bb4cd8f2f062487aa58eb22ac1cae9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b62a78cc2c95e0d4bb51e4bd51340a5') in 0.006333 seconds
+  Import took 0.011953 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-growl2.ogg
+  artifactKey: Guid(2e77463d056f93647b1f400e5c8a0c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-growl2.ogg using Guid(2e77463d056f93647b1f400e5c8a0c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74201f61f087efedd577393e6892e24') in 0.006627 seconds
+  Import took 0.012355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-calm.ogg
+  artifactKey: Guid(aafad6057d8ff4b439280f5000d370a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-calm.ogg using Guid(aafad6057d8ff4b439280f5000d370a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f8ab1ab6c6509d9afb567b34a1c1a36') in 0.006602 seconds
+  Import took 0.012431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-bell.ogg
+  artifactKey: Guid(7a8ecf224348340ea938d9a55928756b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cow-bell.ogg using Guid(7a8ecf224348340ea938d9a55928756b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7489722eaf0e0101aa28ad89fdec4c7') in 0.006496 seconds
+  Import took 0.012493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-attack.ogg
+  artifactKey: Guid(fcd0b1302b70c48c198a88d22f962f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/gorilla-attack.ogg using Guid(fcd0b1302b70c48c198a88d22f962f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae1cf2a2bc28c01a4e81aa6c414b7bda') in 0.007228 seconds
+  Import took 0.012715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-meow.ogg
+  artifactKey: Guid(695628755669c46ecac58b609405526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-meow.ogg using Guid(695628755669c46ecac58b609405526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51cac8e6093be8a58c2bc9dee51b3ed9') in 0.007040 seconds
+  Import took 0.012766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/penguin.ogg
+  artifactKey: Guid(e213f073542414fcbbb5795da66a953a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/penguin.ogg using Guid(e213f073542414fcbbb5795da66a953a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a25bf814d60147ae2c4815764b6841') in 0.006835 seconds
+  Import took 0.012528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-stomp.ogg
+  artifactKey: Guid(612962daa1f8842159872a600c011bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/elephant-stomp.ogg using Guid(612962daa1f8842159872a600c011bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094200412820a79b859c2ebd4db6fa2f') in 0.007020 seconds
+  Import took 0.012545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-growl.ogg
+  artifactKey: Guid(a63e9f3704ea34881a61eaaed67c4ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/bear-growl.ogg using Guid(a63e9f3704ea34881a61eaaed67c4ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b591318d55687b6b12fb7bf010963890') in 0.006856 seconds
+  Import took 0.012608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-angry.ogg
+  artifactKey: Guid(13a58eb5deb3e46599037ffb43ae7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-angry.ogg using Guid(13a58eb5deb3e46599037ffb43ae7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2714fbeb914fae08132b0490ab7b85cf') in 0.006632 seconds
+  Import took 0.012370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006201 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-angry.ogg
+  artifactKey: Guid(13a58eb5deb3e46599037ffb43ae7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/cat-angry.ogg using Guid(13a58eb5deb3e46599037ffb43ae7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2714fbeb914fae08132b0490ab7b85cf') in 0.007145 seconds
+  Import took 0.013609 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.855132 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/water-bubbles.ogg
+  artifactKey: Guid(3a10a0836b8864a65bd0207bf3f79f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/water-bubbles.ogg using Guid(3a10a0836b8864a65bd0207bf3f79f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e4abf5f670bfe899c9cffa077306931') in 0.014479 seconds
+  Import took 0.020203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/wolf-howl.ogg
+  artifactKey: Guid(e4aa6f48a36014dcc9d111bf13e6c85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Addons/polyperfect/Low Poly Animated Animals/- Sounds/wolf-howl.ogg using Guid(e4aa6f48a36014dcc9d111bf13e6c85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c0e3469ccafdf0f6e243d218c257b1') in 0.006783 seconds
+  Import took 0.012521 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003028 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[C:/Users/GameR/Unity Workspace/Winter Runner/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.133 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3381 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 272.3 MB.
+System memory in use after: 270.6 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 4167.
+Total: 4.429300 ms (FindLiveObjects: 0.441200 ms CreateObjectMapping: 0.103500 ms MarkObjects: 2.820700 ms  DeleteObjects: 1.062500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

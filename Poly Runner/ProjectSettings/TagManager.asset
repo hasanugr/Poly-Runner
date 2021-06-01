@@ -7,6 +7,9 @@ TagManager:
   - PlayerBody
   - Snow
   - Obstacle
+  - FxTemporaire
+  - Enemy
+  - IceGround
   layers:
   - Default
   - TransparentFX

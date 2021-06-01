@@ -11,21 +11,18 @@ public enum HitZ { Forward, Middle, Backward, None };
 
 public class Character : MonoBehaviour
 {
+    [Header("Base Controls")]
     public SIDE m_Side = SIDE.Middle;
     public HitX hitX = HitX.None;
     public HitY hitY = HitY.None;
     public HitZ hitZ = HitZ.None;
+    [SerializeField] private Animator m_Animator;
+    [SerializeField] private GameObject characterBody;
+    [SerializeField] private float characterSwipeRotateValue;
     [SerializeField] private float XValue;
     [SerializeField] private float SpeedDodge;
     [SerializeField] private float JumpPower = 7f;
-    [SerializeField] private float FrwSpeed = 7f;
-
-    [SerializeField] private GameObject footPrint;
-    [SerializeField] private float footPrintMaxDistance = 0.2f;
-
-    [SerializeField] private CapsuleCollider hitDetectorCapsuleCollider;
-    [SerializeField] private GameObject characterRagdoll;
-    [SerializeField] private CharacterEffects characterEffects;
+    [SerializeField] private float FrwSpeed = 10f;
 
     private bool isGameActive;
     private bool SwipeLeft, SwipeRight, SwipeUp, SwipeDown;
@@ -37,6 +34,28 @@ public class Character : MonoBehaviour
     private float slidingLowCollideTime = 1.1f;
     private float ColHeight;
     private float ColCenterY;
+
+    [Header("Trail And Prints")]
+    [SerializeField] private GameObject footPrint;
+    [SerializeField] private float footPrintMaxDistance = 0.2f;
+    [SerializeField] private GameObject[] slideTrailObject;
+    [SerializeField] private TrailRenderer[] slideTrailRenderer;
+
+    [Header("Hit And Effects")]
+    [SerializeField] private CapsuleCollider hitDetectorCapsuleCollider;
+    [SerializeField] private GameObject characterRagdoll;
+    [SerializeField] private CharacterEffects characterEffects;
+
+    [Header("Enemy Controls")]
+    [SerializeField] private GameObject enemyHolder;
+    [SerializeField] private Animator enemyAnimator;
+    [SerializeField] private Transform enemyTargetBody;
+    [SerializeField] private float chasingDistance = 4f;
+    [SerializeField] private float deadBodyClosingSpeed = 10f;
+    [SerializeField] private float deadBodyStopDistance = 1f;
+    private bool enemyClosingToBody = false;
+
+    [Header("Player Status")]
     [SerializeField] private bool InRoll;
     [SerializeField] private bool isFalling;
     [SerializeField] private bool isJumping;
@@ -44,13 +63,14 @@ public class Character : MonoBehaviour
     [SerializeField] private bool isStunned;
     [SerializeField] private bool isInStunDelay;
 
+    [HideInInspector] public bool isCinematic;
     [HideInInspector] public bool isReverseMovement = false;
+    [HideInInspector] public bool isTrailing = false;
 
     ObjectPooler _footPrintPool;
-    ObjectPooler _rollingPrintPool;
 
+    private InGameManager _igm;
     private CharacterController m_char;
-    private Animator m_Animator;
     private SwipeDetection swipeDetection;
     private void Awake()
     {
@@ -60,18 +80,14 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _igm = FindObjectOfType<InGameManager>();
         m_char = GetComponent<CharacterController>();
         ColHeight = m_char.height;
         ColCenterY = m_char.center.y;
-        m_Animator = GetComponent<Animator>();
 
         _footPrintPool = new ObjectPooler(footPrint);
         _footPrintPool.FillThePool(10);
-
-        _rollingPrintPool = new ObjectPooler(footPrint);
-        _rollingPrintPool.FillThePool(20);
     }
-
 
     private void OnEnable()
     {
@@ -98,7 +114,7 @@ public class Character : MonoBehaviour
     void Update()
     {
         isOnGround = m_char.isGrounded;
-        if (isGameActive)
+        if (isGameActive && !isCinematic)
         {
             if (SwipeLeft)
             {
@@ -109,13 +125,15 @@ public class Character : MonoBehaviour
                     {
                         NewXPos = -XValue;
                         m_Side = SIDE.Left;
-                        m_Animator.SetTrigger("LeftSideJump");
+                        //LeanTween.rotateY(characterBody, -characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
+                        //m_Animator.SetTrigger("LeftSideJump");
                     }
                     else if (m_Side == SIDE.Right)
                     {
                         NewXPos = 0;
                         m_Side = SIDE.Middle;
-                        m_Animator.SetTrigger("LeftSideJump");
+                        //LeanTween.rotateY(characterBody, -characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
+                        //m_Animator.SetTrigger("LeftSideJump");
                     }
                 }
             }else if (SwipeRight)
@@ -127,15 +145,23 @@ public class Character : MonoBehaviour
                     {
                         NewXPos = XValue;
                         m_Side = SIDE.Right;
-                        m_Animator.SetTrigger("RightSideJump");
+                        //LeanTween.rotateY(characterBody, characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
+                        //m_Animator.SetTrigger("RightSideJump");
                     }
                     else if (m_Side == SIDE.Left)
                     {
                         NewXPos = 0;
                         m_Side = SIDE.Middle;
-                        m_Animator.SetTrigger("RightSideJump");
+                        //LeanTween.rotateY(characterBody, characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
+                        //m_Animator.SetTrigger("RightSideJump");
                     }
                 }
+            }
+            float rotY = ((NewXPos - x) / 2.5f) * characterSwipeRotateValue;
+            characterBody.transform.rotation = Quaternion.Euler(new Vector3(0, rotY, 0));
+            if (isStunned)
+            {
+                enemyHolder.transform.rotation = Quaternion.Euler(new Vector3(0, rotY, 0));
             }
 
             x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);
@@ -145,6 +171,18 @@ public class Character : MonoBehaviour
             Roll();
 
             LeaveTrail();
+        }
+        else if (isCinematic)
+        {
+            y = Mathf.Lerp(y, 0f, Time.deltaTime * SpeedDodge);
+            Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FrwSpeed * Time.deltaTime);
+            m_char.Move(moveVector);
+            LeaveTrail();
+        }
+
+        if (enemyClosingToBody)
+        {
+            EnemyGoingToDeadBody();
         }
     }
 
@@ -224,8 +262,29 @@ public class Character : MonoBehaviour
             }
         }
     }
+    
+    public void FinishMoves()
+    {
+        SwipeDownHandle();
+        isCinematic = true;
+        InRoll = true;
+        float normalSpeed = FrwSpeed;
+        m_Animator.SetTrigger("FinishSlide");
+        LeanTween.value(gameObject, normalSpeed, 0, 3f).setOnUpdate((float val) =>
+        {
+            FrwSpeed = val;
+        }).setOnComplete(() =>
+        {
+            InRoll = false;
+            m_Animator.applyRootMotion = true;
+            m_Animator.SetTrigger("FinishDance");
+        });
+    }
 
     private void SwipeLeftHandle() {
+        if (isCinematic)
+            return;
+
         if (isReverseMovement)
         {
             SwipeRight = true;
@@ -235,6 +294,9 @@ public class Character : MonoBehaviour
         }
     }
     private void SwipeRightHandle() {
+        if (isCinematic)
+            return;
+
         if (isReverseMovement)
         {
             SwipeLeft = true;
@@ -244,8 +306,18 @@ public class Character : MonoBehaviour
             SwipeRight = true;
         }
     }
-    private void SwipeUpHandle() { SwipeUp = true; }
-    private void SwipeDownHandle() { SwipeDown = true; }
+    private void SwipeUpHandle() {
+        if (isCinematic)
+            return;
+
+        SwipeUp = true;
+    }
+    private void SwipeDownHandle() {
+        if (isCinematic)
+            return;
+
+        SwipeDown = true;
+    }
 
     #endregion
 
@@ -350,13 +422,22 @@ public class Character : MonoBehaviour
 
         characterRagdoll.transform.parent = null;
         characterRagdoll.SetActive(true);
-        gameObject.SetActive(false);
+        
+        characterBody.SetActive(false);
+        FrwSpeed = 0;
+        isGameActive = false;
+        isCinematic = true;
+        _igm.GameOver();
+
+        float enemyDelay = isStunned ? 0 : 1;
+        StartCoroutine(ActivateEnemyGoingToDeadBody(enemyDelay));
     }
     IEnumerator GetStunned()
     {
         isStunned = true;
         isInStunDelay = true;
         characterEffects.EffectProcess(CharacterEffectTypes.Stunned, true);
+        EnemyCloser();
         yield return new WaitForSeconds(0.5f);
         isInStunDelay = false;
 
@@ -364,6 +445,7 @@ public class Character : MonoBehaviour
 
         isStunned = false;
         characterEffects.EffectProcess(CharacterEffectTypes.Stunned, false);
+        EnemyGetAway();
     }
     private HitX GetHitX(Collider col)
     {
@@ -433,14 +515,11 @@ public class Character : MonoBehaviour
         if (objectType == "FootPrint")
         {
             _footPrintPool.SendObjectToPool(poolObject);
-        }else if (objectType == "RollingPrint")
-        {
-            _rollingPrintPool.SendObjectToPool(poolObject);
         }
     }
 
 
-    public void FootPrint(string footType)
+    public void FootPrint()
     {
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, footPrintMaxDistance) && hit.collider.CompareTag("Snow"))
         {
@@ -460,26 +539,106 @@ public class Character : MonoBehaviour
         StartCoroutine(SendToPoolObjectTimout(footPrintObject, "FootPrint", 2f));
     }
 
+    protected int lastIndexOfTrail;
     private void LeaveTrail()
     {
         Debug.DrawRay(transform.position, -transform.up, Color.red, footPrintMaxDistance);
-
         if (InRoll)
         {
-            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, footPrintMaxDistance) && hit.collider.CompareTag("Snow"))
+            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, footPrintMaxDistance) && (hit.collider.CompareTag("Snow") || hit.collider.CompareTag("IceGround")))
             {
-                Vector3 pos = hit.point;
-                Quaternion rot = Quaternion.FromToRotation(transform.position, hit.normal);
+                int indexOfTrail = hit.collider.CompareTag("Snow") ? 0 : 1;
+                if (!isTrailing || indexOfTrail != lastIndexOfTrail)
+                {
+                    slideTrailObject[indexOfTrail].transform.position = transform.position;
+                    slideTrailRenderer[indexOfTrail].Clear();
+                }
+                isTrailing = true;
 
-                GameObject rollingPrintObject = _rollingPrintPool.GetObjectFromPool();
-                rollingPrintObject.transform.localScale = new Vector3(1, 0.25f, 0.25f);
-                rollingPrintObject.transform.rotation = rot;
-                rollingPrintObject.transform.position = pos;
-                rollingPrintObject.transform.Translate(new Vector3(0, 0, 0.1f), Space.Self);
+                slideTrailObject[indexOfTrail].transform.position = transform.position;
 
-                StartCoroutine(SendToPoolObjectTimout(rollingPrintObject, "RollingPrint", 1f));
+                lastIndexOfTrail = indexOfTrail;
             }
+            else if (isTrailing)
+            {
+                isTrailing = false;
+            }
+        }else if (isTrailing)
+        {
+            isTrailing = false;
         }
     }
+    #endregion
+
+    #region Enemy Control Codes
+    private void EnemyCloser()
+    {
+        enemyHolder.SetActive(true);
+        enemyAnimator.SetBool("isRunning", true);
+        LeanTween.moveLocalZ(enemyHolder, -chasingDistance, 0.5f);
+    }
+
+    private void EnemyGetAway()
+    {
+        if (isGameActive)
+        {
+            LeanTween.moveLocalZ(enemyHolder, -10f, 0.5f).setOnComplete(() => {
+                enemyHolder.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                enemyHolder.SetActive(false);
+            });
+        }
+    }
+
+    IEnumerator ActivateEnemyGoingToDeadBody(float time)
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(time);
+
+        LeanTween.cancel(enemyHolder);
+        enemyHolder.SetActive(true);
+        enemyAnimator.SetBool("isRunning", true);
+        enemyClosingToBody = true;
+    }
+
+    protected string enemyAnimateType = "Running";
+    private void EnemyGoingToDeadBody()
+    {
+        float closingSpeed = deadBodyClosingSpeed;
+        float maxDistance = Vector3.Distance(enemyHolder.transform.position, enemyTargetBody.position);
+        maxDistance -= deadBodyStopDistance;
+        Vector3 directionToMove = enemyTargetBody.position - enemyHolder.transform.position;
+        if (enemyAnimateType == "Running" && maxDistance < 5)
+        {
+            closingSpeed = deadBodyClosingSpeed * 0.5f;
+            enemyAnimator.SetBool("isRunning", false);
+            enemyAnimator.SetBool("isWalking", true);
+            enemyAnimateType = "Walking";
+        }
+        else if (enemyAnimateType == "Walking" && maxDistance < 1)
+        {
+            enemyAnimator.SetBool("isWalking", false);
+            enemyAnimateType = "Idle";
+            enemyClosingToBody = false;
+        }
+        else if (enemyAnimateType == "Idle" && maxDistance > 5)
+        {
+            closingSpeed = deadBodyClosingSpeed;
+            enemyAnimator.SetBool("isRunning", true);
+            enemyAnimateType = "Running";
+        }
+        directionToMove = directionToMove.normalized * Time.deltaTime * closingSpeed;
+
+        var lookPos = directionToMove;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        enemyHolder.transform.rotation = rotation; //Quaternion.Slerp(enemyHolder.transform.rotation, rotation, Time.deltaTime * 5f);
+
+        //Debug.Log("Distance: " + maxDistance + " directionToMove: " + directionToMove + " ClampMagnitude: " + Vector3.ClampMagnitude(directionToMove, maxDistance));
+        Physics.Raycast(enemyHolder.transform.position, -enemyHolder.transform.up, out RaycastHit hit, 10f);
+        Vector3 targetPosition = enemyHolder.transform.position + Vector3.ClampMagnitude(directionToMove, maxDistance);
+        targetPosition.y = hit.point.y;
+        enemyHolder.transform.position = targetPosition;
+    }
+
     #endregion
 }

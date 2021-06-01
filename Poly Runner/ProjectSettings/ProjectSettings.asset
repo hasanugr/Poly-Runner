@@ -146,6 +146,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.KoalGames.PolyRunner
+    Standalone: com.KoalGames.PolyRunner
     iPhone: com.KoalGames.PolyRunner
   buildNumber:
     Standalone: 0

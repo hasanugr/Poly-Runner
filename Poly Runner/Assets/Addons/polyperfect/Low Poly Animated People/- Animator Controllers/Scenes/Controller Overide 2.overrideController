@@ -3,8 +3,9 @@
 --- !u!221 &22100000
 AnimatorOverrideController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Controller Overide 2
   m_Controller: {fileID: 9100000, guid: 62d9d5523b73c7d4d94fce94b9a8dd7f, type: 2}
   m_Clips:
@@ -26,3 +27,7 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 4d10202860dceb04983fc2b2f7484e3b, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: f8b68f5841b9ede44aafb7d0fa71dc2e, type: 3}
     m_OverrideClip: {fileID: 7400000, guid: f8b68f5841b9ede44aafb7d0fa71dc2e, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 4d40d140a749ad543afaf557bceb331c, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 4d40d140a749ad543afaf557bceb331c, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: dd133285bba84ab42a38b8994057b9ac, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: dd133285bba84ab42a38b8994057b9ac, type: 3}
