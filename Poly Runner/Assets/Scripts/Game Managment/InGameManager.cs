@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using AmazingAssets.CurvedWorld;
 
 public class InGameManager : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private Vector3 startPosition;
     [SerializeField] private Quaternion startRotation;
 
-    private int point;
     private int _collectedGold;
 
     [Header("Game Countdown Timer")]
@@ -38,7 +38,15 @@ public class InGameManager : MonoBehaviour
     public GameObject GoldIcon;
     public TextMeshProUGUI GoldText;
 
+    [Header("Curved World Control")]
+    public CurvedWorldController curverWorldController;
+    public enum CurvedWorldType { Ramp, Normal, NormalLeft, NormalRight };
+    public CurvedWorldType currentType = CurvedWorldType.NormalLeft;
 
+    private float[] curvedDataNormal = { 0, 0, -1, 30 };
+    private float[] curvedDataNormalLeft = { -1, 15, -1, 30 };
+    private float[] curvedDataNormalRight = { 1, 15, -1, 30 };
+    private float[] curvedDataRamp = { 0, 15, 2, 5 };
 
     private void Start()
     {
@@ -159,6 +167,104 @@ public class InGameManager : MonoBehaviour
     }
 
     public int GetGold() { return _collectedGold; }
+
+    public void CurvedWorldRamp(bool isActive)
+    { 
+        if (isActive)
+        {
+            LeanTween.value(gameObject, -1, 0, 3f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendHorizontalSize(val);
+            });
+
+            LeanTween.value(gameObject, -1, 0, 1.5f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendVerticalSize(val);
+            });
+
+            LeanTween.value(gameObject, 30, 70, 1.5f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendVerticalOffset(val);
+            }).setOnComplete(() => {
+
+                LeanTween.value(gameObject, 0, 3, 1.5f).setOnUpdate((float val) =>
+                {
+                    curverWorldController.SetBendVerticalSize(val);
+                });
+
+                LeanTween.value(gameObject, 70, 15, 1.5f).setOnUpdate((float val) =>
+                {
+                    curverWorldController.SetBendVerticalOffset(val);
+                });
+
+            });
+        }else
+        {
+            LeanTween.value(gameObject, 0, -1, 3f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendHorizontalSize(val);
+            });
+
+            LeanTween.value(gameObject, 3, 1, 1.5f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendVerticalSize(val);
+            });
+
+            LeanTween.value(gameObject, 15, 5, 1.5f).setOnUpdate((float val) =>
+            {
+                curverWorldController.SetBendVerticalOffset(val);
+            }).setOnComplete(() => {
+
+                LeanTween.value(gameObject, 1, -1, 1.5f).setOnUpdate((float val) =>
+                {
+                    curverWorldController.SetBendVerticalSize(val);
+                });
+
+                LeanTween.value(gameObject, 5, 30, 1.5f).setOnUpdate((float val) =>
+                {
+                    curverWorldController.SetBendVerticalOffset(val);
+                });
+
+            });
+        }
+    }
+
+    public void CurvedWorldChange(CurvedWorldType type, float time)
+    {
+        // Data Type -> [ HorizontalSize, HorizontalOffset, VerticalSize, VerticalOffset ]
+        float[] oldData = GetCurvedData(currentType);
+        float[] newData = GetCurvedData(type);
+        currentType = type;
+
+        LeanTween.value(gameObject, oldData[0], newData[0], time).setOnUpdate((float val) =>
+        {
+            curverWorldController.SetBendHorizontalSize(val);
+        });
+        LeanTween.value(gameObject, oldData[1], newData[1], time + (time * 0.5f)).setOnUpdate((float val) =>
+        {
+            curverWorldController.SetBendHorizontalOffset(val);
+        });
+        LeanTween.value(gameObject, oldData[2], newData[2], time).setOnUpdate((float val) =>
+        {
+            curverWorldController.SetBendVerticalSize(val);
+        });
+        LeanTween.value(gameObject, oldData[3], newData[3], time).setOnUpdate((float val) =>
+        {
+            curverWorldController.SetBendVerticalOffset(val);
+        });
+    }
+
+    private float[] GetCurvedData(CurvedWorldType type)
+    {
+        return type switch
+        {
+            CurvedWorldType.Normal => curvedDataNormal,
+            CurvedWorldType.NormalLeft => curvedDataNormalLeft,
+            CurvedWorldType.NormalRight => curvedDataNormalRight,
+            CurvedWorldType.Ramp => curvedDataRamp,
+            _ => curvedDataNormal,
+        };
+    }
 
 
     private void MakeSingleton()

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using MilkShake;
 
-public enum VectorType { X, Y, Z };
-
 public class StartLine : MonoBehaviour
 {
     public GameObject CameraObj;
@@ -14,6 +12,7 @@ public class StartLine : MonoBehaviour
     public ShakePreset BigShake;
     public float dustDelay = 1.5f;
     public float runDelay = 1.7f;
+    private enum VectorType { X, Y, Z };
 
     void Start()
     {
@@ -23,8 +22,10 @@ public class StartLine : MonoBehaviour
     public void StartProcess()
     {
         Bear.SetActive(true);
-        LeanTween.moveLocalZ(CameraObj, -25f, runDelay - 0.3f);
-        LeanTween.rotateX(CameraObj, -15f, runDelay - 0.3f);
+        /*LeanTween.moveLocalZ(CameraObj, -25f, runDelay - 0.3f);
+        LeanTween.rotateX(CameraObj, -15f, runDelay - 0.3f);*/
+        LeanTween.moveLocal(CameraObj, new Vector3(0, 1, -45), runDelay - 0.3f);
+        LeanTween.rotate(CameraObj, new Vector3(-15, 180, 0), runDelay - 0.3f);
         BearAnimator.SetBool("isStanding", true);
         StartCoroutine(AnimateWithDelay(BearAnimator, "isStanding", false, runDelay - 0.3f));
         StartCoroutine(AnimateWithDelay(BearAnimator, "isRunning", true, runDelay));

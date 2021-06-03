@@ -187,6 +187,7 @@ public class Character : MonoBehaviour
     }
 
     #region Movement Codes
+    protected float swipeUpCountdown = 0;
     public void Jump()
     {
         if (m_char.isGrounded)
@@ -218,6 +219,17 @@ public class Character : MonoBehaviour
             if (m_char.velocity.y < -0.1f)
             {
                 isFalling = true;
+            }
+
+            if (SwipeUp)
+            {
+                if (swipeUpCountdown > 0)
+                {
+                    swipeUpCountdown -= 4f * Time.deltaTime; // 0.25 sec
+                }else
+                {
+                    SwipeUp = false;
+                }
             }
         }
     }
@@ -311,6 +323,7 @@ public class Character : MonoBehaviour
             return;
 
         SwipeUp = true;
+        swipeUpCountdown = 1;
     }
     private void SwipeDownHandle() {
         if (isCinematic)
@@ -330,7 +343,7 @@ public class Character : MonoBehaviour
         hitX = GetHitX(col);
         hitY = GetHitY(col);
         hitZ = GetHitZ(col);
-
+        
         if (hitZ == HitZ.Forward && hitX == HitX.Middle)
         {
             if (hitY == HitY.Down)

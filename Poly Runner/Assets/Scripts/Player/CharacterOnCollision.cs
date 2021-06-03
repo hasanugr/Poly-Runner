@@ -8,6 +8,7 @@ public class CharacterOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("OnCollisionEnter: " + collision.collider.name);
         if (collision.transform.CompareTag("Obstacle"))
             m_char.OnCharacterColliderHit(collision.collider);
     }
