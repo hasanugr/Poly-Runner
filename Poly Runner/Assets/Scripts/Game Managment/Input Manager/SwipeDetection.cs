@@ -62,12 +62,14 @@ public class SwipeDetection : MonoBehaviour
 
     private void SwipeStart(Vector2 position, float time)
     {
+        Debug.Log("Swipe Start!!");
         startPosition = position;
         startTime = time;
     }
 
     private void SwipeEnd(Vector2 position, float time)
     {
+        Debug.Log("Swipe End!!");
         endPosition = position;
         endTime = time;
         DetectSwipe();
@@ -174,4 +176,5 @@ public class SwipeDetection : MonoBehaviour
         }
     }
     #endregion
+
 }
