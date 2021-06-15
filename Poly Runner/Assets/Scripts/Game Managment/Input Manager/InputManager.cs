@@ -13,17 +13,13 @@ public class InputManager : MonoBehaviour
     public event EndTouch OnEndTouch;
     #endregion
 
-    //[SerializeField] private float screenToWorldPosZ = 10;
-
     private PlayerControls playerControls;
-    //private Camera mainCamera;
 
     private void Awake()
     {
         MakeSingleton();
 
         playerControls = new PlayerControls();
-        //mainCamera = Camera.main;
     }
 
     private void OnEnable()
@@ -60,10 +56,9 @@ public class InputManager : MonoBehaviour
         if (OnStartTouch != null)
         {
             Vector2 touchPosition = playerControls.Touch.PrimaryPosition.ReadValue<Vector2>();
-            //Debug.Log("Touch 2D: " + touchPosition + "TouchScreenToWorld: " + Utils.ScreenToWorld(mainCamera, touchPosition, screenToWorldPosZ));
+            //Debug.Log("Touch 2D: " + touchPosition);
             if (touchPosition.x != 0 && touchPosition.y != 0)
             {
-                //OnStartTouch(Utils.ScreenToWorld(mainCamera, touchPosition, screenToWorldPosZ), (float)context.startTime);
                 OnStartTouch(touchPosition, (float)context.startTime);
             }
         }
@@ -74,10 +69,9 @@ public class InputManager : MonoBehaviour
         if (OnEndTouch != null)
         {
             Vector2 touchPosition = playerControls.Touch.PrimaryPosition.ReadValue<Vector2>();
-            //Debug.Log("Touch 2D: " + touchPosition + "TouchScreenToWorld: " + Utils.ScreenToWorld(mainCamera, touchPosition, screenToWorldPosZ));
+            //Debug.Log("Touch 2D: " + touchPosition);
             if (touchPosition.x != 0 && touchPosition.y != 0)
             {
-                //OnEndTouch(Utils.ScreenToWorld(mainCamera, touchPosition, screenToWorldPosZ), (float)context.time);
                 OnEndTouch(touchPosition, (float)context.time);
             }
         }

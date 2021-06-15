@@ -7,8 +7,8 @@ public class FinishLine : MonoBehaviour
 {
     public GameObject Bear;
     public Animator BearAnimator;
-    public Animation CageAnimation;
-    //public GameObject Rope;
+    [SerializeField] float bearStartDistance = -18f;
+    public Animator CageAnimator;
     public GameObject DustEffect;
     public ShakePreset BigShake;
     public GameObject[] humans;
@@ -17,7 +17,7 @@ public class FinishLine : MonoBehaviour
 
     InGameManager _igm;
 
-    private bool _isActiveToTrigger;
+    private bool isTriggered;
 
     void Start()
     {
@@ -26,13 +26,12 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_isActiveToTrigger)
+        if (!isTriggered)
         {
             _player = other.transform.gameObject;
-            _isActiveToTrigger = true;
+            isTriggered = true;
             _igm.Finish();
-            //Rope.SetActive(false);
-            CageAnimation.Play();
+            CageAnimator.SetTrigger("FinishGateClose");
             StartCoroutine(ActivateWithDelay(DustEffect, .9f));
             StartCoroutine(CameraShakeWithDelay(BigShake, .9f));
             Bear.SetActive(true);
@@ -40,19 +39,6 @@ public class FinishLine : MonoBehaviour
             LeanTween.moveLocalZ(Bear, -3.5f, 2f);
             StartCoroutine(AnimateWithDelay(BearAnimator, "isRunning", false, 2f));
         }
-
-        /*if (!_isActiveToTrigger)
-        {
-            _isActiveToTrigger = true;
-            _igm.Finish();
-            //Rope.SetActive(false);
-            CageAnimation.Play();
-            StartCoroutine(ActivateWithDelay(DustEffect, 2.7f));
-            Bear.SetActive(true);
-            BearAnimator.SetBool("isRunning", true);
-            LeanTween.moveLocalX(Bear, 0f, 3f);
-            StartCoroutine(AnimateWithDelay(BearAnimator, "isRunning", false, 3f));
-        }*/
     }
 
     IEnumerator CameraShakeWithDelay(ShakePreset shakePreset, float time)
@@ -82,5 +68,14 @@ public class FinishLine : MonoBehaviour
         {
             humans[i].transform.LookAt(_player.transform);
         }
+    }
+
+    public void ResetObstacle()
+    {
+        LeanTween.cancel(Bear);
+        Bear.transform.localPosition = new Vector3(0, 0.1f, bearStartDistance);
+        Bear.SetActive(false);
+        CageAnimator.SetTrigger("Passive");
+        isTriggered = false;
     }
 }

@@ -110,7 +110,7 @@ Material:
     - _BaseColor: {r: 0.9921568, g: 0.8431372, b: 0.14117643, a: 1}
     - _Color: {r: 0.99215686, g: 0.84313726, b: 0.14117648, a: 1}
     - _CurvedWorldBendSettings: {r: 2, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 32.125492, g: 0.30238256, b: 0, a: 1}
+    - _EmissionColor: {r: 8.031373, g: 0.97009325, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4889260793821302145

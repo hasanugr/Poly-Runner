@@ -4,25 +4,49 @@ using UnityEngine;
 
 public class JumpingShark : MonoBehaviour
 {
-    [SerializeField] private Animation animationControl;
+    [SerializeField] private Animator animationControl;
     [SerializeField] private GameObject particleEffect;
 
+    CameraFollow _cameraFollow;
+    Character _playerScript;
+
+    private int triggerCounter;
     private bool isTriggered;
+    // Start is called before the first frame update
+    void Start()
+    {
+        _cameraFollow = FindObjectOfType<CameraFollow>();
+        _playerScript = FindObjectOfType<Character>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!isTriggered && other.CompareTag("Player"))
         {
             isTriggered = true;
-            animationControl.Play();
-            particleEffect.SetActive(true);
-            StartCoroutine(DeactiveTheObstacle(5f));
-        }
-    }
+            
+            StartCoroutine(TriggeredDeactive(0.5f));
 
-    public void AddFallEffect()
-    {
-        particleEffect.SetActive(true);
+            switch (triggerCounter)
+            {
+                case 0:
+                    _playerScript.runMode = RunMode.Bridge;
+                    break;
+                case 1:
+                    animationControl.SetTrigger("SharkAttack");
+                    particleEffect.SetActive(true);
+                    break;
+                case 5:
+                    _playerScript.runMode = RunMode.Straight;
+                    //StartCoroutine(DeactiveTheObstacle(5f));
+                    break;
+                default:
+                    Debug.Log("There is no more action.");
+                    break;
+            }
+            triggerCounter++;
+            
+        }
     }
 
     IEnumerator DeactiveTheObstacle(float time)
@@ -33,5 +57,20 @@ public class JumpingShark : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator TriggeredDeactive(float time)
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(time);
+        isTriggered = false;
+    }
+
+    public void ResetObstacle()
+    {
+        if (animationControl.GetCurrentAnimatorClipInfo(0).Length > 0)
+            animationControl.SetTrigger("Passive");
+        isTriggered = false;
+        triggerCounter = 0;
     }
 }

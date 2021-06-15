@@ -5,7 +5,10 @@ using MilkShake;
 
 public class SeagulAttacker : MonoBehaviour
 {
-    [SerializeField] private Animation[] animationControl;
+    private enum SeagulType { TripleSeagul, BigSeagul };
+    
+    [SerializeField] private SeagulType seagulType;
+    [SerializeField] private Animator[] animationControl;
     [SerializeField] private float animationDelay;
     [SerializeField] private ShakePreset fallShake;
     [SerializeField] private float fallShakeDelay;
@@ -22,16 +25,23 @@ public class SeagulAttacker : MonoBehaviour
                 StartCoroutine(AnimateWithDelay(animationControl[i], animationDelay * i));
                 StartCoroutine(CameraShakeWithDelay(fallShake, (animationDelay * i) + fallShakeDelay));
             }
-            StartCoroutine(DeactiveTheObstacle((animationDelay * (animationControl.Length - 1)) + 5f));
+            //StartCoroutine(DeactiveTheObstacle((animationDelay * (animationControl.Length - 1)) + 5f));
         }
     }
 
-    IEnumerator AnimateWithDelay(Animation animation, float time)
+    IEnumerator AnimateWithDelay(Animator animation, float time)
     {
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(time);
 
-        animation.Play();
+        if (seagulType == SeagulType.BigSeagul)
+        {
+            animation.SetTrigger("BigSeagulAttack");
+        }
+        else if(seagulType == SeagulType.TripleSeagul)
+        {
+            animation.SetTrigger("SeagulAttack");
+        }
     }
 
     IEnumerator CameraShakeWithDelay(ShakePreset shakePreset, float time)
@@ -50,5 +60,14 @@ public class SeagulAttacker : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+    public void ResetObstacle()
+    {
+        for (int i = 0; i < animationControl.Length; i++)
+        {
+            if (animationControl[i].GetCurrentAnimatorClipInfo(0).Length > 0)
+                animationControl[i].SetTrigger("Passive");
+        }
+        isTriggered = false;
     }
 }

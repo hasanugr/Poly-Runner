@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+	[SerializeField] Vector3 startPosition;
+	[SerializeField] Quaternion startRotation;
+
+	[Header("Normal Way")]
 	private Transform target; // Self explanatory
 	public float distance = 5.5f; // Standard distance to follow object
 	public float height = 4.5f; // The height of the camera
@@ -11,22 +15,35 @@ public class CameraFollow : MonoBehaviour
 	public float lookAtDown = 20.0f;
 	public float positionSmoothTime = 0.05f;
 	public float ZPositionTime = 5f;
+	public float XRotationTime = 0.2f;
 	public float rotationSmoothTime = 0.2f;
-	public bool isReverseCamera = false;
-	public bool isInCinematic = true;
-
-	private CharacterController targetCharacterController;
-
 	public float distanceSnapTime;
 	public float distanceMultiplier;
 
+	[Header("Ramp Slide Way")]
+	public float rampDistance = 5.5f; // Standard distance to follow object
+	public float rampHeight = 4.5f; // The height of the camera
+	public float rampLookHeight = 10f; // The look height of the follow object
+	public float rampLookSmoothTime = 2f;
+
+	[HideInInspector] public bool isReverseCamera = false;
+	[HideInInspector] public bool isInCinematic = true;
+	[HideInInspector] public bool isLookAtPlayer = false;
+	[HideInInspector] public bool isRampSlidingMode = false;
+
+	private CharacterController targetCharacterController;
 	private float usedDistance;
 
 	Vector3 wantedPosition;
 	Vector3 currentPosition;
 
 	//private float posX;
+	private float _distance; // Standard distance to follow object
+	private float _height; // The height of the camera
+	private float _coreDistance;
+	private float _coreHeight;
 	private float posY;
+	private float currentLookAtDown;
 	private float zVelocity = 0.0F;
 	private Vector3 xyzVelocity = new Vector3(0, 0, 0);
 
@@ -36,6 +53,9 @@ public class CameraFollow : MonoBehaviour
 		
 		target = targetObject.transform;
 		targetCharacterController = targetObject.GetComponent<CharacterController>();
+		currentLookAtDown = lookAtDown;
+		_coreDistance = distance;
+		_coreHeight = height;
 	}
 
 	void LateUpdate()
@@ -43,7 +63,14 @@ public class CameraFollow : MonoBehaviour
 		if (isInCinematic)
 			return;
 
-		//Vector3 followPos = target.position;
+		FollowPlayerStraightWay();
+	}
+
+	private void FollowPlayerStraightWay()
+    {
+		_distance = Mathf.Lerp(_distance, (isRampSlidingMode ? rampDistance : distance), Time.deltaTime * rampLookSmoothTime);
+		_height = Mathf.Lerp(_height, (isRampSlidingMode ? rampHeight : height), Time.deltaTime * rampLookSmoothTime);
+
 		wantedPosition.x = target.position.x * 0.7f;
 		if (Physics.Raycast(target.position, Vector3.down, out RaycastHit hit, 2.5f))
 		{
@@ -53,15 +80,42 @@ public class CameraFollow : MonoBehaviour
 		{
 			posY = Mathf.Lerp(posY, target.position.y, Time.deltaTime * ZPositionTime);
 		}
-		wantedPosition.y = posY + height;
+		wantedPosition.y = posY + _height;
 		// Camera Hight and Distance functions
-		usedDistance = Mathf.SmoothDampAngle(usedDistance, isReverseCamera ? -distance : distance + (targetCharacterController.velocity.magnitude * distanceMultiplier), ref zVelocity, distanceSnapTime);
+		usedDistance = Mathf.SmoothDampAngle(usedDistance, isReverseCamera ? -_distance : _distance + (targetCharacterController.velocity.magnitude * distanceMultiplier), ref zVelocity, distanceSnapTime);
 		wantedPosition.z = target.position.z - usedDistance;
 		//wantedPosition = target.position + (target.right.normalized * posX) + (target.up * (posY + height)) + (target.rotation * new Vector3(0, 0, -usedDistance));
 		currentPosition = transform.position;
 
 		transform.position = Vector3.SmoothDamp(currentPosition, wantedPosition, ref xyzVelocity, positionSmoothTime);
-		Quaternion targetRotation = isReverseCamera ? Quaternion.Euler(lookAtDown, 180f, 0) : Quaternion.Euler(lookAtDown, 0, 0);
+
+		float targetLookAtDown = isLookAtPlayer ? LookAtPlayerXAxis() : lookAtDown;
+		currentLookAtDown = Mathf.Lerp(currentLookAtDown, targetLookAtDown, Time.deltaTime * XRotationTime);
+		Quaternion targetRotation = isReverseCamera ? Quaternion.Euler(currentLookAtDown, 180f, 0) : Quaternion.Euler(currentLookAtDown, 0, 0);
 		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSmoothTime);
+	}
+
+	private float LookAtPlayerXAxis()
+    {
+		Vector3 relativePos = target.position - transform.position;
+		float xRotAngle = Quaternion.LookRotation(relativePos).eulerAngles.x;
+
+		return isRampSlidingMode ? xRotAngle - rampLookHeight : xRotAngle;
+	}
+
+	public void ResetCamera()
+    {
+		isReverseCamera = false;
+		isInCinematic = true;
+		isLookAtPlayer = false;
+		isRampSlidingMode = false;
+		distance = _coreDistance;
+		_distance = _coreDistance;
+		height = _coreHeight;
+		_height = _coreHeight;
+		usedDistance = 0;
+
+		transform.position = startPosition;
+		transform.rotation = startRotation;
 	}
 }

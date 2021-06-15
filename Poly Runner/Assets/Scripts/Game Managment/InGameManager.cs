@@ -15,6 +15,13 @@ public class InGameManager : MonoBehaviour
     public Character playerController;
     public bool isGameActive = false;
 
+    [Header("Game ReLoad")]
+    [SerializeField] StartLine startLine;
+    [SerializeField] FinishLine finishLine;
+    [SerializeField] LevelHolderControl[] levelHolderControls;
+    [SerializeField] LevelController levelController;
+    [SerializeField] int activeLevelIndex = 1;
+
     [Header("Action Control")]
     public bool IsBossActive = false;
 
@@ -58,11 +65,18 @@ public class InGameManager : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
+        startLine.StartProcess();
+
+        TimerUIObj.SetActive(true);
+        Color textColor = TimerUI.color;
+        textColor.a = 1;
+        TimerUI.color = textColor;
+
         while (_timerCountdown > 0)
         {
             yield return new WaitForSeconds(1f);
             TimerUI.text = _timerCountdown.ToString();
-            LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1), 0.5f).setEasePunch();
+            LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1f), 0.5f).setEasePunch();
             _timerCountdown--;
         }
 
@@ -70,7 +84,7 @@ public class InGameManager : MonoBehaviour
         TimerUI.text = "GO";
         isGameActive = true;
         playerController.StartPlayer();
-        LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1), 1f).setEaseInExpo();
+        LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1f), 1f).setEaseInExpo();
         LeanTween.value(TimerUIObj, 0, 1f, 1f).setOnUpdate((float val) =>
         {
             Color textColor = TimerUI.color;
@@ -79,11 +93,14 @@ public class InGameManager : MonoBehaviour
         });
         cameraFollow.isInCinematic = false;
         yield return new WaitForSeconds(1f);
+        TimerUI.text = "";
+        LeanTween.scale(TimerUIObj, new Vector3(1f, 1f, 1f), 0.1f);
         TimerUIObj.SetActive(false);
     }
 
     public void Pause()
     {
+        Debug.Log("Pause Clicked!!!");
         PausePanel.SetActive(true);
         InGameUI.SetActive(false);
         Time.timeScale = 0f;
@@ -100,8 +117,29 @@ public class InGameManager : MonoBehaviour
 
     public void Restart()
     {
+        LeanTween.cancelAll();
+        StopAllCoroutines();
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        startLine.ResetObstacle();
+        finishLine.ResetObstacle();
+        cameraFollow.ResetCamera();
+        playerController.ResetPlayer();
+        levelController.CreateLoadedLevel(activeLevelIndex);
+        //levelHolderControls[activeLevelIndex].ResetLevel();
+
+        currentType = CurvedWorldType.NormalLeft;
+        _collectedGold = 0;
+        GoldText.text = _collectedGold.ToString();
+        GameOverPanel.SetActive(false);
+        FinishLevelPanel.SetActive(false);
+        PausePanel.SetActive(false);
+        InGameUI.SetActive(true);
+
+        _timerCountdown = TimerMaxValue;
+        StartCoroutine(CountdownToStart());
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GameOver()
@@ -228,8 +266,15 @@ public class InGameManager : MonoBehaviour
             });
         }
     }
+    public void CurvedWorldDefault()
+    {
+        curverWorldController.SetBendHorizontalSize(-1);
+        curverWorldController.SetBendHorizontalOffset(15);
+        curverWorldController.SetBendVerticalSize(-1);
+        curverWorldController.SetBendVerticalOffset(30);
+    }
 
-    public void CurvedWorldChange(CurvedWorldType type, float time)
+        public void CurvedWorldChange(CurvedWorldType type, float time)
     {
         // Data Type -> [ HorizontalSize, HorizontalOffset, VerticalSize, VerticalOffset ]
         float[] oldData = GetCurvedData(currentType);

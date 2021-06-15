@@ -103,13 +103,13 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.5529412, g: 0.8326468, b: 1, a: 1}
+    - _BaseColor: {r: 0.20906019, g: 0.3961351, b: 0.509434, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorAddSubDiff: {r: -1, g: 0, b: 0, a: 0}
     - _CurvedWorldBendSettings: {r: 2, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0.3379251, g: 2.2188973, b: 4.033982, a: 1}
+    - _EmissionColor: {r: 0.27561122, g: 1.4403688, b: 2.540416, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []

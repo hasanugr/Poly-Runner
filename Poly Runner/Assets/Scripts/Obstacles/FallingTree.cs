@@ -5,7 +5,7 @@ using MilkShake;
 
 public class FallingTree : MonoBehaviour
 {
-    [SerializeField] private Animation animationControl;
+    [SerializeField] private Animator animationControl;
     [SerializeField] private GameObject dustEffect;
     [SerializeField] private ShakePreset fallShake;
 
@@ -13,16 +13,20 @@ public class FallingTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("FT-IsTriggered: " + isTriggered);
         if (!isTriggered && other.CompareTag("Player"))
         {
             isTriggered = true;
-            animationControl.Play();
-            StartCoroutine(DeactiveTheObstacle(5f));
+            animationControl.SetTrigger("FallTree");
+            StartCoroutine(ParticleEffect(1f));
+            //StartCoroutine(DeactiveTheObstacle(5f));
         }
     }
 
-    public void AddFallEffect()
+    IEnumerator ParticleEffect(float time)
     {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(time);
         dustEffect.SetActive(true);
         Shaker.ShakeAllSeparate(fallShake);
     }
@@ -33,7 +37,15 @@ public class FallingTree : MonoBehaviour
         yield return new WaitForSeconds(time);
         if (InGameManager.instance.isGameActive)
         {
+            animationControl.SetTrigger("Passive");
             gameObject.SetActive(false);
         }
+    }
+
+    public void ResetObstacle()
+    {
+        if (animationControl.GetCurrentAnimatorClipInfo(0).Length > 0)
+            animationControl.SetTrigger("Passive");
+        isTriggered = false;
     }
 }

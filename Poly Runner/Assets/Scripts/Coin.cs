@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] GameObject collectedEffect;
     [SerializeField] GameObject coinModel;
+    [SerializeField] Animation coinAnimation;
+    [SerializeField] GameObject coinCellsModel;
+    [SerializeField] Animator coinCellsAnimator;
+    [SerializeField] GameObject collectedEffect;
 
     InGameManager _igm;
 
@@ -19,10 +22,19 @@ public class Coin : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             _igm.AddGold(1);
-            collectedEffect.SetActive(true);
+            coinAnimation.Stop();
             coinModel.SetActive(false);
-
-            Destroy(gameObject, 0.25f);
+            collectedEffect.SetActive(true);
+            //coinCellsModel.SetActive(true);
+            coinCellsAnimator.SetTrigger("Explode");
+            //Destroy(gameObject, 2f);
         }
+    }
+
+    public void ResetCoin()
+    {
+        coinAnimation.Play();
+        coinModel.SetActive(true);
+        coinCellsAnimator.SetTrigger("Passive");
     }
 }

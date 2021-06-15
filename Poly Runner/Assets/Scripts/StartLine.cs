@@ -7,6 +7,7 @@ public class StartLine : MonoBehaviour
 {
     public GameObject CameraObj;
     public GameObject Bear;
+    [SerializeField] float bearStartDistance = 25f;
     public Animator BearAnimator;
     public GameObject DustEffect;
     public ShakePreset BigShake;
@@ -36,7 +37,7 @@ public class StartLine : MonoBehaviour
         StartCoroutine(MoveObj(CameraObj, 4.5f, (4f - runDelay), VectorType.Y, runDelay));
         StartCoroutine(RotateObj(CameraObj, 20f, (4f - runDelay), VectorType.X, runDelay));
         StartCoroutine(RotateObj(CameraObj, 0, 0.2f, VectorType.Y, 3.8f));
-        StartCoroutine(ActivateWithDelay(gameObject, false, 4.5f));
+        StartCoroutine(ActivateWithDelay(Bear, false, 4.5f));
     }
 
     IEnumerator CameraShakeWithDelay(ShakePreset shakePreset , float time)
@@ -105,5 +106,14 @@ public class StartLine : MonoBehaviour
                 Debug.Log("Missing Vector Type.!!");
                 break;
         }
+    }
+
+    public void ResetObstacle()
+    {
+        BearAnimator.SetBool("isRunning", false);
+        LeanTween.cancel(CameraObj);
+        LeanTween.cancel(Bear);
+        Bear.transform.localPosition = new Vector3(16f, 0, bearStartDistance);
+        Bear.SetActive(false);
     }
 }

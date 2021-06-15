@@ -8,8 +8,8 @@ public class CharacterOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter: " + collision.collider.name);
+       /* Debug.Log("OnCollisionEnter: " + collision.collider.name + " Tag -> " + collision.collider.tag);
         if (collision.transform.CompareTag("Obstacle"))
-            m_char.OnCharacterColliderHit(collision.collider);
+            m_char.OnCharacterColliderHit(collision.collider);*/
     }
 }

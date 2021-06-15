@@ -1,0 +1,1015 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7266249171275982371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7266249171275982372}
+  - component: {fileID: 7266249171275982373}
+  - component: {fileID: 6206975115932286234}
+  m_Layer: 0
+  m_Name: 5-Deer Running
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7266249171275982372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266249171275982371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8571180575266189619}
+  - {fileID: 6189273207140691507}
+  - {fileID: 7046708197583248821}
+  - {fileID: 8144175645342579654}
+  - {fileID: 8532786200084983072}
+  - {fileID: 4013902033995435491}
+  - {fileID: 5256505905777967788}
+  - {fileID: 3932823515158426232}
+  - {fileID: 9150199339771083322}
+  - {fileID: 712542696596881154}
+  - {fileID: 8806872492414863027}
+  - {fileID: 2860775169018416378}
+  - {fileID: 191365455857586909}
+  - {fileID: 3484165681924481709}
+  - {fileID: 2603817647616602755}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7266249171275982373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266249171275982371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 6, z: 1}
+  m_Center: {x: 0, y: 3, z: -20}
+--- !u!114 &6206975115932286234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266249171275982371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98dbac17e2ba8914b857a8399d0c5899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingObjects: []
+  animationDelay: 0.5
+  fallShake: {fileID: 11400000, guid: 1cf7815c90d540f4d8cce6063f08a477, type: 2}
+--- !u!1001 &17797272856932196
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (14)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &2603817647616602755 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 17797272856932196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &265192340540805405
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &2860775169018416378 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 265192340540805405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1335764768431878047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &3932823515158426232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 1335764768431878047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1416833426006937604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &4013902033995435491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 1416833426006937604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1461306920852275018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (13)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &3484165681924481709 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 1461306920852275018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2790675972467396410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (12)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &191365455857586909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 2790675972467396410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3314316251189977829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &712542696596881154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 3314316251189977829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5032573683320176722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &7046708197583248821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 5032573683320176722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5942269959859384519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709088801353422942, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &8532786200084983072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 5942269959859384519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5976091500406582484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &8571180575266189619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 5976091500406582484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6131730354618705441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &8144175645342579654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 6131730354618705441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6548705606459369437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709088801353422942, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &9150199339771083322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 6548705606459369437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6784091207049091924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &8806872492414863027 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 6784091207049091924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7849625277497646923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &5256505905777967788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 7849625277497646923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8212617300725576660
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7266249171275982372}
+    m_Modifications:
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328664743984132523, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+      propertyPath: m_Name
+      value: Deer Holder (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+--- !u!4 &6189273207140691507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2602417427250617831, guid: 3bdf15d8f46ae5942ab0d6b195c017f0, type: 3}
+  m_PrefabInstance: {fileID: 8212617300725576660}
+  m_PrefabAsset: {fileID: 0}

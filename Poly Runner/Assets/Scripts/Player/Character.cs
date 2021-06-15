@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public enum SIDE { Left, Middle, Right };
+public enum RunMode { Straight, Slope, Bridge };
 public enum HitX { Left, Middle, Right, None };
 public enum HitY { Up, Middle, Down, None };
 public enum HitZ { Forward, Middle, Backward, None };
@@ -13,27 +14,40 @@ public class Character : MonoBehaviour
 {
     [Header("Base Controls")]
     public SIDE m_Side = SIDE.Middle;
+    public RunMode runMode = RunMode.Straight;
     public HitX hitX = HitX.None;
     public HitY hitY = HitY.None;
     public HitZ hitZ = HitZ.None;
-    [SerializeField] private Animator m_Animator;
     [SerializeField] private GameObject characterBody;
+    [SerializeField] private GameObject animatorBody;
+    [SerializeField] private Animator m_Animator;
+    [SerializeField] private Transform groundDirection;
     [SerializeField] private float characterSwipeRotateValue;
     [SerializeField] private float XValue;
     [SerializeField] private float SpeedDodge;
     [SerializeField] private float JumpPower = 7f;
-    [SerializeField] private float FrwSpeed = 10f;
+    [SerializeField] private float Speed = 10f;
+    [SerializeField] private float ExtraSlopeSpeed = 5f;
+    [SerializeField] private float SlopeSpeedMultiple = 2f;
+    [SerializeField] private float slopeGroundDistance = 0.2f;
 
     private bool isGameActive;
     private bool SwipeLeft, SwipeRight, SwipeUp, SwipeDown;
+    private bool isSlopeGrounded = false;
     private float x;
     private float y;
     private float NewXPos = 0f;
+    private float slopeSpeed = 0f;
+    private float FrwSpeed;
 
     private float rollingLowCollideTime = 0.6f;
     private float slidingLowCollideTime = 1.1f;
     private float ColHeight;
     private float ColCenterY;
+
+    private float forwardAngle;
+    Ray groundRay;
+    RaycastHit groundHit;
 
     [Header("Trail And Prints")]
     [SerializeField] private GameObject footPrint;
@@ -42,7 +56,7 @@ public class Character : MonoBehaviour
     [SerializeField] private TrailRenderer[] slideTrailRenderer;
 
     [Header("Hit And Effects")]
-    [SerializeField] private CapsuleCollider hitDetectorCapsuleCollider;
+    //[SerializeField] private CapsuleCollider hitDetectorCapsuleCollider;
     [SerializeField] private GameObject characterRagdoll;
     [SerializeField] private CharacterEffects characterEffects;
 
@@ -58,20 +72,22 @@ public class Character : MonoBehaviour
     [Header("Player Status")]
     [SerializeField] private bool InRoll;
     [SerializeField] private bool isFalling;
-    [SerializeField] private bool isJumping;
+    public bool isJumping;
     [SerializeField] private bool isOnGround;
     [SerializeField] private bool isStunned;
     [SerializeField] private bool isInStunDelay;
 
-    [HideInInspector] public bool isCinematic;
-    [HideInInspector] public bool isReverseMovement = false;
-    [HideInInspector] public bool isTrailing = false;
+    /*[HideInInspector]*/ public bool isCinematic;
+    /*[HideInInspector]*/ public bool isReverseMovement = false;
+    /*[HideInInspector]*/ public bool isTrailing = false;
 
     ObjectPooler _footPrintPool;
 
     private InGameManager _igm;
+    private CameraFollow _cameraFollow;
     private CharacterController m_char;
     private SwipeDetection swipeDetection;
+
     private void Awake()
     {
         swipeDetection = SwipeDetection.instance;
@@ -81,9 +97,11 @@ public class Character : MonoBehaviour
     void Start()
     {
         _igm = FindObjectOfType<InGameManager>();
+        _cameraFollow = FindObjectOfType<CameraFollow>();
         m_char = GetComponent<CharacterController>();
         ColHeight = m_char.height;
         ColCenterY = m_char.center.y;
+        FrwSpeed = Speed;
 
         _footPrintPool = new ObjectPooler(footPrint);
         _footPrintPool.FillThePool(10);
@@ -108,7 +126,62 @@ public class Character : MonoBehaviour
     public void StartPlayer()
     {
         isGameActive = true;
+        animatorBody.transform.localPosition = Vector3.zero;
+        animatorBody.transform.rotation = Quaternion.identity;
         m_Animator.SetTrigger("Run");
+    }
+
+    public void ResetPlayer()
+    {
+        m_Animator.applyRootMotion = false;
+        m_char.enabled = false;
+        m_char.transform.position = new Vector3(0, 0.1f, 5);
+        m_char.transform.rotation = Quaternion.identity;
+        m_char.enabled = true;
+        characterBody.SetActive(true);
+
+        // Character props
+        isCinematic = false;
+        isGameActive = false;
+        isReverseMovement = false;
+        isTrailing = false;
+        InRoll = false;
+        isFalling = false;
+        isJumping = false;
+        isStunned = false;
+        isInStunDelay = false;
+        enemyClosingToBody = false;
+        isSlopeGrounded = false;
+        m_Side = SIDE.Middle;
+        runMode = RunMode.Straight;
+        hitX = HitX.None;
+        hitY = HitY.None;
+        hitZ = HitZ.None;
+        FrwSpeed = Speed;
+        x = 0;
+        NewXPos = 0;
+        y = 0;
+
+        // Swipes
+        SwipeLeft = false;
+        SwipeRight = false;
+        SwipeDown = false;
+        SwipeUp = false;
+
+        // Hit And Effects
+        characterRagdoll.transform.parent = gameObject.transform;
+        characterRagdoll.transform.localPosition = Vector3.zero;
+        characterRagdoll.SetActive(false);
+        characterEffects.EffectProcess(CharacterEffectTypes.Stunned, false);
+
+        // Enemy Controls
+        LeanTween.cancel(enemyHolder);
+        enemyClosingToBody = false;
+        enemyHolder.SetActive(false);
+        enemyHolder.transform.position = new Vector3(0, 0, -10f);
+        enemyHolder.transform.rotation = Quaternion.identity;
+        enemyAnimator.SetBool("isRunning", false);
+        enemyAnimator.SetBool("isWalking", false);
     }
 
     void Update()
@@ -116,61 +189,19 @@ public class Character : MonoBehaviour
         isOnGround = m_char.isGrounded;
         if (isGameActive && !isCinematic)
         {
-            if (SwipeLeft)
+            if (runMode == RunMode.Straight)
             {
-                SwipeLeft = false;
-                if (!InRoll)
-                {
-                    if (m_Side == SIDE.Middle)
-                    {
-                        NewXPos = -XValue;
-                        m_Side = SIDE.Left;
-                        //LeanTween.rotateY(characterBody, -characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
-                        //m_Animator.SetTrigger("LeftSideJump");
-                    }
-                    else if (m_Side == SIDE.Right)
-                    {
-                        NewXPos = 0;
-                        m_Side = SIDE.Middle;
-                        //LeanTween.rotateY(characterBody, -characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
-                        //m_Animator.SetTrigger("LeftSideJump");
-                    }
-                }
-            }else if (SwipeRight)
+                StraightMove();
+            }else if(runMode == RunMode.Slope)
             {
-                SwipeRight = false;
-                if (!InRoll)
-                {
-                    if (m_Side == SIDE.Middle)
-                    {
-                        NewXPos = XValue;
-                        m_Side = SIDE.Right;
-                        //LeanTween.rotateY(characterBody, characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
-                        //m_Animator.SetTrigger("RightSideJump");
-                    }
-                    else if (m_Side == SIDE.Left)
-                    {
-                        NewXPos = 0;
-                        m_Side = SIDE.Middle;
-                        //LeanTween.rotateY(characterBody, characterSwipeRotateValue, characterSwipeRotateDuration).setEasePunch();
-                        //m_Animator.SetTrigger("RightSideJump");
-                    }
-                }
-            }
-            float rotY = ((NewXPos - x) / 2.5f) * characterSwipeRotateValue;
-            characterBody.transform.rotation = Quaternion.Euler(new Vector3(0, rotY, 0));
-            if (isStunned)
+                SlopeMove();
+            }else if(runMode == RunMode.Bridge)
             {
-                enemyHolder.transform.rotation = Quaternion.Euler(new Vector3(0, rotY, 0));
-            }
+                NewXPos = 0;
+                m_Side = SIDE.Middle;
 
-            x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);
-            Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FrwSpeed * Time.deltaTime);
-            m_char.Move(moveVector);
-            Jump();
-            Roll();
-
-            LeaveTrail();
+                StraightMove();
+            }
         }
         else if (isCinematic)
         {
@@ -186,9 +217,124 @@ public class Character : MonoBehaviour
         }
     }
 
+    
+
     #region Movement Codes
+    private void StraightMove()
+    {
+        Rotate();
+        Jump();
+        Roll();
+
+        groundDirection.eulerAngles = new Vector3(0, 0, 0);
+        if (slopeSpeed > 0)
+        {
+            isSlopeGrounded = false;
+            slopeSpeed -= SlopeSpeedMultiple * Time.deltaTime;
+            slopeSpeed = Mathf.Clamp(slopeSpeed, 0, ExtraSlopeSpeed);
+        }
+        Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, (FrwSpeed + (slopeSpeed * 0.3f)) * Time.deltaTime);
+        m_char.Move(moveVector);
+
+        LeaveTrail();
+    }
+    private void SlopeMove()
+    {
+        Rotate();
+        groundRay.origin = transform.position;
+        groundRay.direction = Vector3.down;
+
+        //Debug.DrawRay(groundRay.origin, groundRay.direction * slopeGroundDistance, Color.red, 0.1f);
+        if (Physics.Raycast(groundRay, out groundHit, slopeGroundDistance) && m_char.isGrounded)
+        {
+            isSlopeGrounded = true;
+            if (groundHit.collider.name == "Slope Ground")
+            {
+                m_Animator.SetTrigger("SlopeSliding");
+                _cameraFollow.isRampSlidingMode = true;
+            }else if (groundHit.collider.name == "Ground")
+            {
+                runMode = RunMode.Straight;
+                m_Animator.SetTrigger("JumpToRoll");
+            }
+            
+        }
+        else if (!Physics.Raycast(groundRay, out groundHit, slopeGroundDistance) && !m_char.isGrounded)
+        {
+            isSlopeGrounded = false;
+        }
+
+        if (isSlopeGrounded)
+        {
+            forwardAngle = Vector3.Angle(groundDirection.forward, groundHit.normal) - 90; //Chekcing the forwardAngle against the slope
+            groundDirection.eulerAngles += new Vector3(-forwardAngle, 0, 0); //Rotating groundDirection X
+            slopeSpeed += SlopeSpeedMultiple * Time.deltaTime;
+            slopeSpeed = Mathf.Clamp(slopeSpeed, 0, ExtraSlopeSpeed);
+
+            Vector3 forwardMove = groundDirection.forward * (FrwSpeed + slopeSpeed) * Time.deltaTime;
+            Vector3 moveVector = new Vector3(x - transform.position.x, forwardMove.y, forwardMove.z);
+            m_char.Move(moveVector);
+            LeaveTrail();
+        }
+        else
+        {
+            //slopeSpeed = 0;
+            groundDirection.eulerAngles = new Vector3(0, 0, 0);
+            Jump();
+
+            Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FrwSpeed * Time.deltaTime);
+            m_char.Move(moveVector);
+        }
+    }
+
+    private void Rotate()
+    {
+        if (SwipeLeft)
+        {
+            SwipeLeft = false;
+            if (!InRoll)
+            {
+                if (m_Side == SIDE.Middle)
+                {
+                    NewXPos = -XValue;
+                    m_Side = SIDE.Left;
+                }
+                else if (m_Side == SIDE.Right)
+                {
+                    NewXPos = 0;
+                    m_Side = SIDE.Middle;
+                }
+            }
+        }
+        else if (SwipeRight)
+        {
+            SwipeRight = false;
+            if (!InRoll)
+            {
+                if (m_Side == SIDE.Middle)
+                {
+                    NewXPos = XValue;
+                    m_Side = SIDE.Right;
+                }
+                else if (m_Side == SIDE.Left)
+                {
+                    NewXPos = 0;
+                    m_Side = SIDE.Middle;
+                }
+            }
+        }
+        float rotY = ((NewXPos - x) / 2.5f) * characterSwipeRotateValue;
+        Quaternion swipeRotationEuler = isSlopeGrounded ? Quaternion.Euler(new Vector3(0, 0, rotY * 0.33f)) : Quaternion.Euler(new Vector3(0, rotY, 0));
+        characterBody.transform.rotation = swipeRotationEuler;
+        if (isStunned)
+        {
+            enemyHolder.transform.rotation = Quaternion.Euler(new Vector3(0, rotY, 0));
+        }
+
+        x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);
+    }
     protected float swipeUpCountdown = 0;
-    public void Jump()
+    private void Jump()
     {
         if (m_char.isGrounded)
         {
@@ -235,16 +381,16 @@ public class Character : MonoBehaviour
     }
 
     internal float RollCounter;
-    public void Roll()
+    private void Roll()
     {
         RollCounter -= Time.deltaTime;
         if (RollCounter <= 0f)
         {
             RollCounter = 0f;
             m_char.center = new Vector3(0, ColCenterY, 0);
-            hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY, 0);
+            //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY, 0);
             m_char.height = ColHeight;
-            hitDetectorCapsuleCollider.height = ColHeight;
+            //hitDetectorCapsuleCollider.height = ColHeight;
             InRoll = false;
         }
 
@@ -256,9 +402,9 @@ public class Character : MonoBehaviour
                 RollCounter = slidingLowCollideTime;
                 //y -= 10f;
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
-                hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
+                //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
-                hitDetectorCapsuleCollider.height = ColHeight / 2f;
+                //hitDetectorCapsuleCollider.height = ColHeight / 2f;
                 m_Animator.SetTrigger("Slide");
                 InRoll = true;
             }else
@@ -266,9 +412,9 @@ public class Character : MonoBehaviour
                 RollCounter = rollingLowCollideTime;
                 y -= 10f;
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
-                hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
+                //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
-                hitDetectorCapsuleCollider.height = ColHeight / 2f;
+                //hitDetectorCapsuleCollider.height = ColHeight / 2f;
                 m_Animator.SetTrigger("JumpToRoll");
                 InRoll = true;
             }
@@ -292,9 +438,13 @@ public class Character : MonoBehaviour
             m_Animator.SetTrigger("FinishDance");
         });
     }
+    public void SetAnimate(string animationName)
+    {
+        m_Animator.SetTrigger(animationName);
+    }
 
     private void SwipeLeftHandle() {
-        if (isCinematic)
+        if (isCinematic || runMode == RunMode.Bridge)
             return;
 
         if (isReverseMovement)
@@ -306,7 +456,7 @@ public class Character : MonoBehaviour
         }
     }
     private void SwipeRightHandle() {
-        if (isCinematic)
+        if (isCinematic || runMode == RunMode.Bridge)
             return;
 
         if (isReverseMovement)
@@ -319,14 +469,14 @@ public class Character : MonoBehaviour
         }
     }
     private void SwipeUpHandle() {
-        if (isCinematic)
+        if (isCinematic || runMode == RunMode.Slope)
             return;
 
         SwipeUp = true;
         swipeUpCountdown = 1;
     }
     private void SwipeDownHandle() {
-        if (isCinematic)
+        if (isCinematic || runMode == RunMode.Slope)
             return;
 
         SwipeDown = true;
@@ -335,6 +485,14 @@ public class Character : MonoBehaviour
     #endregion
 
     #region Hit Control Codes
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.transform.CompareTag("Obstacle"))
+        {
+            OnCharacterColliderHit(hit.collider);
+        }
+    }
     public void OnCharacterColliderHit(Collider col)
     {
         if (isInStunDelay)
@@ -343,7 +501,9 @@ public class Character : MonoBehaviour
         hitX = GetHitX(col);
         hitY = GetHitY(col);
         hitZ = GetHitZ(col);
-        
+
+        //Debug.Log("Tag -> " + col.tag + " Hit(XYZ) -> " + hitX + " - " + hitY + " - " + hitZ);
+
         if (hitZ == HitZ.Forward && hitX == HitX.Middle)
         {
             if (hitY == HitY.Down)
@@ -425,7 +585,7 @@ public class Character : MonoBehaviour
             }
         }
     }
-    public void DieProcess()
+    public void DieProcess(string type = "")
     {
         if (isStunned)
         {
@@ -433,13 +593,21 @@ public class Character : MonoBehaviour
             characterEffects.EffectProcess(CharacterEffectTypes.Stunned, false);
         }
 
-        characterRagdoll.transform.parent = null;
-        characterRagdoll.SetActive(true);
-        
-        characterBody.SetActive(false);
+
         FrwSpeed = 0;
         isGameActive = false;
         isCinematic = true;
+
+        if (type == "Drown")
+        {
+            Debug.Log("Drowned");
+        }else
+        {
+            characterRagdoll.transform.parent = null;
+            characterRagdoll.SetActive(true);
+            characterBody.SetActive(false);
+        }
+        
         _igm.GameOver();
 
         float enemyDelay = isStunned ? 0 : 1;
@@ -490,11 +658,11 @@ public class Character : MonoBehaviour
 
         HitY hit;
         if (average < 0.33f)
-            hit = HitY.Down;
+            hit = HitY.Up;
         else if (average < 0.66f)
             hit = HitY.Middle;
         else
-            hit = HitY.Up;
+            hit = HitY.Down;
 
         return hit;
     }
@@ -555,8 +723,8 @@ public class Character : MonoBehaviour
     protected int lastIndexOfTrail;
     private void LeaveTrail()
     {
-        Debug.DrawRay(transform.position, -transform.up, Color.red, footPrintMaxDistance);
-        if (InRoll)
+        //Debug.DrawRay(transform.position, -transform.up, Color.red, footPrintMaxDistance);
+        if (InRoll || isSlopeGrounded)
         {
             if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, footPrintMaxDistance) && (hit.collider.CompareTag("Snow") || hit.collider.CompareTag("IceGround")))
             {

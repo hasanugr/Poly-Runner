@@ -9,6 +9,7 @@ public class SnowballRolling : MonoBehaviour
     [SerializeField] private GameObject[] rotatingObjects;
     [SerializeField] private float animationDelay;
     [SerializeField] private ShakePreset fallShake;
+    [SerializeField] private float startDistance = 70f;
 
     private ShakeInstance shakeInstance;
     private bool isTriggered;
@@ -16,6 +17,9 @@ public class SnowballRolling : MonoBehaviour
     private float cameraShakeEndSecond;
     private float animateDurationMultiple;
     private float rotateAroundTime;
+    private Coroutine _coroutinecameraShake;
+    private Coroutine[] _coroutineMovingObject;
+    private Coroutine[] _coroutineRotatingObjects;
 
     private void Start()
     {
@@ -24,12 +28,14 @@ public class SnowballRolling : MonoBehaviour
 
         movingObjects = new GameObject[gameObject.transform.childCount];
         rotatingObjects = new GameObject[gameObject.transform.childCount];
+        _coroutineMovingObject = new Coroutine[movingObjects.Length];
+        _coroutineRotatingObjects = new Coroutine[movingObjects.Length];
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             movingObjects[i] = gameObject.transform.GetChild(i).GetChild(0).gameObject;
             rotatingObjects[i] = gameObject.transform.GetChild(i).GetChild(0).GetChild(0).gameObject;
         }
-
+        
         cameraShakeEndSecond = (movingObjects.Length * animationDelay) + 2;
     }
 
@@ -49,13 +55,13 @@ public class SnowballRolling : MonoBehaviour
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(time);
 
-        StartCoroutine(CameraShakeWithDelay(fallShake, cameraShakeStartSecond, cameraShakeEndSecond));
+        _coroutinecameraShake = StartCoroutine(CameraShakeWithDelay(fallShake, cameraShakeStartSecond, cameraShakeEndSecond));
         for (int i = 0; i < movingObjects.Length; i++)
         {
-            StartCoroutine(MoveObj(movingObjects[i], -20f + (-10 * i * animationDelay), 4f + (animateDurationMultiple * i), animationDelay * i));
-            StartCoroutine(RotateObj(rotatingObjects[i], 4f + (animateDurationMultiple * i), animationDelay * i));
+            _coroutineMovingObject[i] = StartCoroutine(MoveObj(movingObjects[i], -20f + (-10 * i * animationDelay), 4f + (animateDurationMultiple * i), animationDelay * i));
+            _coroutineRotatingObjects[i] = StartCoroutine(RotateObj(rotatingObjects[i], 4f + (animateDurationMultiple * i), animationDelay * i));
         }
-        StartCoroutine(DeactiveTheObstacle(cameraShakeEndSecond + 5f));
+        //StartCoroutine(DeactiveTheObstacle(cameraShakeEndSecond + 5f));
     }
 
     IEnumerator MoveObj(GameObject obj, float toValue, float durationTime, float delayTime)
@@ -87,7 +93,7 @@ public class SnowballRolling : MonoBehaviour
 
         yield return new WaitForSeconds(endTime);
 
-        shakeInstance.Stop(shakePreset.FadeOut, true);
+        shakeInstance.Stop(shakePreset.FadeOut, false);
         shakeInstance = null;
 
         if (InGameManager.instance.isGameActive)
@@ -103,6 +109,27 @@ public class SnowballRolling : MonoBehaviour
         if (InGameManager.instance.isGameActive)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    public void ResetObstacle()
+    {
+        isTriggered = false;
+        StopCoroutine(_coroutinecameraShake);
+        if (shakeInstance != null)
+        {
+            shakeInstance.Stop(fallShake.FadeOut, false);
+        }
+        InGameManager.instance.CurvedWorldDefault();
+
+        for (int i = 0; i < movingObjects.Length; i++)
+        {
+            StopCoroutine(_coroutineMovingObject[i]);
+            StopCoroutine(_coroutineRotatingObjects[i]);
+            LeanTween.cancel(movingObjects[i]);
+            LeanTween.cancel(rotatingObjects[i]);
+            movingObjects[i].transform.localPosition = new Vector3(0, 0, startDistance);
+            rotatingObjects[i].transform.localRotation = Quaternion.identity;
         }
     }
 }

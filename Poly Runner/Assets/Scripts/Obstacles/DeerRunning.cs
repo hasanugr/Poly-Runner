@@ -8,18 +8,22 @@ public class DeerRunning : MonoBehaviour
     [SerializeField] private GameObject[] movingObjects;
     [SerializeField] private float animationDelay;
     [SerializeField] private ShakePreset fallShake;
+    [SerializeField] private float startDistance = 70f;
 
     private ShakeInstance shakeInstance;
     private bool isTriggered;
     private float cameraShakeStartSecond = 1f;
     private float cameraShakeEndSecond;
     private float animateDurationMultiple;
+    private Coroutine _coroutinecameraShake;
+    private Coroutine[] _coroutineMovingObject;
 
     private void Start()
     {
         animateDurationMultiple = 0.44f * animationDelay; // 0.22f for 0.5 animationDelay
 
         movingObjects = new GameObject[gameObject.transform.childCount];
+        _coroutineMovingObject = new Coroutine[movingObjects.Length];
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             movingObjects[i] = gameObject.transform.GetChild(i).GetChild(0).gameObject;
@@ -34,12 +38,12 @@ public class DeerRunning : MonoBehaviour
         if (!isTriggered && other.CompareTag("Player"))
         {
             isTriggered = true;
-            StartCoroutine(CameraShakeWithDelay(fallShake, cameraShakeStartSecond, cameraShakeEndSecond));
+            _coroutinecameraShake = StartCoroutine(CameraShakeWithDelay(fallShake, cameraShakeStartSecond, cameraShakeEndSecond));
             for (int i = 0; i < movingObjects.Length; i++)
             {
-                StartCoroutine(MoveObj(movingObjects[i], -20f + (-10 * i * animationDelay), 4f + (animateDurationMultiple * i), animationDelay * i));
+                _coroutineMovingObject[i] = StartCoroutine(MoveObj(movingObjects[i], -20f + (-10 * i * animationDelay), 4f + (animateDurationMultiple * i), animationDelay * i));
             }
-            StartCoroutine(DeactiveTheObstacle(cameraShakeEndSecond + 5f));
+            //StartCoroutine(DeactiveTheObstacle(cameraShakeEndSecond + 5f));
         }
     }
 
@@ -60,7 +64,7 @@ public class DeerRunning : MonoBehaviour
 
         yield return new WaitForSeconds(endTime);
 
-        shakeInstance.Stop(shakePreset.FadeOut, true);
+        shakeInstance.Stop(shakePreset.FadeOut, false);
         shakeInstance = null;
     }
 
@@ -71,6 +75,23 @@ public class DeerRunning : MonoBehaviour
         if (InGameManager.instance.isGameActive)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    public void ResetObstacle()
+    {
+        isTriggered = false;
+        StopCoroutine(_coroutinecameraShake);
+        if (shakeInstance != null)
+        {
+            shakeInstance.Stop(fallShake.FadeOut, false);
+        }
+
+        for (int i = 0; i < movingObjects.Length; i++)
+        {
+            StopCoroutine(_coroutineMovingObject[i]);
+            LeanTween.cancel(movingObjects[i]);
+            movingObjects[i].transform.localPosition = new Vector3(0, 0, startDistance);
         }
     }
 }

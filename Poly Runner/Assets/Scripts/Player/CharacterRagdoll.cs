@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class CharacterRagdoll : MonoBehaviour
 {
-    //[SerializeField] private Character mainCharacter;
+    [SerializeField] private GameObject rootObject;
     [SerializeField] private float dieEffectDelay = 0.05f;
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody characterSpineRb;
     [SerializeField] private Vector3 forceWay;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void OnEnable()
     {
@@ -29,4 +23,9 @@ public class CharacterRagdoll : MonoBehaviour
         characterSpineRb.AddForce(forceWay, ForceMode.VelocityChange);
     }
 
+    private void OnDisable()
+    {
+        rootObject.transform.localPosition = new Vector3(0, 1, 0);
+        rootObject.transform.localRotation = Quaternion.Euler(0, -90, -90);
+    }
 }

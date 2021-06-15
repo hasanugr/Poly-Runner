@@ -9,6 +9,18 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         MakeSingleton();
+        LoadPlayerData();
+    }
+
+    private void LoadPlayerData()
+    {
+       /* pd = SaveLoadManager.Load();
+        ChangeActiveCharacter(pd.selectedVehicleId);*/
+    }
+
+    public void SavePlayerData()
+    {
+        //SaveLoadManager.Save(pd);
     }
 
     private void MakeSingleton()

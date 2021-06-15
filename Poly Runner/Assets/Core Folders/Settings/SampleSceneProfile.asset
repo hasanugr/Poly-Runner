@@ -33,7 +33,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.026477398, g: 0.18536685, b: 0.3301887, a: 1}
+    m_Value: {r: 0.32226774, g: 0.74203044, b: 0.9622642, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   color:
     m_OverrideState: 0
-    m_Value: {r: 0, g: 0.063217774, b: 0.6981132, a: 1}
+    m_Value: {r: 0, g: 0.0365562, b: 0.69803923, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -107,12 +107,12 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 17
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 0
-    m_Value: {r: 1.1486983, g: 1.1486983, b: 1.1486983, a: 1}
+    m_Value: {r: 0.99215686, g: 0.8862745, b: 0.79607844, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 60
     min: -100
     max: 100
 --- !u!114 &11400000
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
