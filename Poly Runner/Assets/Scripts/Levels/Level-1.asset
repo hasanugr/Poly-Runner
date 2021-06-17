@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dd7af155647ca4bb290027c9b1873c, type: 3}
   m_Name: Level-1
   m_EditorClassIdentifier: 
-  LevelNumber: 1
+  LevelNumber: 27
   RoadObjects:
   - type: 0
     objects:
@@ -266,6 +266,12 @@ MonoBehaviour:
     - position: {x: 0, y: -0.12, z: 568.48}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 0.7, y: 2, z: 2}
+    - position: {x: 0, y: 0.1, z: 223}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 2, y: 0.8, z: 1}
+    - position: {x: 0, y: 0.1, z: 258}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 2, y: 0.8, z: 1}
   DynamicObstacleObjects:
   - type: 0
     objects:
@@ -292,13 +298,13 @@ MonoBehaviour:
     - position: {x: 0, y: 1, z: 35.06}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 64.55}
+    - position: {x: 2.5, y: 1, z: 70.32}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 71.12}
+    - position: {x: 2.5, y: 1, z: 76.89}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 90.74}
+    - position: {x: 0, y: 1, z: 90.74}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: -2.5, y: 1, z: 140}
@@ -343,43 +349,43 @@ MonoBehaviour:
     - position: {x: 2.5, y: 1, z: 462.99}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 542.26}
+    - position: {x: 2.5, y: 1, z: 546.73}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 548.26}
+    - position: {x: 2.5, y: 1, z: 552.73}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 522.28}
+    - position: {x: -2.5, y: 1, z: 526.65}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 528.28}
+    - position: {x: -2.5, y: 1, z: 532.65}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 600}
+    - position: {x: -2.5, y: 4, z: 616.43}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 625}
+    - position: {x: -2.5, y: 4, z: 645.04}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 655}
+    - position: {x: -2.5, y: 1, z: 659.76}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 661.83}
+    - position: {x: -2.5, y: 1, z: 666.59}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 1, z: 666.99}
+    - position: {x: 0, y: 1, z: 671.75}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 672.28}
+    - position: {x: 2.5, y: 1, z: 677.04004}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 683.6}
+    - position: {x: -2.5, y: 1, z: 688.36}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 1, z: 689.54}
+    - position: {x: 0, y: 1, z: 694.3}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 1, z: 677.82}
+    - position: {x: 0, y: 1, z: 682.58}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
   StartLine:
