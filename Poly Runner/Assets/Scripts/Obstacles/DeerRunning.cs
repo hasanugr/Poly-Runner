@@ -81,7 +81,9 @@ public class DeerRunning : MonoBehaviour
     public void ResetObstacle()
     {
         isTriggered = false;
-        StopCoroutine(_coroutinecameraShake);
+        if (_coroutinecameraShake != null)
+            StopCoroutine(_coroutinecameraShake);
+
         if (shakeInstance != null)
         {
             shakeInstance.Stop(fallShake.FadeOut, false);
@@ -89,7 +91,8 @@ public class DeerRunning : MonoBehaviour
 
         for (int i = 0; i < movingObjects.Length; i++)
         {
-            StopCoroutine(_coroutineMovingObject[i]);
+            if (_coroutineMovingObject[i] != null)
+                StopCoroutine(_coroutineMovingObject[i]);
             LeanTween.cancel(movingObjects[i]);
             movingObjects[i].transform.localPosition = new Vector3(0, 0, startDistance);
         }

@@ -115,17 +115,23 @@ public class TreeTrunkRolling : MonoBehaviour
     public void ResetObstacle()
     {
         isTriggered = false;
-        StopCoroutine(_coroutinecameraShake);
+        if (_coroutinecameraShake != null)
+            StopCoroutine(_coroutinecameraShake);
+
         if (shakeInstance != null)
         {
             shakeInstance.Stop(fallShake.FadeOut, false);
         }
-        InGameManager.instance.CurvedWorldDefault();
+
+        if (InGameManager.instance != null)
+            InGameManager.instance.CurvedWorldDefault();
 
         for (int i = 0; i < movingObjects.Length; i++)
         {
-            StopCoroutine(_coroutineMovingObject[i]);
-            StopCoroutine(_coroutineRotatingObjects[i]);
+            if (_coroutineMovingObject[i] != null)
+                StopCoroutine(_coroutineMovingObject[i]);
+            if (_coroutineRotatingObjects[i] != null)
+                StopCoroutine(_coroutineRotatingObjects[i]);
             LeanTween.cancel(movingObjects[i]);
             LeanTween.cancel(rotatingObjects[i]);
             movingObjects[i].transform.localPosition = new Vector3(0, 0, startDistance);
