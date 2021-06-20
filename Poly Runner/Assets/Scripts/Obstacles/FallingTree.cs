@@ -13,7 +13,6 @@ public class FallingTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("FT-IsTriggered: " + isTriggered);
         if (!isTriggered && other.CompareTag("Player"))
         {
             isTriggered = true;

@@ -31,7 +31,7 @@ MonoBehaviour:
     - position: {x: 0, y: 0, z: 400}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 0, z: 450}
+    - position: {x: 0, y: 0, z: 445}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: 0, y: 0, z: 500}
@@ -177,19 +177,22 @@ MonoBehaviour:
     - position: {x: 0, y: 0, z: 170}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
-    - position: {x: 2.5, y: 0, z: 492.2}
+    - position: {x: 2.5, y: 0, z: 485}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
-    - position: {x: -2.5, y: 0, z: 492.2}
+    - position: {x: -2.5, y: 0, z: 485}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
-    - position: {x: 0, y: 0, z: 507.2}
+    - position: {x: 0, y: 0, z: 473}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
     - position: {x: 2.5, y: 0, z: 522.2}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
     - position: {x: -2.5, y: 0, z: 522.2}
+      rotation: {x: -0, y: 1, z: -0, w: 0}
+      scale: {x: 2, y: 2, z: 2}
+    - position: {x: 0, y: 0, z: 510}
       rotation: {x: -0, y: 1, z: -0, w: 0}
       scale: {x: 2, y: 2, z: 2}
   - type: 11
@@ -289,7 +292,7 @@ MonoBehaviour:
       scale: {x: 1, y: 1, z: 1}
   - type: 1
     objects:
-    - position: {x: 0, y: -0.05000019, z: 475}
+    - position: {x: 0, y: -0.05000019, z: 495}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 0.75}
   - type: 2

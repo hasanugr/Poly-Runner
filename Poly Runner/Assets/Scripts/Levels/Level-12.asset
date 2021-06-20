@@ -48,7 +48,7 @@ MonoBehaviour:
       scale: {x: 1, y: 1, z: 1}
   - type: 1
     objects:
-    - position: {x: 0, y: 0, z: 200}
+    - position: {x: 0, y: 0, z: 195}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: 0, y: 0, z: 300}
@@ -147,13 +147,13 @@ MonoBehaviour:
     - position: {x: 0, y: 0, z: 243}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 0.8, y: 0.8, z: 0.8}
-    - position: {x: 0, y: 0, z: 285}
+    - position: {x: 0, y: 0, z: 267.03}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 0.8, y: 0.8, z: 0.8}
-    - position: {x: 2.5, y: 0, z: 300}
+    - position: {x: 2.5, y: 0, z: 282.03}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 0.8, y: 0.8, z: 0.8}
-    - position: {x: -2.5, y: 0, z: 300}
+    - position: {x: -2.5, y: 0, z: 282.03}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 0.8, y: 0.8, z: 0.8}
   - type: 8
@@ -274,7 +274,7 @@ MonoBehaviour:
       scale: {x: 1, y: 1, z: 1}
   - type: 1
     objects:
-    - position: {x: 0, y: -0.05000019, z: 270}
+    - position: {x: 0, y: -0.05000019, z: 295}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 0.75}
   - type: 2
@@ -325,16 +325,16 @@ MonoBehaviour:
     - position: {x: 0, y: 1, z: 262.95}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 1, z: 285.17}
+    - position: {x: 2.5, y: 1, z: 267.2}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 1, z: 290.17}
+    - position: {x: 0, y: 1, z: 272.2}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: 0, y: 1, z: 295.17}
+    - position: {x: 0, y: 1, z: 277.2}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - position: {x: -2.5, y: 1, z: 304}
+    - position: {x: 0, y: 1, z: 310}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: 2.5, y: 1, z: 315}
