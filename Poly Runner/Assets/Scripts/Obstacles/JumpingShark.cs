@@ -36,7 +36,7 @@ public class JumpingShark : MonoBehaviour
                     animationControl.SetTrigger("SharkAttack");
                     particleEffect.SetActive(true);
                     break;
-                case 5:
+                case 2:
                     _playerScript.runMode = RunMode.Straight;
                     //StartCoroutine(DeactiveTheObstacle(5f));
                     break;
