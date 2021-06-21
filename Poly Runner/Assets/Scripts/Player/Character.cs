@@ -56,7 +56,6 @@ public class Character : MonoBehaviour
     [SerializeField] private TrailRenderer[] slideTrailRenderer;
 
     [Header("Hit And Effects")]
-    //[SerializeField] private CapsuleCollider hitDetectorCapsuleCollider;
     [SerializeField] private GameObject characterRagdoll;
     [SerializeField] private CharacterEffects characterEffects;
 
@@ -158,6 +157,7 @@ public class Character : MonoBehaviour
         hitY = HitY.None;
         hitZ = HitZ.None;
         FrwSpeed = Speed;
+        slopeSpeed = 0;
         x = 0;
         NewXPos = 0;
         y = 0;
@@ -240,6 +240,9 @@ public class Character : MonoBehaviour
     }
     private void SlopeMove()
     {
+        if (InRoll)
+            InRoll = false;
+
         Rotate();
         groundRay.origin = transform.position;
         groundRay.direction = Vector3.down;
@@ -388,9 +391,7 @@ public class Character : MonoBehaviour
         {
             RollCounter = 0f;
             m_char.center = new Vector3(0, ColCenterY, 0);
-            //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY, 0);
             m_char.height = ColHeight;
-            //hitDetectorCapsuleCollider.height = ColHeight;
             InRoll = false;
         }
 
@@ -400,11 +401,8 @@ public class Character : MonoBehaviour
             if (m_char.isGrounded)
             {
                 RollCounter = slidingLowCollideTime;
-                //y -= 10f;
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
-                //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
-                //hitDetectorCapsuleCollider.height = ColHeight / 2f;
                 m_Animator.SetTrigger("Slide");
                 InRoll = true;
             }else
@@ -412,9 +410,7 @@ public class Character : MonoBehaviour
                 RollCounter = rollingLowCollideTime;
                 y -= 10f;
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
-                //hitDetectorCapsuleCollider.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
-                //hitDetectorCapsuleCollider.height = ColHeight / 2f;
                 m_Animator.SetTrigger("JumpToRoll");
                 InRoll = true;
             }
@@ -428,6 +424,8 @@ public class Character : MonoBehaviour
         InRoll = true;
         float normalSpeed = FrwSpeed;
         m_Animator.SetTrigger("FinishSlide");
+        m_char.center = new Vector3(0, ColCenterY / 2f, 0);
+        m_char.height = ColHeight / 2f;
         LeanTween.value(gameObject, normalSpeed, 0, 3f).setOnUpdate((float val) =>
         {
             FrwSpeed = val;
@@ -436,6 +434,8 @@ public class Character : MonoBehaviour
             InRoll = false;
             m_Animator.applyRootMotion = true;
             m_Animator.SetTrigger("FinishDance");
+            m_char.center = new Vector3(0, ColCenterY, 0);
+            m_char.height = ColHeight;
         });
     }
     public void SetAnimate(string animationName)
