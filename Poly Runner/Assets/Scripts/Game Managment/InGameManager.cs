@@ -20,13 +20,13 @@ public class InGameManager : MonoBehaviour
     [SerializeField] FinishLine finishLine;
     [SerializeField] LevelHolderControl[] levelHolderControls;
     [SerializeField] LevelController levelController;
-    [SerializeField] int activeLevelIndex = 1;
+    [SerializeField] int activeLevel = 1;
 
-    [Header("Action Control")]
+    /*[Header("Action Control")]
     public bool IsBossActive = false;
 
     [SerializeField] private Vector3 startPosition;
-    [SerializeField] private Quaternion startRotation;
+    [SerializeField] private Quaternion startRotation;*/
 
     private int _collectedGold;
 
@@ -57,10 +57,8 @@ public class InGameManager : MonoBehaviour
 
     private void Start()
     {
-        MakeSingleton();
-
-        _timerCountdown = TimerMaxValue;
-        StartCoroutine(CountdownToStart());
+        //MakeSingleton();
+        //StartGame(1);
     }
 
     IEnumerator CountdownToStart()
@@ -115,19 +113,19 @@ public class InGameManager : MonoBehaviour
         isGameActive = true;
     }
 
-    public void Restart()
+    public void StartGame(int level)
     {
         LeanTween.cancelAll();
         StopAllCoroutines();
         Time.timeScale = 1;
 
-        startLine.ResetObstacle();
-        finishLine.ResetObstacle();
+        //startLine.ResetObstacle();
+        //finishLine.ResetObstacle();
         cameraFollow.ResetCamera();
         playerController.ResetPlayer();
-        levelController.CreateLoadedLevel(activeLevelIndex);
-        //levelHolderControls[activeLevelIndex].ResetLevel();
+        levelController.CreateLoadedLevel(level);
 
+        activeLevel = level;
         currentType = CurvedWorldType.NormalLeft;
         _collectedGold = 0;
         GoldText.text = _collectedGold.ToString();
@@ -138,8 +136,11 @@ public class InGameManager : MonoBehaviour
 
         _timerCountdown = TimerMaxValue;
         StartCoroutine(CountdownToStart());
+    }
 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public void Restart()
+    {
+        StartGame(activeLevel);
     }
 
     public void GameOver()
@@ -181,7 +182,7 @@ public class InGameManager : MonoBehaviour
         InGameUI.SetActive(false);
     }
 
-    public void BossActivate()
+    /*public void BossActivate()
     {
         if (IsBossActive)
         {
@@ -195,7 +196,7 @@ public class InGameManager : MonoBehaviour
             cameraFollow.isReverseCamera = true;
             playerController.isReverseMovement = true;
         }
-    }
+    }*/
 
     public void AddGold(int count)
     {
@@ -312,7 +313,7 @@ public class InGameManager : MonoBehaviour
     }
 
 
-    private void MakeSingleton()
+    /*private void MakeSingleton()
     {
         if (instance != null)
         {
@@ -323,5 +324,5 @@ public class InGameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
+    }*/
 }

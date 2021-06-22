@@ -82,9 +82,9 @@ public class Character : MonoBehaviour
 
     ObjectPooler _footPrintPool;
 
-    private InGameManager _igm;
-    private CameraFollow _cameraFollow;
-    private CharacterController m_char;
+    [SerializeField] private InGameManager _igm;
+    [SerializeField] private CameraFollow _cameraFollow;
+    [SerializeField] private CharacterController m_char;
     private SwipeDetection swipeDetection;
 
     private void Awake()
@@ -95,9 +95,9 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _igm = FindObjectOfType<InGameManager>();
+        /*_igm = FindObjectOfType<InGameManager>();
         _cameraFollow = FindObjectOfType<CameraFollow>();
-        m_char = GetComponent<CharacterController>();
+        m_char = GetComponent<CharacterController>();*/
         ColHeight = m_char.height;
         ColCenterY = m_char.center.y;
         FrwSpeed = Speed;

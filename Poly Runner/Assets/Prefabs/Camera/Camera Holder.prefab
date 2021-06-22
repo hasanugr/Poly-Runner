@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af85c7846ac90148abd1687c556de99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
   startPosition: {x: -10, y: 20, z: -40}
   startRotation: {x: 0.044943467, y: 0.9512512, z: -0.25488698, w: 0.1677313}
   distance: 5.5
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9038393595214877152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27fec5cae7b257341a91ca046321b6eb, type: 3}
   m_Name: 

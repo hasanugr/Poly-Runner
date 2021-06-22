@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 public static class SaveLoadManager
 {
     public static string directory = "SaveData";
-    public static string fileName = "dadt.sav";
+    public static string fileName = "dad.sav";
 
     public static void Save(PlayerData pd)
     {

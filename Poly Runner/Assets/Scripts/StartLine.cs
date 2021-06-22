@@ -15,11 +15,6 @@ public class StartLine : MonoBehaviour
     public float runDelay = 1.7f;
     private enum VectorType { X, Y, Z };
 
-    void Start()
-    {
-        StartProcess();
-    }
-
     public void StartProcess()
     {
         Bear.SetActive(true);

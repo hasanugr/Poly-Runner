@@ -7,120 +7,43 @@ public class PlayerData
 {
     // Player Game Data
     private int[] _levels;
-    private int _highScore;
     private int _gold;
-    private int _selectedVehicleId;
-    private List<List<int[]>> vehicleList;
+    private int _selectedCharacterId;
+    private int[] _activatedCharactersId;
 
     // Player Game Prefs
     private bool _music;
     private bool _sound;
-    private int _vehicleControlType;
 
 
-    public int selectedVehicleId {
-        get
-        {
-            return _selectedVehicleId;
-        }
-        set
-        {
-            _selectedVehicleId = value;
-        }
-    }
+    public int[] Levels { get => _levels; set => _levels = value; }
+    public int Gold { get => _gold; set => _gold = value; }
+    public int SelectedCharacterId { get => _selectedCharacterId; set => _selectedCharacterId = value; }
+    public int[] ActivatedCharactersId { get => _activatedCharactersId; set => _activatedCharactersId = value; }
 
-    public int highScore { 
-        get
-        {
-            return _highScore;
-        }
-        set
-        {
-            _highScore = value;
-        }
-    }
-
-    public int gold { 
-        get
-        {
-            return _gold;
-        }
-        set
-        {
-            _gold = value;
-        }
-    }
-
-    public int[] levels 
-    { 
-        get
-        {
-            return _levels;
-        }
-    }
-
-    public bool music
-    {
-        get
-        {
-            return _music;
-        }
-        set
-        {
-            _music = value;
-        }
-    }
-
-    public bool sound
-    {
-        get
-        {
-            return _sound;
-        }
-        set
-        {
-            _sound = value;
-        }
-    }
-
-    public int vehicleControlType
-    {
-        get
-        {
-            return _vehicleControlType;
-        }
-        set
-        {
-            _vehicleControlType = value;
-        }
-    }
-
-
+    public bool Music { get => _music; set => _music = value; }
+    public bool Sound { get => _sound; set => _sound = value; }
 
     public void AddDefaultValues()
     {
         _levels = new int[1];
-        _highScore = 0;
         _gold = 0;
-        _selectedVehicleId = 1;
-        ActivateVehicle(_selectedVehicleId);
+        _selectedCharacterId = 1;
+        _activatedCharactersId = new int[1] { 0 };
 
         _music = true;
         _sound = true;
-        _vehicleControlType = 2;
     }
 
     public void AddLoadedValues(PlayerData pd)
     {
-        _levels = pd._levels;
-        _highScore = pd._highScore;
-        _gold = pd._gold;
-        _selectedVehicleId = pd._selectedVehicleId;
-        vehicleList = pd.vehicleList;
+        Levels = pd.Levels;
+        Gold = pd.Gold;
+        SelectedCharacterId = pd.SelectedCharacterId;
+        ActivatedCharactersId = pd.ActivatedCharactersId;
 
-        _music = pd._music;
-        _sound = pd._sound;
-        _vehicleControlType = pd._vehicleControlType;
+        Music = pd.Music;
+        Sound = pd.Sound;
     }
 
     public void NextLevel(int level, int star)
@@ -137,18 +60,18 @@ public class PlayerData
         }
     }
 
-    public bool IsVehicleActive(int vehicleId)
+    public bool IsCharacterActive(int characterId)
     {
-        if (vehicleList == null)
+        if (_activatedCharactersId == null)
         {
-            ActivateVehicle(_selectedVehicleId);
+            ActivateCharacter(_selectedCharacterId);
         }
 
         bool result = false;
         
-        foreach (List<int[]> item in vehicleList)
+        foreach (int itemId in _activatedCharactersId)
         {
-            if (item[0][0] == vehicleId)
+            if (itemId == characterId)
             {
                 result = true;
             }
@@ -157,62 +80,13 @@ public class PlayerData
         return result;
     }
 
-    public void ActivateVehicle(int vehicleId)
+    public void ActivateCharacter(int characterId)
     {
-        if (vehicleList == null)
+        if (!IsCharacterActive(characterId))
         {
-            vehicleList = new List<List<int[]>>();
+            Array.Resize(ref _activatedCharactersId, _activatedCharactersId.Length + 1);
+            _activatedCharactersId[_activatedCharactersId.Length - 1] = characterId;
         }
-
-        vehicleList.Add(new List<int[]>(AddVehicleValues(vehicleId)));
-    }
-
-    public void ActivateColorVehicle(int vehicleIndex, int colorIndex)
-    {
-        vehicleList[vehicleIndex][1][colorIndex] = 1;
-    }
-
-    public void ChangeColorVehicle(int vehicleIndex, int colorIndex)
-    {
-        if (vehicleList[vehicleIndex][1][colorIndex] == 1)
-        {
-            vehicleList[vehicleIndex][0][1] = colorIndex;
-        }
-    }
-
-    private List<int[]> AddVehicleValues(int vehicleId)
-    {
-        List<int[]> tempList = new List<int[]>();
-
-        int[] vehiclePrefs = new int[2];
-        vehiclePrefs[0] = vehicleId; // Vehicle ID
-        vehiclePrefs[1] = 0; // selectedColorIndex
-
-        int[] vehicleColors = new int[3];
-        vehicleColors[0] = 1; // First Color
-        vehicleColors[1] = 0; // Second Color
-        vehicleColors[2] = 0; // Thirth Color
-
-        tempList.Add(vehiclePrefs.ToArray<int>());
-        tempList.Add(vehicleColors.ToArray<int>());
-
-        return tempList;
-    }
-
-    private int FindVehicleIndex(int vehicleId)
-    {
-        int index = 0;
-
-        foreach (List<int[]> item in vehicleList)
-        {
-            if (item[0][0] == vehicleId)
-            {
-                break;
-            }
-            index++;
-        }
-
-        return index;
     }
 
 }
