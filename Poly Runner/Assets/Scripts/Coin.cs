@@ -21,11 +21,12 @@ public class Coin : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            _igm.AddGold(1);
+            _igm.AddGold(10);
             coinAnimation.Stop();
             coinModel.SetActive(false);
             collectedEffect.SetActive(true);
             //coinCellsModel.SetActive(true);
+            coinCellsAnimator.ResetTrigger("Passive");
             coinCellsAnimator.SetTrigger("Explode");
             //Destroy(gameObject, 2f);
         }

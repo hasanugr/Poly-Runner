@@ -28,10 +28,15 @@ public class SlopesRamp : MonoBehaviour
                     _playerScript.runMode = RunMode.Slope;
                     string animateName = _playerScript.isJumping ? "FallingIdleFromJump" : "JumpToSlope";
                     _playerScript.SetAnimate(animateName);
+                    if (!_playerScript.isJumping)
+                    {
+                        _playerScript.CharacterSoundPlay("Jump");
+                    }
                     _cameraFollow.isLookAtPlayer = true;
                     break;
                 case SlopesRampType.Exit:
                     _playerScript.SetAnimate("JumpToSlope");
+                    _playerScript.CharacterSoundPlay("Jump");
                     _cameraFollow.isLookAtPlayer = false;
                     _cameraFollow.isRampSlidingMode = false;
                     break;

@@ -21,8 +21,12 @@ public class TreeTrunkRolling : MonoBehaviour
     private Coroutine[] _coroutineMovingObject;
     private Coroutine[] _coroutineRotatingObjects;
 
+    private AudioManager _audioManager;
+
     private void Start()
     {
+        _audioManager = AudioManager.instance;
+
         animateDurationMultiple = 0.44f * animationDelay; // 0.22f for 0.5 animationDelay
         rotateAroundTime = 0.5f;
 
@@ -90,11 +94,15 @@ public class TreeTrunkRolling : MonoBehaviour
         yield return new WaitForSeconds(startTime);
 
         shakeInstance = Shaker.ShakeAll(shakePreset);
+        _audioManager.Play(AudioManager.AudioSoundTypes.Environment, "Quake1");
+        _audioManager.Play(AudioManager.AudioSoundTypes.Environment, "Quake2");
 
         yield return new WaitForSeconds(endTime);
 
         shakeInstance.Stop(shakePreset.FadeOut, false);
         shakeInstance = null;
+        _audioManager.Stop(AudioManager.AudioSoundTypes.Environment, "Quake1");
+        _audioManager.Stop(AudioManager.AudioSoundTypes.Environment, "Quake2");
 
         if (InGameManager.instance.isGameActive)
         {

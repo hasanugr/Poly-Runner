@@ -5,14 +5,36 @@ using UnityEngine;
 public class CharacterSkinControl : MonoBehaviour
 {
     public PlayerSkin[] PlayerSkins;
+    public PlayerSkin SelectedPlayerSkin;
 
-    private int _lastActiveSkinId = 0;
+    public int lastActiveSkinId = 0;
+
+    private void OnEnable()
+    {
+        ChangeSkin(GameManager.instance.pd.SelectedCharacterId);
+    }
 
     public void ChangeSkin(int skinId)
     {
-        PlayerSkins[_lastActiveSkinId].DeactivateSkin();
-        PlayerSkins[skinId].ActivateSkin();
-        _lastActiveSkinId = skinId;
+        PlayerSkins[GetSkinIndex(lastActiveSkinId)].DeactivateSkin();
+        PlayerSkins[GetSkinIndex(skinId)].ActivateSkin();
+        lastActiveSkinId = skinId;
+        SelectedPlayerSkin = PlayerSkins[GetSkinIndex(skinId)];
+    }
+
+    public int GetSkinIndex(int skinId)
+    {
+        int skinIndex = 0;
+        for (int i = 0; i < PlayerSkins.Length; i++)
+        {
+            if (skinId == PlayerSkins[i].SkinId)
+            {
+                skinIndex = i;
+                break;
+            }
+        }
+
+        return skinIndex;
     }
 }
 
@@ -20,8 +42,12 @@ public class CharacterSkinControl : MonoBehaviour
 public class PlayerSkin
 {
     public enum SkinTypes { Normal, Elite, Rear, Premium, Gift };
+    public enum SkinGender { Male, Female };
 
     public int SkinId;
+    public SkinTypes skinType;
+    public SkinGender skinGender;
+    public float skinPrice;
     public GameObject BodySkinObject;
     public GameObject RagdollSkinObject;
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dd7af155647ca4bb290027c9b1873c, type: 3}
   m_Name: Level-20
   m_EditorClassIdentifier: 
-  LevelNumber: 26
+  LevelNumber: 25
   RoadObjects:
   - type: 0
     objects:
@@ -167,9 +167,6 @@ MonoBehaviour:
       scale: {x: 2, y: 2, z: 2}
   - type: 14
     objects:
-    - position: {x: 0, y: 0.1, z: 450.18}
-      rotation: {x: -0, y: -0, z: -0, w: 1}
-      scale: {x: 2, y: 0.8, z: 1}
     - position: {x: 0, y: 0.1, z: 482.71}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 2, y: 0.8, z: 1}
@@ -251,9 +248,6 @@ MonoBehaviour:
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: 0, y: 0.7, z: 418.96}
-      rotation: {x: -0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - position: {x: 2.5, y: 2.5, z: 450}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - position: {x: 0, y: 1, z: 455}

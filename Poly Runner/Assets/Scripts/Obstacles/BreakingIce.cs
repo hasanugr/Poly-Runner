@@ -16,9 +16,12 @@ public class BreakingIce : MonoBehaviour
     private int triggerCounter = 0;
     private bool isTriggered;
 
+    private AudioManager _audioManager;
+
     private void Start()
     {
         _playerScript = FindObjectOfType<Character>();
+        _audioManager = AudioManager.instance;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,13 +35,17 @@ public class BreakingIce : MonoBehaviour
                 StartCoroutine(ParticleEffect(1.1f));
                 StartCoroutine(TriggeredDeactive(1f));
                 shakeInstance = Shaker.ShakeAll(earthQuakeShake);
+                animationControl.ResetTrigger("BreakingIceDefault");
                 animationControl.SetTrigger("BreakingIce");
-                //StartCoroutine(DeactiveTheObstacle(5f));
-            }else if (triggerCounter == 1)
+                StartCoroutine(PlaySoundWithDelay("IceCrack", 1.1f));
+                StartCoroutine(PlaySoundWithDelay("WaterSplash", 1.2f));
+            }
+            else if (triggerCounter == 1)
             {
                 isTriggered = true;
                 _playerScript.SetAnimate("FallToWater");
                 StartCoroutine(ParticleWithDelay(waterSplashEffect, 0.17f));
+                StartCoroutine(PlaySoundWithDelay("WaterSplash", 0.17f));
                 StartCoroutine(TriggerDie(0f));
             }
         }
@@ -53,14 +60,11 @@ public class BreakingIce : MonoBehaviour
         shakeInstance = null;
     }
 
-    IEnumerator DeactiveTheObstacle(float time)
+    IEnumerator PlaySoundWithDelay(string soundName, float time)
     {
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(time);
-        if (InGameManager.instance.isGameActive)
-        {
-            gameObject.SetActive(false);
-        }
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Environment, soundName);
     }
 
     IEnumerator TriggeredDeactive(float time)
@@ -87,8 +91,9 @@ public class BreakingIce : MonoBehaviour
 
     public void ResetObstacle()
     {
-        if (animationControl.GetCurrentAnimatorClipInfo(0).Length > 0)
-            animationControl.SetTrigger("Passive");
+        //if (animationControl.GetCurrentAnimatorClipInfo(0).Length > 0)
+        animationControl.SetTrigger("BreakingIceDefault");
         isTriggered = false;
+        triggerCounter = 0;
     }
 }

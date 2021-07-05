@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterSkin", menuName = "Cytris/Character Skin")]
-public class CharacterSkinSO : ScriptableObject
+[System.Serializable]
+public class CharacterSkin
 {
     public enum SkinTypes { Normal, Elite, Rear, Premium, Gift };
+    public enum SkinGender { Male, Female };
 
+    public bool isActive;
     public int SkinId;
+    public string skinName;
+    public SkinTypes skinType;
+    public SkinGender skinGender;
+    public float skinPrice;
+    public Sprite BodySkinSprite;
     public GameObject BodySkinObject;
     public GameObject RagdollSkinObject;
-    public SkinTypes SkinType;
-
 
     public void ActivateSkin()
     {

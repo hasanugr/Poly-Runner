@@ -36,10 +36,12 @@ public class SeagulAttacker : MonoBehaviour
 
         if (seagulType == SeagulType.BigSeagul)
         {
+            animation.ResetTrigger("BigSeagulAttackDefault");
             animation.SetTrigger("BigSeagulAttack");
         }
         else if(seagulType == SeagulType.TripleSeagul)
         {
+            animation.ResetTrigger("SeagulAttackDefault");
             animation.SetTrigger("SeagulAttack");
         }
     }
@@ -65,8 +67,17 @@ public class SeagulAttacker : MonoBehaviour
     {
         for (int i = 0; i < animationControl.Length; i++)
         {
-            if (animationControl[i].GetCurrentAnimatorClipInfo(0).Length > 0)
-                animationControl[i].SetTrigger("Passive");
+            /*if (animationControl[i].GetCurrentAnimatorClipInfo(0).Length > 0)
+                animationControl[i].SetTrigger("Passive");*/
+
+            if (seagulType == SeagulType.BigSeagul)
+            {
+                animationControl[i].SetTrigger("BigSeagulAttackDefault");
+            }
+            else if (seagulType == SeagulType.TripleSeagul)
+            {
+                animationControl[i].SetTrigger("SeagulAttackDefault");
+            }
         }
         isTriggered = false;
     }

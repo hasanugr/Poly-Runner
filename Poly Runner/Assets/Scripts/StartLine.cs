@@ -15,6 +15,13 @@ public class StartLine : MonoBehaviour
     public float runDelay = 1.7f;
     private enum VectorType { X, Y, Z };
 
+    AudioManager _audioManager;
+
+    private void Start()
+    {
+        _audioManager = AudioManager.instance;
+    }
+
     public void StartProcess()
     {
         Bear.SetActive(true);
@@ -23,6 +30,7 @@ public class StartLine : MonoBehaviour
         LeanTween.moveLocal(CameraObj, new Vector3(0, 1, -45), runDelay - 0.3f);
         LeanTween.rotate(CameraObj, new Vector3(-15, 180, 0), runDelay - 0.3f);
         BearAnimator.SetBool("isStanding", true);
+        StartCoroutine(PlaySoundWithDelay("Bear", 0.2f));
         StartCoroutine(AnimateWithDelay(BearAnimator, "isStanding", false, runDelay - 0.3f));
         StartCoroutine(AnimateWithDelay(BearAnimator, "isRunning", true, runDelay));
         StartCoroutine(ActivateWithDelay(DustEffect, true, runDelay));
@@ -41,6 +49,14 @@ public class StartLine : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         Shaker.ShakeAllSeparate(shakePreset);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Environment, "FallTree");
+    }
+
+    IEnumerator PlaySoundWithDelay(string soundName, float time)
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(time);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Animals, soundName);
     }
 
     IEnumerator ActivateWithDelay(GameObject activateObject, bool state, float time)

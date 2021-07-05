@@ -27483,6 +27483,7 @@ MonoBehaviour:
   chasingDistance: 4
   deadBodyClosingSpeed: 5
   deadBodyStopDistance: 2
+  skinControl: {fileID: 0}
   InRoll: 0
   isFalling: 0
   isJumping: 0
@@ -27492,6 +27493,9 @@ MonoBehaviour:
   isCinematic: 0
   isReverseMovement: 0
   isTrailing: 0
+  _igm: {fileID: 0}
+  _cameraFollow: {fileID: 0}
+  m_char: {fileID: 0}
 --- !u!114 &2185657589991485614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27506,20 +27510,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSkins:
   - SkinId: 0
+    skinType: 0
+    skinGender: 0
+    skinPrice: 0
     BodySkinObject: {fileID: 7397497320366726620}
     RagdollSkinObject: {fileID: 9016079240640519296}
   - SkinId: 1
-    BodySkinObject: {fileID: 1368769016155114025}
-    RagdollSkinObject: {fileID: 1257257487785343529}
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 4170299370297370605}
+    RagdollSkinObject: {fileID: 2095006349521539732}
   - SkinId: 2
-    BodySkinObject: {fileID: 7149494380387948931}
-    RagdollSkinObject: {fileID: 1185595868808919188}
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 6915798894325279433}
+    RagdollSkinObject: {fileID: 3008916458139990769}
   - SkinId: 3
-    BodySkinObject: {fileID: 3046695103677275062}
-    RagdollSkinObject: {fileID: 4217961777248344641}
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 8291351353578722941}
+    RagdollSkinObject: {fileID: 3249968877314890588}
   - SkinId: 4
-    BodySkinObject: {fileID: 5826184327715523754}
-    RagdollSkinObject: {fileID: 8450888444103414623}
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 1319968662820780764}
+    RagdollSkinObject: {fileID: 7954459474112052784}
+  - SkinId: 5
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 5528186817796938624}
+    RagdollSkinObject: {fileID: 6177178271805649580}
+  - SkinId: 6
+    skinType: 0
+    skinGender: 0
+    skinPrice: 100
+    BodySkinObject: {fileID: 3707876931653687742}
+    RagdollSkinObject: {fileID: 3009190888690426523}
+  - SkinId: 7
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 3421075639445766782}
+    RagdollSkinObject: {fileID: 536334548121894369}
+  - SkinId: 8
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 2827163732508549735}
+    RagdollSkinObject: {fileID: 6397117718051016711}
+  - SkinId: 9
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 1051196519282214926}
+    RagdollSkinObject: {fileID: 7940287749066893660}
+  - SkinId: 10
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 6998057378203585977}
+    RagdollSkinObject: {fileID: 7077150183517668238}
+  - SkinId: 11
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 3596856021723333257}
+    RagdollSkinObject: {fileID: 2462935510546785037}
+  - SkinId: 12
+    skinType: 0
+    skinGender: 1
+    skinPrice: 100
+    BodySkinObject: {fileID: 7898316073384246789}
+    RagdollSkinObject: {fileID: 1114961996379884647}
+  SelectedPlayerSkin:
+    SkinId: 0
+    skinType: 0
+    skinGender: 0
+    skinPrice: 0
+    BodySkinObject: {fileID: 0}
+    RagdollSkinObject: {fileID: 0}
+  lastActiveSkinId: 0
 --- !u!1 &6877159088666506437
 GameObject:
   m_ObjectHideFlags: 0

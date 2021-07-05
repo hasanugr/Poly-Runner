@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322802264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1733136, y: -1.5696293, z: 1.745821}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3492668784976375750}
@@ -112,14 +112,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0807780aac4064498a4d7b3bf2067af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSkipStartShow: 0
   cameraFollow: {fileID: 0}
   player: {fileID: 0}
   playerController: {fileID: 0}
   isGameActive: 0
-  IsBossActive: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
+  startLine: {fileID: 0}
+  finishLine: {fileID: 0}
+  levelHolderControls: []
+  levelController: {fileID: 0}
+  activeLevel: 1
   TimerMaxValue: 3
   TimerUIObj: {fileID: 8331111035774952744}
   TimerUI: {fileID: 8331111035774952746}

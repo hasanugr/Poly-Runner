@@ -29,6 +29,8 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private Quaternion startRotation;*/
 
     private int _collectedGold;
+    private int _levelMaxGold;
+    private int _calculatedStar;
 
     [Header("Game Countdown Timer")]
     public float TimerMaxValue = 3;
@@ -40,10 +42,12 @@ public class InGameManager : MonoBehaviour
     [Header("UI Screen")]
     public GameObject InGameUI;
     public GameObject PausePanel;
+    public GameObject SettingsPanel;
     public GameObject GameOverPanel;
     public GameObject FinishLevelPanel;
     public GameObject GoldIcon;
     public TextMeshProUGUI GoldText;
+    public TextMeshProUGUI PauseGoldText;
 
     [Header("Curved World Control")]
     public CurvedWorldController curverWorldController;
@@ -55,10 +59,19 @@ public class InGameManager : MonoBehaviour
     private float[] curvedDataNormalRight = { 1, 15, -1, 30 };
     private float[] curvedDataRamp = { 0, 15, 2, 5 };
 
+    private bool _buttonBlock;
+    AudioManager _audioManager;
+
     private void Start()
     {
-        //MakeSingleton();
+        _audioManager = AudioManager.instance;
+        MakeSingleton();
         //StartGame(1);
+    }
+
+    private void OnEnable()
+    {
+        _buttonBlock = false;
     }
 
     IEnumerator CountdownToStart()
@@ -76,10 +89,12 @@ public class InGameManager : MonoBehaviour
             TimerUI.text = _timerCountdown.ToString();
             LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1f), 0.5f).setEasePunch();
             _timerCountdown--;
+            _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "Countdown");
         }
 
         yield return new WaitForSeconds(1f);
         TimerUI.text = "GO";
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "CountdownGo");
         isGameActive = true;
         playerController.StartPlayer();
         LeanTween.scale(TimerUIObj, new Vector3(1.5f, 1.5f, 1f), 1f).setEaseInExpo();
@@ -96,13 +111,40 @@ public class InGameManager : MonoBehaviour
         TimerUIObj.SetActive(false);
     }
 
+    public void StartGame(int level)
+    {
+        LeanTween.cancelAll();
+        StopAllCoroutines();
+        Time.timeScale = 1;
+
+        cameraFollow.ResetCamera();
+        playerController.ResetPlayer();
+        levelController.CreateLoadedLevel(level);
+
+        activeLevel = level;
+        currentType = CurvedWorldType.NormalLeft;
+        _collectedGold = 0;
+        _levelMaxGold = levelController.Levels[0].LevelNumber;
+        GoldText.text = _collectedGold.ToString();
+        PauseGoldText.text = _collectedGold.ToString();
+        TimerUI.text = "";
+        GameOverPanel.SetActive(false);
+        FinishLevelPanel.SetActive(false);
+        PausePanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        InGameUI.SetActive(true);
+
+        _timerCountdown = TimerMaxValue;
+        StartCoroutine(CountdownToStart());
+    }
+
     public void Pause()
     {
-        Debug.Log("Pause Clicked!!!");
         PausePanel.SetActive(true);
         InGameUI.SetActive(false);
         Time.timeScale = 0f;
         isGameActive = false;
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "MenuButton");
     }
 
     public void Resume()
@@ -111,36 +153,52 @@ public class InGameManager : MonoBehaviour
         InGameUI.SetActive(true);
         Time.timeScale = 1f;
         isGameActive = true;
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "MenuButton");
     }
 
-    public void StartGame(int level)
+    public void Settings()
     {
-        LeanTween.cancelAll();
-        StopAllCoroutines();
-        Time.timeScale = 1;
-
-        //startLine.ResetObstacle();
-        //finishLine.ResetObstacle();
-        cameraFollow.ResetCamera();
-        playerController.ResetPlayer();
-        levelController.CreateLoadedLevel(level);
-
-        activeLevel = level;
-        currentType = CurvedWorldType.NormalLeft;
-        _collectedGold = 0;
-        GoldText.text = _collectedGold.ToString();
-        GameOverPanel.SetActive(false);
-        FinishLevelPanel.SetActive(false);
+        SettingsPanel.SetActive(true);
         PausePanel.SetActive(false);
-        InGameUI.SetActive(true);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "MenuButton");
+    }
 
-        _timerCountdown = TimerMaxValue;
-        StartCoroutine(CountdownToStart());
+    
+    public void BackToPause()
+    {
+        SettingsPanel.SetActive(false);
+        PausePanel.SetActive(true);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "MenuButton");
     }
 
     public void Restart()
     {
         StartGame(activeLevel);
+    }
+
+    public void NextLevel()
+    {
+        StartGame(activeLevel + 1);
+    }
+
+    public void GoHome()
+    {
+        GameManager.instance.GoToMenu();
+    }
+
+    public void GoLevelSelect()
+    {
+        GameManager.instance.GoToLevelSelect();
+    }
+
+    public void DoubleDiamondAds()
+    {
+        if (!_buttonBlock)
+        {
+            StartCoroutine(ButtonCooldown(0.5f));
+
+            Debug.Log("DoubleDiamondAds");
+        }
     }
 
     public void GameOver()
@@ -164,13 +222,47 @@ public class InGameManager : MonoBehaviour
         InGameUI.SetActive(false);
     }
 
+    #region Finish
     public void Finish()
     {
         cameraFollow.isReverseCamera = true;
         isGameActive = false;
         playerController.FinishMoves();
 
+        AddEarnedGold();
+        AddFinishPoint();
+
         StartCoroutine(FinishWithDelay(3f));
+    }
+
+    private void AddEarnedGold()
+    {
+        int existingGold = GameManager.instance.pd.Gold;
+        existingGold += GetGold();
+        GameManager.instance.pd.Gold = existingGold;
+        GameManager.instance.SavePlayerData();
+    }
+    private void AddFinishPoint()
+    {
+        int levelCollectedGold = GetGold();
+        float percentComplete = ((float)levelCollectedGold / ((float)_levelMaxGold * 10)) * 100;
+        Debug.Log("Max: " + _levelMaxGold + " Current: " + levelCollectedGold + " Percent: %" + percentComplete);
+
+        if (percentComplete > 70)
+        {
+            _calculatedStar = 3;
+        }
+        else if(percentComplete > 40)
+        {
+            _calculatedStar = 2;
+        }
+        else
+        {
+            _calculatedStar = 1;
+        }
+
+        GameManager.instance.pd.NextLevel(activeLevel, _calculatedStar);
+        GameManager.instance.SavePlayerData();
     }
 
     IEnumerator FinishWithDelay(float time)
@@ -181,32 +273,23 @@ public class InGameManager : MonoBehaviour
         FinishLevelPanel.SetActive(true);
         InGameUI.SetActive(false);
     }
+    #endregion
 
-    /*public void BossActivate()
-    {
-        if (IsBossActive)
-        {
-            IsBossActive = false;
-            cameraFollow.isReverseCamera = false;
-            playerController.isReverseMovement = false;
-        }
-        else
-        {
-            IsBossActive = true;
-            cameraFollow.isReverseCamera = true;
-            playerController.isReverseMovement = true;
-        }
-    }*/
 
     public void AddGold(int count)
     {
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Environment, "CollectDiamond");
         _collectedGold += count;
         LeanTween.scale(GoldIcon, new Vector3(1.5f, 1.5f, 1), 0.5f).setEasePunch();
         GoldText.text = _collectedGold.ToString();
+        PauseGoldText.text = _collectedGold.ToString();
     }
 
     public int GetGold() { return _collectedGold; }
+    public int GetMaxGold() { return _levelMaxGold; }
+    public int GetCalculatedStar() { return _calculatedStar; }
 
+    #region Curved World Control
     public void CurvedWorldRamp(bool isActive)
     { 
         if (isActive)
@@ -275,7 +358,7 @@ public class InGameManager : MonoBehaviour
         curverWorldController.SetBendVerticalOffset(30);
     }
 
-        public void CurvedWorldChange(CurvedWorldType type, float time)
+    public void CurvedWorldChange(CurvedWorldType type, float time)
     {
         // Data Type -> [ HorizontalSize, HorizontalOffset, VerticalSize, VerticalOffset ]
         float[] oldData = GetCurvedData(currentType);
@@ -311,9 +394,19 @@ public class InGameManager : MonoBehaviour
             _ => curvedDataNormal,
         };
     }
+    #endregion
 
+    IEnumerator ButtonCooldown(float time)
+    {
+        _buttonBlock = true;
 
-    /*private void MakeSingleton()
+        //yield on a new YieldInstruction that waits for X seconds.
+        yield return new WaitForSecondsRealtime(time);
+
+        _buttonBlock = false;
+    }
+
+    private void MakeSingleton()
     {
         if (instance != null)
         {
@@ -324,5 +417,5 @@ public class InGameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }*/
+    }
 }

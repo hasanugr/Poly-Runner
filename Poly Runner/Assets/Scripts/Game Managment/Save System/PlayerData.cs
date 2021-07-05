@@ -26,13 +26,13 @@ public class PlayerData
 
     public void AddDefaultValues()
     {
-        _levels = new int[1];
-        _gold = 0;
-        _selectedCharacterId = 1;
-        _activatedCharactersId = new int[1] { 0 };
+        _levels = new int[1]; // 1
+        _gold = 990; // 0
+        _selectedCharacterId = 0; // 0
+        _activatedCharactersId = new int[1] { 0 }; // [1] { 0 }
 
-        _music = true;
-        _sound = true;
+        _music = true; // true
+        _sound = true; // true
     }
 
     public void AddLoadedValues(PlayerData pd)

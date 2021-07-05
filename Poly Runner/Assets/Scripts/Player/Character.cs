@@ -69,6 +69,7 @@ public class Character : MonoBehaviour
     private bool enemyClosingToBody = false;
 
     [Header("Player Status")]
+    [SerializeField] CharacterSkinControl skinControl;
     [SerializeField] private bool InRoll;
     [SerializeField] private bool isFalling;
     public bool isJumping;
@@ -85,11 +86,14 @@ public class Character : MonoBehaviour
     [SerializeField] private InGameManager _igm;
     [SerializeField] private CameraFollow _cameraFollow;
     [SerializeField] private CharacterController m_char;
+
     private SwipeDetection swipeDetection;
+    AudioManager _audioManager;
 
     private void Awake()
     {
         swipeDetection = SwipeDetection.instance;
+        _audioManager = AudioManager.instance;
     }
 
     // Start is called before the first frame update
@@ -120,19 +124,29 @@ public class Character : MonoBehaviour
         swipeDetection.OnSwipeDown -= SwipeDownHandle;
         swipeDetection.OnSwipeLeft -= SwipeLeftHandle;
         swipeDetection.OnSwipeRight -= SwipeRightHandle;
+
+        m_Animator.applyRootMotion = true;
+        animatorBody.transform.localPosition = Vector3.zero;
+        animatorBody.transform.localRotation = Quaternion.identity;
+        m_Animator.applyRootMotion = false;
     }
 
     public void StartPlayer()
     {
         isGameActive = true;
         animatorBody.transform.localPosition = Vector3.zero;
-        animatorBody.transform.rotation = Quaternion.identity;
+        animatorBody.transform.localRotation = Quaternion.identity;
+        m_Animator.applyRootMotion = false;
         m_Animator.SetTrigger("Run");
     }
 
     public void ResetPlayer()
     {
+        m_Animator.applyRootMotion = true;
+        animatorBody.transform.localPosition = Vector3.zero;
+        animatorBody.transform.localRotation = Quaternion.identity;
         m_Animator.applyRootMotion = false;
+
         m_char.enabled = false;
         m_char.transform.position = new Vector3(0, 0.1f, 5);
         m_char.transform.rotation = Quaternion.identity;
@@ -217,7 +231,36 @@ public class Character : MonoBehaviour
         }
     }
 
-    
+    public void CharacterSoundPlay(string type)
+    {
+        if (type == "Jump")
+        {
+            if (skinControl.SelectedPlayerSkin.skinGender == PlayerSkin.SkinGender.Female)
+            {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "JumpF");
+            }
+            else
+            {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "JumpM");
+            }
+
+            // End of the Slide Down Road
+            if (runMode == RunMode.Slope)
+            {
+                _audioManager.Stop(AudioManager.AudioSoundTypes.Player, "SlideDown");
+            }
+        } else if (type == "Hit")
+        {
+            if (skinControl.SelectedPlayerSkin.skinGender == PlayerSkin.SkinGender.Female)
+            {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "HitF");
+            }
+            else
+            {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "HitM");
+            }
+        }
+    }
 
     #region Movement Codes
     private void StraightMove()
@@ -254,11 +297,13 @@ public class Character : MonoBehaviour
             if (groundHit.collider.name == "Slope Ground")
             {
                 m_Animator.SetTrigger("SlopeSliding");
+                _audioManager.Play(AudioManager.AudioSoundTypes.Player, "SlideDown");
                 _cameraFollow.isRampSlidingMode = true;
             }else if (groundHit.collider.name == "Ground")
             {
                 runMode = RunMode.Straight;
                 m_Animator.SetTrigger("JumpToRoll");
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Roll");
             }
             
         }
@@ -297,6 +342,7 @@ public class Character : MonoBehaviour
             SwipeLeft = false;
             if (!InRoll)
             {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Swipe");
                 if (m_Side == SIDE.Middle)
                 {
                     NewXPos = -XValue;
@@ -314,6 +360,7 @@ public class Character : MonoBehaviour
             SwipeRight = false;
             if (!InRoll)
             {
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Swipe");
                 if (m_Side == SIDE.Middle)
                 {
                     NewXPos = XValue;
@@ -353,6 +400,7 @@ public class Character : MonoBehaviour
                 isJumping = true;
                 y = JumpPower;
                 m_Animator.SetTrigger("Jump");
+                CharacterSoundPlay("Jump");
             }
         }
         else
@@ -404,6 +452,7 @@ public class Character : MonoBehaviour
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
                 m_Animator.SetTrigger("Slide");
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Slide");
                 InRoll = true;
             }else
             {
@@ -412,6 +461,7 @@ public class Character : MonoBehaviour
                 m_char.center = new Vector3(0, ColCenterY / 2f, 0);
                 m_char.height = ColHeight / 2f;
                 m_Animator.SetTrigger("JumpToRoll");
+                _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Roll");
                 InRoll = true;
             }
         }
@@ -424,6 +474,7 @@ public class Character : MonoBehaviour
         InRoll = true;
         float normalSpeed = FrwSpeed;
         m_Animator.SetTrigger("FinishSlide");
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "Slide");
         m_char.center = new Vector3(0, ColCenterY / 2f, 0);
         m_char.height = ColHeight / 2f;
         LeanTween.value(gameObject, normalSpeed, 0, 3f).setOnUpdate((float val) =>
@@ -488,7 +539,7 @@ public class Character : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.transform.CompareTag("Obstacle"))
+        if (hit.transform.CompareTag("Obstacle") && isGameActive)
         {
             OnCharacterColliderHit(hit.collider);
         }
@@ -601,11 +652,13 @@ public class Character : MonoBehaviour
         if (type == "Drown")
         {
             Debug.Log("Drowned");
-        }else
+        }
+        else
         {
             characterRagdoll.transform.parent = null;
             characterRagdoll.SetActive(true);
             characterBody.SetActive(false);
+            CharacterSoundPlay("Hit");
         }
         
         _igm.GameOver();
@@ -618,6 +671,7 @@ public class Character : MonoBehaviour
         isStunned = true;
         isInStunDelay = true;
         characterEffects.EffectProcess(CharacterEffectTypes.Stunned, true);
+        CharacterSoundPlay("Hit");
         EnemyCloser();
         yield return new WaitForSeconds(0.5f);
         isInStunDelay = false;
@@ -716,6 +770,7 @@ public class Character : MonoBehaviour
         footPrintObject.transform.rotation = rot;
         footPrintObject.transform.position = pos;
         footPrintObject.transform.Translate(new Vector3(0, 0, 0.1f), Space.Self);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Player, "FootstepSnow");
 
         StartCoroutine(SendToPoolObjectTimout(footPrintObject, "FootPrint", 2f));
     }
@@ -757,6 +812,7 @@ public class Character : MonoBehaviour
         enemyHolder.SetActive(true);
         enemyAnimator.SetBool("isRunning", true);
         LeanTween.moveLocalZ(enemyHolder, -chasingDistance, 0.5f);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Animals, "BearFollow");
     }
 
     private void EnemyGetAway()

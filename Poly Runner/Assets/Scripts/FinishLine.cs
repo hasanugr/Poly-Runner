@@ -15,13 +15,15 @@ public class FinishLine : MonoBehaviour
 
     private GameObject _player;
 
-    InGameManager _igm;
-
     private bool isTriggered;
+
+    InGameManager _igm;
+    AudioManager _audioManager;
 
     void Start()
     {
         _igm = FindObjectOfType<InGameManager>();
+        _audioManager = AudioManager.instance;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,9 +33,12 @@ public class FinishLine : MonoBehaviour
             _player = other.transform.gameObject;
             isTriggered = true;
             _igm.Finish();
+
+            CageAnimator.ResetTrigger("FinishGateCloseDefault");
             CageAnimator.SetTrigger("FinishGateClose");
             StartCoroutine(ActivateWithDelay(DustEffect, .9f));
             StartCoroutine(CameraShakeWithDelay(BigShake, .9f));
+            StartCoroutine(PlaySoundWithDelay("FallTree", .9f));
             Bear.SetActive(true);
             BearAnimator.SetBool("isRunning", true);
             LeanTween.moveLocalZ(Bear, -3.5f, 2f);
@@ -70,12 +75,19 @@ public class FinishLine : MonoBehaviour
         }
     }
 
+    IEnumerator PlaySoundWithDelay(string soundName, float time)
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(time);
+        _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.Environment, soundName);
+    }
+
     public void ResetObstacle()
     {
         LeanTween.cancel(Bear);
         Bear.transform.localPosition = new Vector3(0, 0.1f, bearStartDistance);
         Bear.SetActive(false);
-        CageAnimator.SetTrigger("Passive");
+        CageAnimator.SetTrigger("FinishGateCloseDefault");
         isTriggered = false;
     }
 }
