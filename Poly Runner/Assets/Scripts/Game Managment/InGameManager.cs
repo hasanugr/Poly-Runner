@@ -197,7 +197,7 @@ public class InGameManager : MonoBehaviour
         {
             StartCoroutine(ButtonCooldown(0.5f));
 
-            Debug.Log("DoubleDiamondAds");
+            AdmobManager.instance.ShowRewardedAd();
         }
     }
 
@@ -220,6 +220,8 @@ public class InGameManager : MonoBehaviour
 
         GameOverPanel.SetActive(true);
         InGameUI.SetActive(false);
+
+        AdmobManager.instance.ShowInterstitial();
     }
 
     #region Finish
@@ -229,18 +231,9 @@ public class InGameManager : MonoBehaviour
         isGameActive = false;
         playerController.FinishMoves();
 
-        AddEarnedGold();
         AddFinishPoint();
 
         StartCoroutine(FinishWithDelay(3f));
-    }
-
-    private void AddEarnedGold()
-    {
-        int existingGold = GameManager.instance.pd.Gold;
-        existingGold += GetGold();
-        GameManager.instance.pd.Gold = existingGold;
-        GameManager.instance.SavePlayerData();
     }
     private void AddFinishPoint()
     {
@@ -272,6 +265,8 @@ public class InGameManager : MonoBehaviour
 
         FinishLevelPanel.SetActive(true);
         InGameUI.SetActive(false);
+
+        AdmobManager.instance.ShowInterstitial();
     }
     #endregion
 

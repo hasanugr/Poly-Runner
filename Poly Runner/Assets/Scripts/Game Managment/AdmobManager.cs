@@ -1,27 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using GoogleMobileAds.Api;
+using GoogleMobileAds.Api;
 
 public class AdmobManager : MonoBehaviour
 {
-    /*public static AdmobManager instance;
+    public static AdmobManager instance;
 
     [Header("ADMOB Settings")]
     public bool IsTestMode;
-    public string InterstitialID = "ca-app-pub-5086672850663845/8077068827";
-    public string RewardedID = "ca-app-pub-5086672850663845/4137823818";
+    public string InterstitialID = "ca-app-pub-8338191387048913/6619351570";
+    public string RewardedID = "ca-app-pub-8338191387048913/3158139788";
     [HideInInspector]
     public bool IsUserEarnedReward = false;
 
     private InterstitialAd Interstitial;
     private RewardedAd Rewarded;
 
+    public delegate void AwardWon();
+    public event AwardWon OnAwardWon;
+
     // Start is called before the first frame update
     void Start()
     {
         MobileAds.Initialize(initStatus => { });
-
+        
         if (IsTestMode)
         {
             InterstitialID = "ca-app-pub-3940256099942544/1033173712";
@@ -37,7 +40,7 @@ public class AdmobManager : MonoBehaviour
         MakeSingleton();
     }
 
-    #region Public Functions
+#region Public Functions
 
     public void ShowInterstitial()
     {
@@ -55,9 +58,9 @@ public class AdmobManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
-    #region Private Functions
+#region Private Functions
 
     private void RequestInterstitial()
     {
@@ -88,7 +91,8 @@ public class AdmobManager : MonoBehaviour
 
     private void Rewarded_OnUserEarnedReward(object sender, Reward e)
     {
-        instance.IsUserEarnedReward = true;
+        IsUserEarnedReward = true;
+        OnAwardWon();
     }
 
     private void MakeSingleton()
@@ -103,5 +107,5 @@ public class AdmobManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    #endregion*/
+#endregion
 }

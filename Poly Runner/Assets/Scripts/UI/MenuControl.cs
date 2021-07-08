@@ -71,7 +71,6 @@ public class MenuControl : MonoBehaviour
             StartCoroutine(ButtonCooldown(0.5f));
 
             _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "MenuButton");
-
             goldText.text = GameManager.instance.pd.Gold.ToString();
             CharacterSelectMenu.SetActive(false);
             LevelSelectMenu.SetActive(false);
