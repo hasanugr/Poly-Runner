@@ -27,7 +27,7 @@ public class PlayerData
     public void AddDefaultValues()
     {
         _levels = new int[1]; // 1
-        _gold = 990; // 0
+        _gold = 0; // 0
         _selectedCharacterId = 0; // 0
         _activatedCharactersId = new int[1] { 0 }; // [1] { 0 }
 
