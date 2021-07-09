@@ -18,15 +18,8 @@ public class InGameManager : MonoBehaviour
     [Header("Game ReLoad")]
     [SerializeField] StartLine startLine;
     [SerializeField] FinishLine finishLine;
-    [SerializeField] LevelHolderControl[] levelHolderControls;
     [SerializeField] LevelController levelController;
     [SerializeField] int activeLevel = 1;
-
-    /*[Header("Action Control")]
-    public bool IsBossActive = false;
-
-    [SerializeField] private Vector3 startPosition;
-    [SerializeField] private Quaternion startRotation;*/
 
     private int _collectedGold;
     private int _levelMaxGold;

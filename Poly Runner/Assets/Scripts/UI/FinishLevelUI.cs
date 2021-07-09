@@ -12,7 +12,6 @@ public class FinishLevelUI : MonoBehaviour
     public GameObject TouchBlockPanel;
     public GameObject WatchAdsButton;
     public GameObject RewardedShow;
-    public GameObject RewardedParticleEffect;
 
     public Sprite star;
     public Sprite starMissing;
@@ -65,7 +64,6 @@ public class FinishLevelUI : MonoBehaviour
         RewardedGoldValue.text = _collectedGold.ToString();
         WatchAdsButton.SetActive(false);
         RewardedShow.SetActive(true);
-        RewardedParticleEffect.SetActive(true);
         LeanTween.scale(RewardedShow, new Vector3(1.05f, 1.05f, 1f), 1.5f).setEasePunch().setLoopClamp();
         _totalPlayerGold = GameManager.instance.pd.Gold;
 

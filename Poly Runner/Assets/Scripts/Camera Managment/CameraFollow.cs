@@ -31,8 +31,6 @@ public class CameraFollow : MonoBehaviour
 	[HideInInspector] public bool isLookAtPlayer = false;
 	[HideInInspector] public bool isRampSlidingMode = false;
 
-	private float usedDistance;
-
 	Vector3 wantedPosition;
 	Vector3 currentPosition;
 
@@ -43,7 +41,6 @@ public class CameraFollow : MonoBehaviour
 	private float _coreHeight;
 	private float posY;
 	private float currentLookAtDown;
-	private float zVelocity = 0.0F;
 	private Vector3 xyzVelocity = new Vector3(0, 0, 0);
 
 	void Awake()
@@ -77,17 +74,8 @@ public class CameraFollow : MonoBehaviour
 			posY = Mathf.Lerp(posY, target.localPosition.y, Time.deltaTime * ZPositionTime);
 		}
 		wantedPosition.y = posY + _height;
-		// Camera Hight and Distance functions
-		/*usedDistance = Mathf.SmoothDampAngle(usedDistance, isReverseCamera ? -_distance : _distance, ref zVelocity, distanceSnapTime);
-		wantedPosition.z = target.localPosition.z - usedDistance;*/
 		wantedPosition.z = target.localPosition.z - (isReverseCamera ? -_distance : _distance);
-		//wantedPosition = target.position + (target.right.normalized * posX) + (target.up * (posY + height)) + (target.rotation * new Vector3(0, 0, -usedDistance));
 		currentPosition = transform.localPosition;
-
-		//Debug.Log(_distance + " + (" + targetCharacterController.velocity.magnitude + " * " + distanceMultiplier + ")  -->  " + _distance + (targetCharacterController.velocity.magnitude * distanceMultiplier));
-		//Debug.Log("Target Z Pos: " + target.position.z + "  Used Distance: " + usedDistance);
-		//Debug.Log("Used Distance: " + usedDistance);
-		//Debug.Log("Target Pos: " + target.localPosition + "  Wanted Pos: " + wantedPosition);
 
 		transform.localPosition = Vector3.SmoothDamp(currentPosition, wantedPosition, ref xyzVelocity, positionSmoothTime);
 
@@ -115,7 +103,6 @@ public class CameraFollow : MonoBehaviour
 		_distance = _coreDistance;
 		height = _coreHeight;
 		_height = _coreHeight;
-		usedDistance = 0;
 
 		transform.localPosition = startPosition;
 		transform.localRotation = startRotation;
