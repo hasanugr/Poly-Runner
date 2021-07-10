@@ -23,7 +23,7 @@ public class Coin : MonoBehaviour
         {
             _igm.AddGold(10);
             coinAnimation.Stop();
-            coinModel.SetActive(false);
+            //coinModel.SetActive(false);
             collectedEffect.SetActive(true);
             //coinCellsModel.SetActive(true);
             coinCellsAnimator.ResetTrigger("Passive");
@@ -35,7 +35,7 @@ public class Coin : MonoBehaviour
     public void ResetCoin()
     {
         coinAnimation.Play();
-        coinModel.SetActive(true);
+        //coinModel.SetActive(true);
         coinCellsAnimator.SetTrigger("Passive");
     }
 }

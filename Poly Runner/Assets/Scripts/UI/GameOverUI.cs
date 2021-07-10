@@ -35,6 +35,7 @@ public class GameOverUI : MonoBehaviour
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(time);
 
+        AdmobManager.instance.ShowInterstitial();
         TouchBlockPanel.SetActive(false);
     }
 }

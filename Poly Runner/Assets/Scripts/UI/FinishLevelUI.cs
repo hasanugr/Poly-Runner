@@ -44,6 +44,7 @@ public class FinishLevelUI : MonoBehaviour
         CalculateGold();
         AddEarnedGold();
 
+        AdmobManager.instance.ShowInterstitial();
         StartCoroutine(DisableTheTouchBlock(1.5f));
     }
 

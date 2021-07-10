@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 92603782115579578, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 93528764846975993, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 93528766705775224, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
       propertyPath: m_Name
-      value: High Road Ramp
+      value: 5-high-road-ramp
       objectReference: {fileID: 0}
     - target: {fileID: 93528766705775225, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +62,10 @@ PrefabInstance:
     - target: {fileID: 93528766705775225, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 94516678512743524, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949eb560ea8e0bb4fa13dfb4c6d39d4d, type: 3}

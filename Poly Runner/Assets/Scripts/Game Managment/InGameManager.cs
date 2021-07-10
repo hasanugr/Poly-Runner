@@ -213,8 +213,6 @@ public class InGameManager : MonoBehaviour
 
         GameOverPanel.SetActive(true);
         InGameUI.SetActive(false);
-
-        AdmobManager.instance.ShowInterstitial();
     }
 
     #region Finish
@@ -258,8 +256,6 @@ public class InGameManager : MonoBehaviour
 
         FinishLevelPanel.SetActive(true);
         InGameUI.SetActive(false);
-
-        AdmobManager.instance.ShowInterstitial();
     }
     #endregion
 
