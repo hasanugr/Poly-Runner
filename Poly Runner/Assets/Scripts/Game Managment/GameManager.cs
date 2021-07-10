@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
+
         _audioManager = AudioManager.instance;
 
         if (pd.Music)
