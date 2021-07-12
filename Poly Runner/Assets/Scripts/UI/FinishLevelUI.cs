@@ -27,12 +27,15 @@ public class FinishLevelUI : MonoBehaviour
     private InGameManager _igm;
     AudioManager _audioManager;
 
+    // Adds Reward Control
+    private bool _isUserEarnedRewardProccessin = false;
+
     private void OnEnable()
     {
-        AdmobManager.instance.OnAwardWon += RewardedGold;
-
         _igm = FindObjectOfType<InGameManager>();
         _audioManager = AudioManager.instance;
+        
+        AdmobManager.instance.ShowInterstitial();
 
         _totalPlayerGold = GameManager.instance.pd.Gold;
         TotalGoldValue.text = _totalPlayerGold.ToString();
@@ -44,14 +47,24 @@ public class FinishLevelUI : MonoBehaviour
         CalculateGold();
         AddEarnedGold();
 
-        AdmobManager.instance.ShowInterstitial();
         StartCoroutine(DisableTheTouchBlock(1.5f));
+    }
+
+    private void Update()
+    {
+        if (AdmobManager.instance.IsUserEarnedReward && !_isUserEarnedRewardProccessin)
+        {
+            _isUserEarnedRewardProccessin = true;
+            RewardedGold();
+        }
+        else if (_isUserEarnedRewardProccessin && !AdmobManager.instance.IsUserEarnedReward)
+        {
+            _isUserEarnedRewardProccessin = false;
+        }
     }
 
     private void OnDisable()
     {
-        AdmobManager.instance.OnAwardWon -= RewardedGold;
-
         LeanTween.cancel(RewardedShow);
         RewardedGoldValue.text = "";
         WatchAdsButton.SetActive(true);
@@ -77,6 +90,8 @@ public class FinishLevelUI : MonoBehaviour
         }).setOnComplete(() => {
             _audioManager.PlayOneShot(AudioManager.AudioSoundTypes.UI, "StarGain3");
         }).setIgnoreTimeScale(true);
+
+        AdmobManager.instance.IsUserEarnedReward = false;
 
         AddEarnedGold();
     }

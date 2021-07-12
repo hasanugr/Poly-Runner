@@ -17,9 +17,6 @@ public class AdmobManager : MonoBehaviour
     private InterstitialAd Interstitial;
     private RewardedAd Rewarded;
 
-    public delegate void AwardWon();
-    public event AwardWon OnAwardWon;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -91,8 +88,8 @@ public class AdmobManager : MonoBehaviour
 
     private void Rewarded_OnUserEarnedReward(object sender, Reward e)
     {
+        Debug.Log("Rewarded_OnUserEarnedReward");
         IsUserEarnedReward = true;
-        OnAwardWon();
     }
 
     private void MakeSingleton()
